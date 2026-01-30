@@ -1,0 +1,1075 @@
+@charset "UTF-8";
+
+/* ============================================
+   Common CSS - 汎用スタイルシート
+   ============================================ */
+
+/* ============================================
+   1. CSS変数（カスタムプロパティ）
+   ============================================ */
+:root {
+    /* --- カラーシステム --- */
+    /* プライマリーカラー */
+    --color-primary: rgb(205, 74, 30);
+    --color-primary-light: rgb(231, 108, 37);
+    --color-primary-dark: rgb(119, 50, 27);
+
+    /* セカンダリーカラー */
+    --color-secondary: #7c3aed;
+    --color-secondary-light: #a78bfa;
+    --color-secondary-dark: #5b21b6;
+
+    /* ニュートラルカラー */
+    --color-black: #1a1a1a;
+    --color-gray-900: #262626;
+    --color-gray-700: #525252;
+    --color-gray-500: #737373;
+    --color-gray-300: #d4d4d4;
+    --color-gray-100: #f5f5f5;
+    --color-white: #ffffff;
+
+    /* バックグラウンドカラー */
+    --color-BG1: #ffffff;
+    --color-BG2: #f5e6d3;
+
+    /* セマンティックカラー（用途別） */
+    --color-success: #22c55e;
+    /* 成功・完了 */
+    --color-warning: #f59e0b;
+    /* 警告・注意 */
+    --color-error: #d61919;
+    /* エラー・危険 */
+    --color-info: #3b82f6;
+    /* 情報 */
+
+    /* --- タイポグラフィ --- */
+    /* フォントファミリー */
+    --font-serif: 'Source Han Serif', 'Noto Serif JP', serif;
+    --font-main: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'メイリオ', sans-serif;
+    --font-accent: 'Roboto', 'Noto Sans JP', sans-serif;
+    /* 英数字用 */
+    --font-en: 'Playfair Display';
+    --font-en-accent: 'Lato';
+
+    --font-code: 'Consolas', 'Monaco', monospace;
+    /* コード表示用 */
+
+    /* フォントサイズ - clamp()でレスポンシブ対応 */
+    /* clamp(最小値, 可変値, 最大値) - 画面幅に応じて自動調整 */
+    --fs-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+    /* 12px → 14px */
+    --fs-sm: clamp(0.875rem, 0.825rem + 0.25vw, 1rem);
+    /* 14px → 16px */
+    --fs-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    /* 16px → 18px */
+    --fs-md: clamp(1.125rem, 1.05rem + 0.375vw, 1.25rem);
+    /* 18px → 20px */
+    --fs-lg: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+    /* 20px → 24px */
+    --fs-xl: clamp(1.5rem, 1.35rem + 0.75vw, 2rem);
+    /* 24px → 32px */
+    --fs-2xl: clamp(1.875rem, 1.65rem + 1.125vw, 2.5rem);
+    /* 30px → 40px */
+    --fs-3xl: clamp(2.25rem, 1.95rem + 1.5vw, 3rem);
+    /* 36px → 48px */
+    --fs-4xl: clamp(2.75rem, 2.35rem + 2vw, 3.75rem);
+    /* 44px → 60px */
+
+    /* 行の高さ（line-height） */
+    --lh-tight: 1.25;
+    /* 詰め気味（見出し向け） */
+    --lh-normal: 1.5;
+    /* 標準 */
+    --lh-relaxed: 1.75;
+    /* ゆったり（本文向け） */
+    --lh-loose: 2;
+    /* 広め */
+
+    /* フォントウェイト（太さ） */
+    --fw-light: 300;
+    /* 細字 */
+    --fw-normal: 400;
+    /* 標準 */
+    --fw-medium: 500;
+    /* やや太字 */
+    --fw-bold: 700;
+    /* 太字 */
+    --fw-black: 900;
+    /* 極太 */
+
+    /* --- スペーシング --- */
+    /* 基準値を使った倍数システム - clamp()でレスポンシブ対応 */
+    /* clamp(最小値, 可変値, 最大値) - 画面幅に応じて自動調整 */
+    --space-xs: clamp(0.25rem, 0.2rem + 0.25vw, 0.5rem);
+    /* 4px → 8px */
+    --space-sm: clamp(0.5rem, 0.45rem + 0.25vw, 0.75rem);
+    /* 8px → 12px */
+    --space-md: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
+    /* 16px → 24px */
+    --space-lg: clamp(1.5rem, 1.35rem + 0.75vw, 2rem);
+    /* 24px → 32px */
+    --space-xl: clamp(2rem, 1.8rem + 1vw, 3rem);
+    /* 32px → 48px */
+    --space-2xl: clamp(3rem, 2.7rem + 1.5vw, 4.5rem);
+    /* 48px → 72px */
+    --space-3xl: clamp(4rem, 3.6rem + 2vw, 6rem);
+    /* 64px → 96px */
+
+    /* 上下パディング */
+    .py-xs {
+        padding-top: var(--space-xs);
+        padding-bottom: var(--space-xs);
+    }
+
+    .py-sm {
+        padding-top: var(--space-sm);
+        padding-bottom: var(--space-sm);
+    }
+
+    .py-md {
+        padding-top: var(--space-md);
+        padding-bottom: var(--space-md);
+    }
+
+    .py-lg {
+        padding-top: var(--space-lg);
+        padding-bottom: var(--space-lg);
+    }
+
+    .py-xl {
+        padding-top: var(--space-xl);
+        padding-bottom: var(--space-xl);
+    }
+
+    .py-2xl {
+        padding-top: var(--space-2xl);
+        padding-bottom: var(--space-2xl);
+    }
+
+    .py-3xl {
+        padding-top: var(--space-3xl);
+        padding-bottom: var(--space-3xl);
+    }
+
+    /* --- レイアウト --- */
+    /* コンテナ幅 */
+    --container-max: 1140px;
+    /* 最大幅 */
+    --container-width: 100%;
+    /* 基本幅（%指定） */
+    --container-padding: 2.5%;
+    /* 左右パディング（中間サイズ） */
+    --container-padding-sm: 4%;
+    /* 左右パディング（小画面用） */
+    --container-padding-lg: 25px;
+    /* 左右パディング（大画面用） */
+
+    /* ブレークポイント（メディアクエリ用） */
+    --bp-sm: 480px;
+    /* スマートフォン */
+    --bp-md: 768px;
+    /* タブレット縦（Portrait） */
+    --bp-lg: 1024px;
+    /* タブレット横（Landscape）・小型PC */
+    --bp-xl: 1280px;
+    /* デスクトップ */
+    --bp-2xl: 1536px;
+    /* 大型デスクトップ */
+
+    /* --- ボーダー --- */
+    /* 太さ */
+    --border-width-thin: 1px;
+    /* 細い */
+    --border-width-medium: 2px;
+    /* 中間 */
+    --border-width-thick: 4px;
+    /* 太い */
+
+    /* 角丸（border-radius） */
+    --border-radius-sm: 0.25rem;
+    /* 4px - 小さい角丸 */
+    --border-radius-md: 0.5rem;
+    /* 8px - 標準角丸 */
+    --border-radius-lg: 1rem;
+    /* 16px - 大きい角丸 */
+    --border-radius-full: 9999px;
+    /* 完全な円形・カプセル型 */
+
+    /* --- シャドウ（影） --- */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    /* 微細な影 */
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    /* 標準的な影 */
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    /* 大きめの影 */
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    /* 強い影 */
+
+    /* --- アニメーション --- */
+    /* トランジション速度（ease-in-out） */
+    --transition-fast: 150ms ease-in-out;
+    /* 速い（マイクロインタラクション） */
+    --transition-base: 200ms ease-in-out;
+    /* 標準（ホバー効果など） */
+    --transition-slow: 500ms ease-in-out;
+    /* ゆっくり（モーダル表示など） */
+
+    /* --- z-index管理 --- */
+    /* 重なり順を一元管理（数値が大きいほど前面） */
+    --z-dropdown: 1000;
+    /* ドロップダウンメニュー */
+    --z-sticky: 1020;
+    /* 固定ヘッダー */
+    --z-fixed: 1030;
+    /* 固定要素 */
+    --z-modal-backdrop: 1040;
+    /* モーダル背景 */
+    --z-modal: 1050;
+    /* モーダル本体 */
+    --z-popover: 1060;
+    /* ポップオーバー */
+    --z-tooltip: 1070;
+    /* ツールチップ */
+}
+
+
+/* ============================================
+   2. 基本リセット
+   ============================================ */
+a {
+    text-decoration: none;
+    transition: var(--transition-base);
+}
+
+p {
+    word-break: break-all;
+    /* 日本語の長い単語でレイアウトが崩れないよう設定 */
+}
+
+
+/* ============================================
+   3. レイアウト - コンテナ
+   ============================================ */
+.wrap {
+    max-width: var(--container-max);
+    width: var(--container-width);
+    margin: 0 auto;
+}
+
+/* コンテナの内側パディング */
+.wrap-inner {
+    padding: 0 var(--container-padding);
+}
+
+/* 大画面用のパディング調整（1140px以上） */
+@media (min-width: 1140px) {
+    .wrap-inner {
+        padding: 0 var(--container-padding-lg);
+    }
+}
+
+/* 小画面用のパディング調整（480px以下） */
+@media (max-width: 480px) {
+    .wrap-inner {
+        padding: 0 var(--container-padding-sm);
+    }
+}
+
+/* 汎用コンテナ */
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding: 0 var(--space-md);
+}
+
+
+/* ============================================
+   4. レイアウト - Flexbox
+   ============================================ */
+.flex {
+    display: flex;
+}
+
+/* 横並び・中央揃え */
+.flex-row {
+    display: flex;
+    align-items: center;
+}
+
+/* 縦並び */
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 折り返し設定 */
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+/* 垂直方向の配置（align-items） */
+.items-start {
+    align-items: flex-start;
+    /* 上揃え */
+}
+
+.items-center {
+    align-items: center;
+    /* 中央揃え */
+}
+
+.items-end {
+    align-items: flex-end;
+    /* 下揃え */
+}
+
+.items-stretch {
+    align-items: stretch;
+    /* 高さを揃える */
+}
+
+/* 水平方向の配置（justify-content） */
+.justify-start {
+    justify-content: flex-start;
+    /* 左揃え */
+}
+
+.justify-center {
+    justify-content: center;
+    /* 中央揃え */
+}
+
+.justify-end {
+    justify-content: flex-end;
+    /* 右揃え */
+}
+
+.justify-between {
+    justify-content: space-between;
+    /* 両端揃え */
+}
+
+.justify-around {
+    justify-content: space-around;
+    /* 均等配置 */
+}
+
+/* アイテム間の間隔（gap） */
+.gap-xs {
+    gap: var(--space-xs);
+}
+
+.gap-sm {
+    gap: var(--space-sm);
+}
+
+.gap-md {
+    gap: var(--space-md);
+}
+
+.gap-lg {
+    gap: var(--space-lg);
+}
+
+.gap-xl {
+    gap: var(--space-xl);
+}
+
+
+/* ============================================
+   5. レイアウト - Grid
+   ============================================ */
+.grid {
+    display: grid;
+}
+
+/* グリッド列数の指定 */
+.grid-cols-1 {
+    grid-template-columns: repeat(1, 1fr);
+    /* 1列 */
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2列 */
+}
+
+.grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+    /* 3列 */
+}
+
+.grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+    /* 4列 */
+}
+
+
+/* ============================================
+   6. Position（配置方法）
+   ============================================ */
+.relative {
+    position: relative;
+    /* 相対配置 */
+}
+
+.absolute {
+    position: absolute;
+    /* 絶対配置 */
+}
+
+.fixed {
+    position: fixed;
+    /* 固定配置（スクロールしても固定） */
+}
+
+.sticky {
+    position: sticky;
+    /* スクロール時に固定される */
+}
+
+
+/* ============================================
+   7. Spacing - Margin（外側の余白）
+   ============================================ */
+/* リセット・自動調整 */
+.m-0 {
+    margin: 0;
+    /* 余白なし */
+}
+
+.m-auto {
+    margin: auto;
+    /* 自動（中央揃えなどに使用） */
+}
+
+.mx-auto {
+    margin-left: auto;
+    /* 左右を自動（中央揃え） */
+    margin-right: auto;
+}
+
+.my-auto {
+    margin-top: auto;
+    /* 上下を自動 */
+    margin-bottom: auto;
+}
+
+/* 全方向のマージン */
+.m-xs {
+    margin: var(--space-xs);
+}
+
+.m-sm {
+    margin: var(--space-sm);
+}
+
+.m-md {
+    margin: var(--space-md);
+}
+
+.m-lg {
+    margin: var(--space-lg);
+}
+
+.m-xl {
+    margin: var(--space-xl);
+}
+
+/* 上側のマージン */
+.mt-xs {
+    margin-top: var(--space-xs);
+}
+
+.mt-sm {
+    margin-top: var(--space-sm);
+}
+
+.mt-md {
+    margin-top: var(--space-md);
+}
+
+.mt-lg {
+    margin-top: var(--space-lg);
+}
+
+.mt-xl {
+    margin-top: var(--space-xl);
+}
+
+/* 下側のマージン */
+.mb-xs {
+    margin-bottom: var(--space-xs);
+}
+
+.mb-sm {
+    margin-bottom: var(--space-sm);
+}
+
+.mb-md {
+    margin-bottom: var(--space-md);
+}
+
+.mb-lg {
+    margin-bottom: var(--space-lg);
+}
+
+.mb-xl {
+    margin-bottom: var(--space-xl);
+}
+
+/* 左側のマージン */
+.ml-xs {
+    margin-left: var(--space-xs);
+}
+
+.ml-sm {
+    margin-left: var(--space-sm);
+}
+
+.ml-md {
+    margin-left: var(--space-md);
+}
+
+.ml-auto {
+    margin-left: auto;
+    /* 自動（右寄せに使用） */
+}
+
+/* 右側のマージン */
+.mr-xs {
+    margin-right: var(--space-xs);
+}
+
+.mr-sm {
+    margin-right: var(--space-sm);
+}
+
+.mr-md {
+    margin-right: var(--space-md);
+}
+
+.mr-auto {
+    margin-right: auto;
+    /* 自動（左寄せに使用） */
+}
+
+
+/* ============================================
+   8. Spacing - Padding（内側の余白）
+   ============================================ */
+/* リセット */
+.p-0 {
+    padding: 0;
+    /* 余白なし */
+}
+
+/* 全方向のパディング */
+.p-xs {
+    padding: var(--space-xs);
+}
+
+.p-sm {
+    padding: var(--space-sm);
+}
+
+.p-md {
+    padding: var(--space-md);
+}
+
+.p-lg {
+    padding: var(--space-lg);
+}
+
+.p-xl {
+    padding: var(--space-xl);
+}
+
+/* 左右のパディング */
+.px-xs {
+    padding-left: var(--space-xs);
+    padding-right: var(--space-xs);
+}
+
+.px-sm {
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+}
+
+.px-md {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+}
+
+.px-lg {
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+}
+
+.px-xl {
+    padding-left: var(--space-xl);
+    padding-right: var(--space-xl);
+}
+
+/* 上下のパディング */
+.py-xs {
+    padding-top: var(--space-xs);
+    padding-bottom: var(--space-xs);
+}
+
+.py-sm {
+    padding-top: var(--space-sm);
+    padding-bottom: var(--space-sm);
+}
+
+.py-md {
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
+}
+
+.py-lg {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+}
+
+.py-xl {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+}
+
+
+/* ============================================
+   9. Typography（文字に関するスタイル）
+   ============================================ */
+/* フォントサイズ */
+.text-xs {
+    font-size: var(--fs-xs);
+    /* 最小（キャプションなど） */
+}
+
+.text-sm {
+    font-size: var(--fs-sm);
+    /* 小（注釈など） */
+}
+
+.text-base {
+    font-size: var(--fs-base);
+    /* 基本（本文） */
+}
+
+.text-md {
+    font-size: var(--fs-md);
+    /* やや大（リード文など） */
+}
+
+.text-lg {
+    font-size: var(--fs-lg);
+    /* 大（小見出しなど） */
+}
+
+.text-xl {
+    font-size: var(--fs-xl);
+    /* 特大（見出しなど） */
+}
+
+.text-2xl {
+    font-size: var(--fs-2xl);
+    /* 2倍大 */
+}
+
+.text-3xl {
+    font-size: var(--fs-3xl);
+    /* 3倍大 */
+}
+
+.text-4xl {
+    font-size: var(--fs-4xl);
+    /* 4倍大（メインタイトルなど） */
+}
+
+/* フォントウェイト（太さ） */
+.font-light {
+    font-weight: var(--fw-light);
+    /* 細字 */
+}
+
+.font-normal {
+    font-weight: var(--fw-normal);
+    /* 標準 */
+}
+
+.font-medium {
+    font-weight: var(--fw-medium);
+    /* やや太字 */
+}
+
+.font-bold {
+    font-weight: var(--fw-bold);
+    /* 太字 */
+}
+
+.font-black {
+    font-weight: var(--fw-black);
+    /* 極太 */
+}
+
+/* 行の高さ */
+.leading-tight {
+    line-height: var(--lh-tight);
+    /* 詰め気味 */
+}
+
+.leading-normal {
+    line-height: var(--lh-normal);
+    /* 標準 */
+}
+
+.leading-relaxed {
+    line-height: var(--lh-relaxed);
+    /* ゆったり */
+}
+
+.leading-loose {
+    line-height: var(--lh-loose);
+    /* 広め */
+}
+
+/* テキストの配置 */
+.text-left {
+    text-align: left;
+    /* 左揃え */
+}
+
+.text-center {
+    text-align: center;
+    /* 中央揃え */
+}
+
+.text-right {
+    text-align: right;
+    /* 右揃え */
+}
+
+
+/* ============================================
+   10. Colors（色）
+   ============================================ */
+/* テキストカラー */
+.text-primary {
+    color: var(--color-primary);
+}
+
+.text-secondary {
+    color: var(--color-secondary);
+}
+
+.text-black {
+    color: var(--color-black);
+}
+
+.text-gray-900 {
+    color: var(--color-gray-900);
+}
+
+.text-gray-700 {
+    color: var(--color-gray-700);
+}
+
+.text-gray-500 {
+    color: var(--color-gray-500);
+}
+
+.text-white {
+    color: var(--color-white);
+}
+
+/* 背景色 */
+.bg-primary {
+    background-color: var(--color-primary);
+}
+
+.bg-secondary {
+    background-color: var(--color-secondary);
+}
+
+.bg-black {
+    background-color: var(--color-black);
+}
+
+.bg-gray-100 {
+    background-color: var(--color-gray-100);
+}
+
+.bg-gray-900 {
+    background-color: var(--color-gray-900);
+}
+
+.bg-white {
+    background-color: var(--color-white);
+}
+
+
+/* ============================================
+   11. Border（枠線）
+   ============================================ */
+/* 基本的な枠線 */
+.border {
+    border: var(--border-width-thin) solid var(--color-gray-300);
+}
+
+/* 太めの枠線 */
+.border-2 {
+    border: var(--border-width-medium) solid var(--color-gray-300);
+}
+
+/* 枠線の色変更 */
+.border-primary {
+    border-color: var(--color-primary);
+}
+
+/* 角丸 */
+.rounded-sm {
+    border-radius: var(--border-radius-sm);
+    /* 小さい角丸 */
+}
+
+.rounded-md {
+    border-radius: var(--border-radius-md);
+    /* 標準角丸 */
+}
+
+.rounded-lg {
+    border-radius: var(--border-radius-lg);
+    /* 大きい角丸 */
+}
+
+.rounded-full {
+    border-radius: var(--border-radius-full);
+    /* 完全な円形 */
+}
+
+
+/* ============================================
+   12. Shadow（影）
+   ============================================ */
+.shadow-sm {
+    box-shadow: var(--shadow-sm);
+    /* 微細な影 */
+}
+
+.shadow-md {
+    box-shadow: var(--shadow-md);
+    /* 標準的な影 */
+}
+
+.shadow-lg {
+    box-shadow: var(--shadow-lg);
+    /* 大きめの影 */
+}
+
+.shadow-xl {
+    box-shadow: var(--shadow-xl);
+    /* 強い影 */
+}
+
+
+/* ============================================
+   13. Transition（アニメーション）
+   ============================================ */
+.transition {
+    transition: all var(--transition-base);
+    /* 標準速度 */
+}
+
+.transition-fast {
+    transition: all var(--transition-fast);
+    /* 速い */
+}
+
+.transition-slow {
+    transition: all var(--transition-slow);
+    /* ゆっくり */
+}
+
+
+/* ============================================
+   14. Display（表示方法）
+   ============================================ */
+.block {
+    display: block;
+    /* ブロック要素として表示 */
+}
+
+.inline-block {
+    display: inline-block;
+    /* インラインブロック */
+}
+
+.inline {
+    display: inline;
+    /* インライン要素 */
+}
+
+.hidden {
+    display: none;
+    /* 非表示 */
+}
+
+
+/* ============================================
+   15. レスポンシブ - 表示切り替え
+   ============================================ */
+
+/* スマートフォンのみ表示（481px以上で非表示） */
+@media (min-width: 481px) {
+    .sp-only {
+        display: none;
+    }
+}
+
+/* タブレット縦以上で非表示（768px以上で非表示） */
+@media (min-width: 768px) {
+    .sp-only-md {
+        display: none;
+    }
+}
+
+/* タブレット横以上で非表示（1024px以上で非表示） */
+@media (min-width: 1024px) {
+    .sp-only-lg {
+        display: none;
+    }
+}
+
+/* タブレット縦以下で非表示（767px以下で非表示） */
+@media (max-width: 767px) {
+    .pc-only {
+        display: none;
+    }
+}
+
+/* タブレット横以下で非表示（1023px以下で非表示） */
+@media (max-width: 1023px) {
+    .pc-only-lg {
+        display: none;
+    }
+}
+
+/* スマートフォン以下で非表示（480px以下で非表示） */
+@media (max-width: 480px) {
+    .sp-only-sm {
+        display: none;
+    }
+}
+
+
+/* ============================================
+   レスポンシブ - Grid（768px以上 - タブレット縦）
+   ============================================ */
+@media (min-width: 768px) {
+
+    /* タブレット縦・PC用グリッド列数 */
+    .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .md\:grid-cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* タブレット縦・PC用表示切り替え */
+    .md\:flex {
+        display: flex;
+    }
+
+    .md\:block {
+        display: block;
+    }
+
+    .md\:hidden {
+        display: none;
+    }
+}
+
+
+/* ============================================
+   レスポンシブ - Grid（1024px以上 - タブレット横）
+   ============================================ */
+@media (min-width: 1024px) {
+
+    /* タブレット横・デスクトップ用グリッド列数 */
+    .lg\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lg\:grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .lg\:grid-cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .lg\:grid-cols-6 {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    /* タブレット横・デスクトップ用表示切り替え */
+    .lg\:flex {
+        display: flex;
+    }
+
+    .lg\:block {
+        display: block;
+    }
+
+    .lg\:hidden {
+        display: none;
+    }
+}
+
+
+/* ============================================
+   レスポンシブ - Grid（1280px以上 - デスクトップ）
+   ============================================ */
+@media (min-width: 1280px) {
+
+    /* デスクトップ用グリッド列数 */
+    .xl\:grid-cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .xl\:grid-cols-5 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .xl\:grid-cols-6 {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    /* デスクトップ用表示切り替え */
+    .xl\:flex {
+        display: flex;
+    }
+
+    .xl\:block {
+        display: block;
+    }
+
+    .xl\:hidden {
+        display: none;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
