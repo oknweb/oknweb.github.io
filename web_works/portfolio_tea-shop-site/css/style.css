@@ -100,7 +100,7 @@ a:hover {
     content: "";
     width: 28px;
     height: 28px;
-    background-image: url(/images/icon-tea.svg);
+    background-image: url(images/icon-tea.svg);
     background-size: contain;
     vertical-align: middle;
     background-repeat: no-repeat;
@@ -133,7 +133,7 @@ a:hover {
     content: "";
     width: 28px;
     height: 28px;
-    background-image: url(/images/icon-book.svg);
+    background-image: url(images/icon-book.svg);
     background-size: contain;
     vertical-align: middle;
     background-repeat: no-repeat;
@@ -690,18 +690,35 @@ nav {
 
 
 .logo-nav {
-    width: 60px;
+    display: block;
+    text-decoration: none;
     padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.logo-nav img {
+    width: 60px;
+    display: block;
+
+}
+
+.logo-nav .small-font {
+    margin-top: 0.25rem;
+
 }
 
 .main-nav {
-    /* padding: 0.25rem 0; */
+    margin-top: 5rem;
+    /* main-navとlogo-navの間に空間 */
 }
 
 .main-nav>* {
     padding-top: var(--space-lg);
     padding-bottom: var(--space-lg);
 }
+
+
+
 
 .main-nav a {
     color: var(--color-primary);
