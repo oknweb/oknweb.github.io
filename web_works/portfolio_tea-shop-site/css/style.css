@@ -706,11 +706,13 @@ nav {
     padding-bottom: var(--space-lg);
 }
 
-
-
-
 .main-nav a {
     color: var(--color-primary);
+
+}
+
+.main-nav a:hover {
+    font-weight: var(--fw-bold);
 
 }
 
