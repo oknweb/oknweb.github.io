@@ -204,7 +204,8 @@ a:hover {
 
 
 
-/* ビジュアルエリア */
+/* ビジュアルエリアセクション
+ */
 .visual-area {
     display: block;
     grid-area: visual-area;
@@ -378,7 +379,7 @@ nav {
 
 .header-menu ul {
     list-style: none;
-    padding: 0;
+    padding: 0.4vh 0;
     margin: 0;
     min-height: 100vh;
     display: flex;
@@ -394,22 +395,23 @@ nav {
 }
 
 .header-menu li a {
-    padding: 1.5rem 2rem;
-    font-size: var(--fs-lg);
+    padding: 0.33rem 2rem;
+    font-size: var(--fs-md);
     color: var(--color-primary);
     display: block;
     text-align: center;
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 0.5rem;
-    border: 2px solid var(--color-primary-light);
+    border: 1px solid var(--color-primary-light);
     transition: var(--transition-base);
 }
 
 .header-menu li a:hover {
-    background-color: var(--color-primary-light);
+    background-color: var(--color-white);
     color: var(--color-white);
-    transform: scale(1.05);
+    border: .55px solid var(--color-secondary-light);
+    transform: scale(1.1);
 }
 
 /* ハンバーガーボタン  */
@@ -421,14 +423,13 @@ nav {
     width: 24px;
     height: 24px;
     z-index: 200;
-    transition: all 0.3s ease;
 }
 
 .hamburger.open::before {
     content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 12px;
+    left: 24px;
     transform: translate(-50%, -50%);
     width: 36px;
     height: 36px;
@@ -436,17 +437,6 @@ nav {
     border-radius: 50%;
     z-index: -1;
     box-shadow: 0 2px 4px rgba(205, 74, 30, 0.5);
-}
-
-/* モーダルオープン時の位置 */
-.hamburger.open {
-    top: 60px;
-    /* 下に移動 */
-    right: 0;
-    /* 中央寄せの基準 */
-    transform: translateX(-180%);
-    /* 中央に配置 */
-
 }
 
 .hamburger span {
@@ -471,8 +461,7 @@ nav {
 }
 
 .hamburger.open span:nth-of-type(1) {
-    top: 10px;
-    transform: translateY(6px) rotate(-225deg);
+    transform: translateY(8px) rotate(-225deg);
 }
 
 .hamburger.open span:nth-of-type(2) {
@@ -480,8 +469,8 @@ nav {
 }
 
 .hamburger.open span:nth-of-type(3) {
-    top: 22px;
-    transform: translateY(-6px) rotate(225deg);
+    transform: translateY(-8px) rotate(225deg);
+
 }
 
 @media (min-width: 1024px) {
@@ -789,7 +778,7 @@ nav {
 /*共用文章スタイル*/
 
 .section-intro {
-    font-size: var(--fs-base);
+    font-size: var(--fs-sm);
     font-weight: var(--fw-medium);
     max-width: 90%;
     margin: 0 auto;
