@@ -24,11 +24,13 @@ body {
     line-height: var(--lh-relaxed);
     font-weight: var(--fw-normal);
     color: #521e0f;
-    background-color: var(--color-white);
+    background-color: #ffffff;
+    background-image: linear-gradient(#fdfdfedf, #fdf6fedf),
 
+        url(../images/noise.png);
+    background-repeat: repeat;
+    background-size: 100px;
     scroll-behavior: smooth;
-
-    /* アンチエイリアス（文字を滑らかに表示） */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
@@ -36,6 +38,25 @@ body {
 
 a:hover {
     color: var(--color-secondary) !important;
+}
+
+p {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+}
+
+h3 {
+    font-family: var(--font-serif);
+    font-size: var(--fs-md);
+    font-weight: var(--fw-bold);
+
+}
+
+h4 {
+    font-family: var(--font-en);
+    font-size: var(--fs-base);
+    font-weight: var(--fw-bold);
+
 }
 
 .photo {
@@ -46,11 +67,6 @@ a:hover {
     aspect-ratio: 4 / 3;
     margin-bottom: 3rem;
     border-radius: 20px;
-}
-
-.p {
-    font-size: var(--fs-base);
-    font-weight: var(--fw-medium);
 }
 
 .wrap {
@@ -94,6 +110,12 @@ a:hover {
 
 }
 
+.btn-cup:hover {
+    transform: translate(0, -2px);
+    transform: scale(1.05);
+    box-shadow: var(--shadow-md);
+}
+
 .btn-cup::before {
     position: absolute;
     display: inline-block;
@@ -127,6 +149,12 @@ a:hover {
 
 }
 
+.btn-book:hover {
+    transform: translate(0, -2px);
+    transform: scale(1.05);
+    box-shadow: var(--shadow-md);
+}
+
 .btn-book::before {
     position: absolute;
     display: inline-block;
@@ -153,11 +181,13 @@ a:hover {
     top: 0;
     left: 0;
     width: 100%;
+    height: 3rem;
     background-color: rgba(255, 255, 255, 0.85);
     z-index: 100;
     padding: 0.5rem 0;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 }
+
 
 .mobile-header a {
     color: var(--color-primary-dark);
@@ -197,7 +227,6 @@ a:hover {
 @media (min-width: 1024px) {
     .mobile-header {
         display: none !important;
-        /* ← 追加 */
     }
 }
 
@@ -276,14 +305,23 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: var(--color-primary); */
-    background-image: linear-gradient(180deg, rgba(206, 76, 30, 1) 65%, rgba(231, 108, 37, 1) 100%);
+    /* SVGを先に、グラデーションを後に */
+    background-image:
+        url('../images/wave.svg'),
+        linear-gradient(180deg, rgb(163, 52, 12) 0%, rgba(205, 74, 30, 1) 55%, rgba(247, 119, 45, 1) 100%);
+    /* SVGのサイズ, グラデーションのサイズ */
+    background-size: 100% auto, auto;
+    /* SVGの位置, グラデーションの位置 */
+    background-position: bottom, center;
+    background-repeat: no-repeat, no-repeat;
 }
+
+
+
 
 .hero-content {
     padding: var(--space-lg);
     color: var(--color-white);
-
     width: 100%;
     max-width: 600px;
 }
@@ -294,6 +332,10 @@ a:hover {
     /* SemiBold */
     font-size: var(--fs-lg);
     font-weight: var(--fw-light);
+    text-shadow:
+        1px 1px 2px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(255, 100, 0, 0.3);
+
 }
 
 .hero-title-en {
@@ -301,11 +343,17 @@ a:hover {
     font-size: var(--fs-3xl);
     font-weight: var(--fw-medium);
     margin-bottom: 1.5rem;
+    text-shadow:
+        1px 1px 2px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(255, 100, 0, 0.3);
 }
 
 .hero-sub {
     font-size: var(--fs-normal);
     margin-bottom: 2rem;
+    text-shadow:
+        1px 1px 2px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(255, 100, 0, 0.3);
 }
 
 .section {
@@ -342,6 +390,7 @@ section h2 .en {
         background-position: center;
         background-color: rgba(105, 74, 30, .5);
         background-blend-mode: multiply;
+        margin-top: 3rem;
     }
 
     .hero-content {
@@ -490,21 +539,39 @@ nav {
     width: 100%;
     background-color: var(--color-white);
     border-right: 1px solid #f5e6d3;
+}
 
+.features {
+    display: grid;
+    background-color: #f5e6d3;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem 0 2rem 0;
+    margin-bottom: 2.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.feature-item {
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem;
 
 }
 
-.features h3 {
-    font-family: var(--font-main);
-    font-size: var(--fs-md);
-    font-weight: var(--fw-bold);
+.feature-item h4 {
+    border: none;
+    border-top: 2px solid var(--color-primary-dark);
+    border-bottom: 2px solid var(--color-primary-dark);
+
 }
 
-.features h4 {
-    font-family: var(--font-en);
-    font-size: var(--fs-md);
-    font-weight: var(--fw-bold);
+
+
+.concept {
+
+    margin-bottom: 2.5rem;
 }
+
 
 @media (max-width: 1023px) {
 
@@ -538,29 +605,80 @@ nav {
 
 }
 
+.photo-slider {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.slick01 {
+    width: 100%;
+    height: auto;
+}
+
+.slick01 li {
+    outline: none;
+    /* フォーカス時の枠線を消す */
+}
+
+.slick01 img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .slick01 img {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slick01 img {
+        height: 300px;
+    }
+}
 
 /*メニューセクション*/
+.menu-card {
+    display: grid;
+    justify-content: center;
+    border: solid var(--color-primary-light) 1px;
+    height: auto;
+    width: 400px;
+    max-width: 95%;
+    background-color: rgba(255, 255, 255, 0.66);
+    padding: 1.5rem 0 2.5rem 0;
+    margin: 0 auto;
+    margin-bottom: var(--space-lg);
+}
+
 .menu-category {
     margin: 0 auto;
-    width: 90%;
+    width: 100%;
+    min-width: 280px;
     border-collapse: collapse;
-    margin-bottom: var(--space-lg);
+
 
 }
+
 
 .menu-category h3.table-head {
     font-family: var(--font-serif);
     font-size: var(--fs-lg);
     font-weight: var(--fw-bold);
     color: var(--color-white);
-    background-color: var(--color-primary-light);
-    max-width: 45%;
+    background-color: #521e0f;
+    width: 60%;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.633rem;
-    margin-bottom: 0.75rem;
+
     box-shadow: var(--shadow-sm);
 }
 
@@ -571,25 +689,35 @@ nav {
 
 }
 
+.menu-category h4 {
+    font-family: var(--font-serif);
+    font-size: var(--fs-sm);
+    padding: 0;
+    margin-bottom: 0.5em;
+}
+
+
+
 .menu-category .table-bg {
+    width: 95%;
+    height: auto;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
 
 .menu-category td {
-    background-color: rgba(255, 255, 255, 0.66);
-    padding: 1rem 0;
+    padding: 0 0;
     position: relative;
 }
 
 .menu-category td:first-child {
     text-align: left;
-    padding: 0.5rem 2rem 0.5rem 2rem
+    padding: 0.25rem 0rem 0.5rem 0rem
 }
 
 .menu-category td:last-child {
     text-align: right;
-    padding: 0.5rem 2rem 0.5rem 2rem;
+    padding: 0.5rem 0rem 0.5rem 0rem;
 }
 
 .menu-category tr:first-child td {
@@ -600,17 +728,31 @@ nav {
     padding-bottom: 1.5rem;
 }
 
+.menu-category .menu-item-name {
+    font-size: var(--fs-base);
+    font-weight: var(--fw-medium);
+    display: inline-block;
+}
+
+.menu-category .menu-item-text {
+    font-size: var(--fs-xs);
+    color: var(--color-primary);
+    display: inline-block;
+    padding: 0.125rem 0 1.5rem 1rem;
+
+}
+
 .menu-category .PopularItem::after {
     content: "人気の商品";
     position: absolute;
-    left: 5%;
-    top: 17.5%;
+    left: 0;
+    top: 0;
     transform: translateY(0%);
-    transform: translateX(0%);
+    transform: translateX(-10%);
     height: auto;
     width: auto;
     font-size: 0.66em;
-    font-weight: var(--fw-md);
+    font-weight: var(--fw-medium);
     color: var(--color-white);
     background-color: var(--color-primary-light);
     padding: 0 0.25rem;
@@ -618,7 +760,6 @@ nav {
 
 .menu-note {
     font-size: var(--fs-xs);
-    margin: 0 0 2rem 0;
 }
 
 /*ブックスエリア*/
@@ -636,7 +777,7 @@ nav {
     padding-bottom: 1rem;
 }
 
-.info-block h3 {
+/* .info-block h3 {
     font-family: var(--font-serif);
     font-size: var(--fs-md);
     font-weight: var(--fw-bold);
@@ -645,7 +786,7 @@ nav {
 .info-block h3 p {
     font-family: var(--font-main);
     font-size: var(--fs-xl);
-}
+} */
 
 .gmap {
     margin: var(--space-lg);
@@ -669,7 +810,7 @@ nav {
     top: 0;
     right: 0;
     width: calc(100vw / 7);
-    height: 90vh;
+    height: 100vh;
     overflow-y: auto;
     z-index: 100;
     padding-left: var(--space-md);
@@ -773,6 +914,11 @@ nav {
 .social-links a {
     color: var(--color-primary);
     display: inline-block;
+}
+
+.contact-btn {
+
+    background-color: var(--color-white);
 }
 
 /*共用文章スタイル*/

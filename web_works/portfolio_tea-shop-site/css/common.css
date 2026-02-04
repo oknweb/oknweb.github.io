@@ -10,8 +10,8 @@
 :root {
     /* --- カラーシステム --- */
     /* プライマリーカラー */
-    --color-primary: rgb(205, 74, 30);
-    --color-primary-light: rgb(231, 108, 37);
+    --color-primary: #cd4a1e;
+    --color-primary-light: #e76c25;
     --color-primary-dark: rgb(119, 50, 27);
 
     /* セカンダリーカラー */
