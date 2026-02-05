@@ -320,7 +320,7 @@ h4 {
     width: 200%;
     height: 150px;
     background-image: url('../images/wave.svg');
-    background-size: 50% 100%;
+    background-size: calc(50% + 1px) 100%;
     background-repeat: repeat-x;
     background-position: bottom;
     z-index: 0;
@@ -433,6 +433,10 @@ section h2 .en {
         padding-top: 2.5rem;
         padding-bottom: 3.5rem;
 
+    }
+
+    .hero::after {
+        display: none;
     }
 
 }
