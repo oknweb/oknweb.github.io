@@ -48,10 +48,10 @@ $(function () {
 $('.slick01').slick({
     autoplay: true,
     autoplaySpeed: 3000,
-    dots: true,
-    arrows: true,
-    fade: false,           // スライド効果にする場合はfalse
-    infinite: true,        // 無限ループ
+    dots: false,
+    arrows: false,
+    fade: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -59,8 +59,8 @@ $('.slick01').slick({
         {
             breakpoint: 1023,
             settings: {
-                arrows: false,  // スマホでは矢印非表示
-                slidesToShow: 1,     // スマホでも1枚表示
+                arrows: false,
+                slidesToShow: 2,
                 slidesToScroll: 1,
             }
         }
