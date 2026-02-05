@@ -47,20 +47,24 @@ $(function () {
 // スライダーslick //
 $('.slick01').slick({
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 0,
     dots: false,
     arrows: false,
+    swipe: false,
     fade: false,
     infinite: true,
-    speed: 500,
-    slidesToShow: 3,
+    speed: 10000,
+    slidesToShow: 2,
     slidesToScroll: 1,
+    adaptiveHeight: true,
+    centerMode: true,
+    cssEase: "linear",
     responsive: [
         {
             breakpoint: 1023,
             settings: {
                 arrows: false,
-                slidesToShow: 2,
+                slidesToShow: 4,
                 slidesToScroll: 1,
             }
         }
