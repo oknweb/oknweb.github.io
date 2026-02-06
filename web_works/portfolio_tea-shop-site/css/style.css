@@ -43,6 +43,7 @@ a:hover {
 p {
     font-size: var(--fs-sm);
     font-weight: var(--fw-medium);
+
 }
 
 h3 {
@@ -1054,20 +1055,9 @@ nav {
 
 /* アクセスエリア */
 .info-block {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
 }
-
-/* .info-block h3 {
-    font-family: var(--font-serif);
-    font-size: var(--fs-md);
-    font-weight: var(--fw-bold);
-}
-
-.info-block h3 p {
-    font-family: var(--font-main);
-    font-size: var(--fs-xl);
-} */
 
 .gmap {
     margin: var(--space-lg);
