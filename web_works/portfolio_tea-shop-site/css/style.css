@@ -305,7 +305,7 @@ h4 {
 /* ヒーローセクション */
 .hero {
 
-    height: 70vh;
+    height: 680px;
     min-height: 400px;
     display: flex;
     align-items: center;
@@ -419,8 +419,16 @@ section h2 .en {
 
 }
 
+section.shop h2 .en {
+    background-color: #28a739;
+    /* または任意の色 */
+    border-left: double 10px var(--color-gray-700);
+    border-right: double 10px var(--color-gray-700);
+}
+
 @media (max-width: 1023px) {
     .hero {
+        height: 60vh;
         background-image: url('../images/slide3.jpg');
         background-size: cover;
         background-position: center;
@@ -687,6 +695,7 @@ nav {
 
     .about,
     .books,
+    .menu,
     .shop,
     .access {
         padding: 0;
@@ -709,13 +718,13 @@ nav {
 }
 
 .shop {
-    background-color: var(--color-BG1);
+    background-color: var(--color-BG2);
     width: 100%;
     border-right: 1px solid #f5e6d3;
 }
 
 .access {
-    background-color: var(--color-BG2);
+    background-color: var(--color-BG1);
     border-right: 1px solid #f5e6d3;
 
 }
@@ -749,6 +758,22 @@ nav {
     display: block;
 }
 
+
+.slick01,
+.slick01 li,
+.slick01 img,
+.slick01 .slick-slide,
+.slick01 .slick-list,
+.slick01 .slick-track {
+    margin: 0;
+    padding: 0;
+}
+
+.slick01 .slick-track {
+    display: flex;
+
+}
+
 /* レスポンシブ対応 */
 @media (max-width: 1023px) {
     .photo-slider {
@@ -757,14 +782,15 @@ nav {
 
     .slick01 img {
         height: 160px;
-        width: 200px;
+        width: 100%;
     }
 }
 
 @media (max-width: 480px) {
     .slick01 img {
         height: 160px;
-        width: auto;
+        width: 100%;
+        /* auto → 100% に変更 */
     }
 }
 
@@ -894,7 +920,7 @@ nav {
     font-weight: 600;
 }
 
-.books-picup {
+.books-pickup {
     display: block;
     width: 60%;
     margin: 0 auto;
@@ -902,7 +928,7 @@ nav {
     background-color: var(--color-primary-dark);
 }
 
-.books-picup .en {
+.books-pickup .en {
     font-size: var(--fs-sm);
     display: block;
 
@@ -912,7 +938,7 @@ nav {
 .shop-card {
     display: grid;
     justify-content: center;
-    border: solid #223dd1 1px;
+    border: solid #2fac2a 1px;
     height: auto;
     width: 400px;
     max-width: 95%;
@@ -928,7 +954,6 @@ nav {
     min-width: 280px;
     border-collapse: collapse;
 
-
 }
 
 
@@ -937,7 +962,7 @@ nav {
     font-size: var(--fs-lg);
     font-weight: var(--fw-bold);
     color: var(--color-white);
-    background-color: #19266e;
+    background-color: #196e24;
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -1001,7 +1026,7 @@ nav {
 
 .shop-category .shop-item-text {
     font-size: var(--fs-xs);
-    color: var(--color-primary);
+    color: #28a739;
     display: inline-block;
     /* padding: 0.125rem 0 1.5rem 1rem; */
 
@@ -1019,7 +1044,7 @@ nav {
     font-size: 0.66em;
     font-weight: var(--fw-medium);
     color: var(--color-white);
-    background-color: #223dd1;
+    background-color: #2fac2a;
     padding: 0 0.25rem;
 }
 
@@ -1077,8 +1102,7 @@ nav {
 .logo-nav {
     display: block;
     text-decoration: none;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .logo-nav img {
@@ -1092,13 +1116,9 @@ nav {
 
 }
 
-.main-nav {
-    margin-top: 8rem;
 
-}
 
 .main-nav>* {
-    padding-top: var(--space-lg);
     padding-bottom: var(--space-lg);
 }
 

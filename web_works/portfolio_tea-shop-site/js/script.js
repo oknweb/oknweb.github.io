@@ -56,7 +56,7 @@ $('.slick01').slick({
     speed: 10000,
     slidesToShow: 2,
     slidesToScroll: 1,
-    adaptiveHeight: true,
+    adaptiveHeight: false,
     centerMode: true,
     cssEase: "linear",
     responsive: [
@@ -64,9 +64,15 @@ $('.slick01').slick({
             breakpoint: 1023,
             settings: {
                 arrows: false,
-                slidesToShow: 4,
+                slidesToShow: 1,
                 slidesToScroll: 1,
-            }
+            },
+            breakpoint: 380,
+            settings: {
+                arrows: false,
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            },
         }
     ]
 });
