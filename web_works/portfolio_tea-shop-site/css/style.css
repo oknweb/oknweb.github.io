@@ -71,6 +71,15 @@ h4 {
     border-radius: 20px;
 }
 
+.photo-v {
+    display: black;
+    margin: 2rem auto 1.5rem auto;
+    width: 200px;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    border-radius: 5px;
+}
+
 .wrap {
     display: grid;
     grid-template-areas: "visual-area content-wrapper nav-area";
@@ -925,6 +934,7 @@ nav {
     display: block;
     width: 60%;
     margin: 0 auto;
+    margin-bottom: 1.5rem;
     color: var(--color-white);
     background-color: var(--color-primary-dark);
 }
@@ -934,6 +944,58 @@ nav {
     display: block;
 
 }
+
+.book-head {
+    font-size: var(--fs-md);
+    color: var(--color-primary);
+    width: auto;
+    max-width: 80%;
+    margin: 0 auto 1.5rem auto;
+    border-top: 2px solid var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+}
+
+.book-title {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-bold);
+    margin-bottom: 0.25rem;
+}
+
+.book-arthur {
+    font-size: var(--fs-xs);
+}
+
+.book-data {
+    margin-bottom: 1rem;
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+    border-top: 1px solid var(--color-primary-dark);
+    border-right: 1px solid var(--color-primary-dark);
+    border-left: 8px solid var(--color-primary-dark);
+    border-bottom: 1px solid var(--color-primary-dark);
+    padding: 0.5rem 0;
+}
+
+.book-introduction {
+    background-color: rgba(245, 230, 211, 0.33);
+    max-width: 98%;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.book-introduction p {
+    text-align: left;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    letter-spacing: 0.1rem;
+    line-height: var(--lh-relaxed);
+}
+
+.book-wrapper {
+    margin-bottom: 3rem;
+}
+
 
 /*　ショップエリア　*/
 .shop-card {
