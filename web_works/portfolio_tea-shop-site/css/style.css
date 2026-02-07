@@ -67,7 +67,6 @@ h4 {
     height: 200px;
     aspect-ratio: 4 / 3;
     margin-top: 1.5rem;
-    margin-bottom: 3rem;
     border-radius: 20px;
 }
 
@@ -122,7 +121,7 @@ h4 {
 }
 
 .btn-cup:hover {
-    transform: translate(0, -2px);
+    transform: translate(0, 0px);
     transform: scale(1.02);
     opacity: 0.8;
     box-shadow: var(--shadow-md);
@@ -182,6 +181,7 @@ h4 {
     top: 50%;
     transform: translateY(-50%);
 }
+
 
 
 
@@ -249,6 +249,7 @@ h4 {
  */
 .visual-area {
     display: block;
+    position: relative;
     grid-area: visual-area;
     background-color: #8b7355;
     position: sticky;
@@ -333,7 +334,7 @@ h4 {
     width: 200%;
     height: 150px;
     background-image: url('../images/wave.svg');
-    background-size: calc(50% + 2px) 100%;
+    background-size: calc(50% + 3px) 100%;
     background-repeat: repeat-x;
     background-position: bottom;
     z-index: 0;
@@ -695,6 +696,14 @@ nav {
     margin-bottom: 2.25rem;
 }
 
+.accordion-content .text-main,
+.accordion-content .text-accent {
+    max-width: 100%;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
 .concept {
 
     margin-bottom: 2.5rem;
@@ -782,6 +791,10 @@ nav {
 .slick01 .slick-track {
     display: flex;
 
+}
+
+.slick-slider div {
+    transition: none;
 }
 
 /* レスポンシブ対応 */
@@ -925,7 +938,6 @@ nav {
 
 /*ブックスエリア*/
 .books h3 {
-
     font-family: 'Source Han Serif', serif;
     font-weight: 600;
 }
@@ -934,6 +946,7 @@ nav {
     display: block;
     width: 60%;
     margin: 0 auto;
+    margin-top: 2.5rem;
     margin-bottom: 1.5rem;
     color: var(--color-white);
     background-color: var(--color-primary-dark);
@@ -942,14 +955,13 @@ nav {
 .books-pickup .en {
     font-size: var(--fs-sm);
     display: block;
-
 }
 
 .book-head {
     font-size: var(--fs-md);
     color: var(--color-primary);
     width: auto;
-    max-width: 80%;
+    max-width: 50%;
     margin: 0 auto 1.5rem auto;
     border-top: 2px solid var(--color-primary);
     border-bottom: 2px solid var(--color-primary);
@@ -977,25 +989,89 @@ nav {
     padding: 0.5rem 0;
 }
 
-.book-introduction {
+.book-wrapper {
+    margin-bottom: 3rem;
+}
+
+/* アコーディオン機能 */
+.book-toggle {
+    display: none;
+}
+
+.book-preview {
+    display: block;
     background-color: rgba(245, 230, 211, 0.33);
     max-width: 98%;
     margin: 0 auto;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    font-size: var(--fs-sm);
+    line-height: var(--lh-relaxed);
+    transition: background-color 0.3s ease;
+    text-align: left;
+}
+
+.book-preview:hover {
+    background-color: rgba(245, 230, 211, 0.8);
+
+    border-bottom: solid 1px var(--color-primary);
+}
+
+.read-more {
+    display: block;
+    color: var(--color-primary);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-bold);
+    text-align: center;
+    margin-top: 0.5rem;
+
+}
+
+.book-toggle:checked+.book-preview {
+    display: none;
+}
+
+.book-introduction-wrapper {
+    display: block;
+    max-width: 98%;
+    margin: 0 auto;
+    cursor: pointer;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.book-toggle:checked~.book-introduction-wrapper {
+    max-height: 1500px;
+}
+
+.book-introduction {
+    background-color: rgba(245, 230, 211, 0.33);
     padding: 2rem 1.5rem;
 }
 
-.book-introduction p {
+.book-close {
+    display: block;
+    text-align: center;
+    margin-top: 0rem;
+    color: var(--color-primary);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-bold);
+    padding: 0.5rem;
+}
+
+.book-close:hover {
+    color: var(--color-secondary);
+}
+
+.book-introduction p,
+.book-preview p {
     text-align: left;
     font-size: var(--fs-sm);
     font-weight: var(--fw-medium);
     letter-spacing: 0.1rem;
     line-height: var(--lh-relaxed);
 }
-
-.book-wrapper {
-    margin-bottom: 3rem;
-}
-
 
 /*　ショップエリア　*/
 .shop-card {
@@ -1117,6 +1193,7 @@ nav {
 
 /* アクセスエリア */
 .info-block {
+    width: 500px;
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
 }
@@ -1131,6 +1208,19 @@ nav {
     overflow: hidden;
     background-color: var(--color-white);
     border: solid 1px var(--color-gray-900);
+}
+
+.access-card {
+    display: grid;
+    justify-content: center;
+    border: solid var(--color-primary-light) 1px;
+    height: auto;
+    width: 400px;
+    max-width: 95%;
+    background-color: rgba(255, 255, 255, 0.66);
+    padding: 1.5rem 0 1.5rem 0;
+    margin: 0 auto;
+    margin-bottom: 2rem;
 }
 
 /* ナビエリア */
@@ -1168,12 +1258,6 @@ nav {
 
 }
 
-
-
-.main-nav>* {
-    padding-bottom: var(--space-lg);
-}
-
 .main-nav a {
     color: var(--color-primary);
 
@@ -1194,6 +1278,7 @@ nav {
     flex-direction: column;
     gap: var(--space-xs);
     list-style: none;
+    margin: 2rem 0 2rem 0;
 }
 
 .main-nav .social-links a {
@@ -1239,6 +1324,14 @@ nav {
     width: auto;
 }
 
+.link-menu {
+    margin: 2rem 0 2rem 0;
+}
+
+.social-links {
+    padding: 1rem;
+}
+
 .social-links a {
     color: var(--color-primary);
     display: inline-block;
@@ -1247,6 +1340,38 @@ nav {
 .contact-btn {
 
     background-color: var(--color-white);
+}
+
+.contact-btn-large {
+    display: grid;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    padding: 0.5rem 1.5rem;
+    border-radius: 100vh;
+    margin: 0.5rem;
+}
+
+.contact-btn-large:hover {
+    color: var(--color-white) !important;
+    opacity: 0.9;
+    transform: scale(1.055);
+}
+
+.visual-contact-btn {
+    position: absolute;
+    bottom: 30px;
+    left: 25px;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    padding: 0.5rem 1.5rem;
+    border-radius: 100vh;
+    z-index: 10;
+}
+
+.visual-contact-btn:hover {
+    color: var(--color-white) !important;
+    background-color: #33150c;
+    transform: scale(1.001);
 }
 
 /*共用文章スタイル*/
