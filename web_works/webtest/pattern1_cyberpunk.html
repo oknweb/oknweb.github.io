@@ -105,9 +105,9 @@
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 3px;
+            font-size: 18px;
+            font-weight: bolder;
+            letter-spacing: 2px;
             background: linear-gradient(90deg, #00FF00, #00FFFF);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -115,9 +115,14 @@
         }
 
         .logo-small {
-            font-size: 16px;
+            font-size: 30px;
             color: #00FF00;
             letter-spacing: 1px;
+        }
+
+        .logo-small.lato-bold {
+            font-family: "Lato", sans-serif !important;
+            font-weight: 700 !important;
         }
 
         nav {
@@ -412,7 +417,7 @@
     <header>
         <div>
             <div class="logo">創作工房</div>
-            <div class="logo-small">[SEED FOREST]</div>
+            <div class="logo-small lato-bold">[SEED FOREST]</div>
         </div>
         <nav>
             <a href="#home">Home</a>
@@ -424,7 +429,7 @@
     </header>
 
     <!-- サイドメニュー -->
-    <div class="side-menu">
+    <div class="side-menu lato-black">
         <div class="side-menu-label">MENU</div>
         <a href="#about">ABOUT</a>
         <a href="#course">COURSE</a>
