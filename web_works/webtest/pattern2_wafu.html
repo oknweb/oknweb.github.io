@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>種の杜</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Serif JP', 'Georgia', serif;
+            background: #FEFEF8;
+            color: #2D2D2D;
+            overflow-x: hidden;
+            font-weight: 600;
+        }
+
+        /* ヘッダー */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            background: #FEFEF8;
+            border-bottom: 1px solid #D4C5B0;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            color: #2D5016;
+            font-family: 'Noto Serif JP', serif;
+        }
+
+        .logo-small {
+            font-size: 11px;
+            color: #8B7355;
+            letter-spacing: 2px;
+            margin-top: 8px;
+            font-weight: 400;
+            font-family: 'Georgia', serif;
+        }
+
+        nav {
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            color: #2D2D2D;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            font-weight: 700;
+            font-family: 'Noto Serif JP', serif;
+        }
+
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #2D5016;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover:after {
+            width: 100%;
+        }
+
+        .cta-small {
+            padding: 10px 24px;
+            border: 1px solid #2D5016;
+            color: #2D5016;
+            text-decoration: none;
+            font-size: 13px;
+            background: transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-family: 'Noto Serif JP', serif;
+            font-weight: 700;
+        }
+
+        .cta-small:hover {
+            background: #2D5016;
+            color: #FEFEF8;
+        }
+
+        /* サイドメニュー */
+        .side-menu {
+            position: fixed;
+            right: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            z-index: 50;
+        }
+
+        .side-menu-label {
+            color: #2D5016;
+            font-size: 13px;
+            letter-spacing: 1px;
+            writing-mode: vertical-rl;
+            font-weight: 900;
+            font-family: 'Noto Serif JP', serif;
+        }
+
+        .side-menu a {
+            color: #2D5016;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            writing-mode: vertical-rl;
+            transition: all 0.3s ease;
+            opacity: 0.85;
+            padding: 10px 14px;
+            border: 1px solid #2D5016;
+            display: inline-block;
+            background: rgba(45, 80, 22, 0.02);
+            font-weight: 800;
+            font-family: 'Noto Serif JP', serif;
+        }
+
+        .side-menu a:hover {
+            opacity: 1;
+            background: rgba(45, 80, 22, 0.1);
+            border-color: #2D5016;
+        }
+
+        /* ファーストビュー */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 100vh;
+            align-items: center;
+            gap: 60px;
+            padding: 100px 60px;
+            position: relative;
+            background: linear-gradient(135deg, rgba(254, 254, 248, 0.5) 0%, rgba(245, 245, 240, 0.5) 100%),
+                url(/hero-photo.jpg);
+            background-blend-mode: lighten;
+            width: 100%;
+            height: auto;
+            background-size: cover;
+            background-position: center;
+            z-index: 11;
+            text-shadow: 1px 0px 0px rgba(82, 82, 82, 0.89);
+            font-family: 'Noto Serif JP', serif;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(139, 115, 85, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-title-sub {
+            font-size: 14px;
+            color: #8B7355;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-family: 'Noto Serif JP', serif;
+        }
+
+        .hero-title {
+            font-size: 52px;
+            font-weight: 900;
+            line-height: 1.4;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+            color: #2D2D2D;
+            font-family: 'Noto Serif JP', serif;
+        }
+
+        .hero-title-accent {
+            color: #2D5016;
+            font-weight: 900;
+        }
+
+        .hero-copy {
+            font-size: 16px;
+            color: #555555;
+            line-height: 1.9;
+            margin-bottom: 50px;
+            max-width: 420px;
+            font-weight: 700;
+            font-family: 'Noto Serif JP', serif;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 48px;
+            background: #2D5016;
+            color: #FEFEF8;
+            text-decoration: none;
+            font-size: 15px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.4s ease;
+            font-family: 'Noto Serif JP', serif;
+            font-weight: 800;
+        }
+
+        .cta-button:hover {
+            background: #1a3010;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(45, 80, 22, 0.2);
+        }
+
+        .hero-image {
+            position: relative;
+            z-index: 10;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+        }
+
+        .about-link {
+            margin-top: 40px;
+        }
+
+        .about-link a {
+            color: #2D5016;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #2D5016;
+            transition: all 0.3s ease;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .about-link a:hover {
+            opacity: 0.7;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 60px 40px;
+                gap: 40px;
+            }
+
+            .hero-title {
+                font-size: 38px;
+            }
+
+            .hero-image {
+                height: 350px;
+            }
+
+            nav {
+                gap: 20px;
+                font-size: 12px;
+            }
+
+            .side-menu {
+                display: none;
+            }
+
+            header {
+                padding: 20px 40px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: 28px;
+            }
+
+            .hero-copy {
+                font-size: 14px;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .cta-button {
+                padding: 12px 32px;
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <div>
+            <div class="logo">種の杜</div>
+            <div class="logo-small">TANE NO MORI</div>
+        </div>
+        <nav>
+            <a href="#home">ホーム</a>
+            <a href="#about">種の杜とは</a>
+            <a href="#course">コース</a>
+            <a href="#contact">お問い合わせ</a>
+            <button class="cta-small">ご相談・見積もり</button>
+        </nav>
+    </header>
+
+    <!-- サイドメニュー -->
+    <div class="side-menu">
+        <div class="side-menu-label">メニュー</div>
+        <a href="#about">種の杜とは</a>
+        <a href="#course">コース</a>
+        <a href="#contact">お問い合わせ</a>
+    </div>
+
+    <!-- ファーストビュー -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-title-sub">職人の技と心</div>
+            <h1 class="hero-title">あなたの<br><span class="hero-title-accent">『こうしたい』</span><br>を形にします</h1>
+            <p class="hero-copy">
+                職人の技術と、あなたの想いが出会う場所。<br>
+                丁寧な制作過程を通じて、創作の可能性を広げる。
+            </p>
+            <button class="cta-button">ご相談・見積もり</button>
+            <div class="about-link">
+                <a href="#about">About ↓</a>
+            </div>
+        </div>
+
+        <!-- <div class="hero-image">
+            <img src="/hero-photo.jpg" alt="プラモデル作品">
+        </div> -->
+    </section>
+</body>
+
+</html>
