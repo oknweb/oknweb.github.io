@@ -1,0 +1,86 @@
+oka_web/ — ディレクトリ構成
+=====================================
+最終更新: 2026-04-22
+
+oka_web/
+├── index.html
+├── structure.txt               ← このファイル
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   └── main.js
+│
+├── images/
+│   ├── profile.jpg
+│   │
+│   ├── banner/
+│   │   ├── asakaworkshop.png
+│   │   ├── banner.jpg
+│   │   ├── banner1.jpg
+│   │   ├── banner2.jpg
+│   │   ├── banner4.jpg
+│   │   ├── business-card-01.png
+│   │   ├── business-card-02.png
+│   │   ├── business-card-03.jpg
+│   │   └── townpress.png
+│   │
+│   ├── illustration/
+│   │   ├── cafe-sora-eyecatch.jpg
+│   │   ├── cafe-sora-novelty.jpg
+│   │   ├── hime-and-shounen-110225.jpg
+│   │   ├── illust-ao.png
+│   │   ├── illust-niiya.png
+│   │   ├── illust-robo.jpg
+│   │   └── poster-data-pix-800.jpg
+│   │
+│   ├── logos/
+│   │   ├── cafe-sora-eyecatch.jpg
+│   │   ├── cafe-sora-logotype.jpg
+│   │   ├── el-logo-black.png
+│   │   ├── logo-test-senshibu.jpg
+│   │   ├── nagayama-quest-logo-2012-8.jpg
+│   │   ├── nagayama-quest-pins.jpg
+│   │   ├── senshibu-logo-800.jpg
+│   │   ├── shibusai-logo-or.jpg
+│   │   ├── shimoque-logo-all-data.jpg
+│   │   ├── site-logo-a.png
+│   │   ├── site-logo-b.png
+│   │   ├── site-logo-c.png
+│   │   └── subarashiki-logo.jpg
+│   │
+│   └── syoka-web-Images/
+│       ├── shyoko-screenshot.png
+│       └── marketing_sheet_jpg/
+│           ├── shoka-marketing-01.jpg
+│           ├── shoka-marketing-02.jpg
+│           ├── shoka-marketing-03.jpg
+│           ├── shoka-marketing-04.jpg
+│           ├── shoka-marketing-05.jpg
+│           ├── shoka-marketing-06.jpg
+│           ├── shoka-marketing-07.jpg
+│           ├── shoka-marketing-08.jpg
+│           ├── shoka-marketing-09.jpg
+│           └── shoka-marketing-10.jpg
+│
+├── MarketingMovies/
+│   ├── CafeSORA_PV.mp4
+│   ├── HonokayaWebCM.mp4
+│   └── TachiWebCM.mp4
+│
+├── MarketingPDF/
+│   ├── CafeSORA_presentation01.pdf
+│   ├── CafeSORA_presentation02.pdf
+│   ├── HonokayaHotel_PDF_.pdf
+│   └── StationeryTACHI_PDF.pdf
+│
+├── pdf/
+│   ├── design_portfolio2026.pdf
+│   └── shokumu_202604.pdf
+│
+└── PortfolioPDF/
+    ├── Design Portfolio2026.pdf
+    └── Shyokumu202604.pdf
+
+=====================================
