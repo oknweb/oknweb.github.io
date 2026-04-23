@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Works — Shinichiro Okaniwa Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Shippori+Mincho:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">S. Okaniwa</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="works.html">Works</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#profile">Profile</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- SPメニュー -->
+  <div class="sp-menu" id="spMenu">
+    <a href="index.html#about" class="sp-menu-link">About</a>
+    <a href="works.html" class="sp-menu-link">Works</a>
+    <a href="index.html#skills" class="sp-menu-link">Skills</a>
+    <a href="index.html#profile" class="sp-menu-link">Profile</a>
+    <a href="index.html#contact" class="sp-menu-link">Contact</a>
+  </div>
+
+  <!-- WORKS PAGE HEADER -->
+  <section class="works-page-header">
+    <div class="works-page-hero">
+      <h1 class="works-page-title">Works</h1>
+      <p class="works-page-subtitle">制作実績</p>
+    </div>
+  </section>
+
+  <!-- WORKS CONTENT -->
+  <section id="works-page">
+    <div class="works-filter reveal">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="web">Web Design</button>
+      <button class="filter-btn" data-category="logo">Logo Design</button>
+      <button class="filter-btn" data-category="video">Video / Marketing</button>
+      <button class="filter-btn" data-category="game">Game Design</button>
+    </div>
+
+    <div class="works-all-grid">
+
+      <!-- Webサイト -->
+      <a href="https://oknweb.github.io//web_works/portfolio_tea-shop-site/" target="_blank" class="work-card"
+        data-category="web">
+        <div class="work-thumb">
+          <img src="images/syoka-web-Images/shyoko-screenshot.png" alt="喫茶ショカ Webページ">
+        </div>
+        <div class="work-info">
+          <p class="work-cat">WEB DESIGN</p>
+          <p class="work-title">喫茶ショカ Webページ</p>
+          <p class="work-note">2026年 / HTML・CSS・JavaScript</p>
+        </div>
+      </a>
+
+      <!-- ロゴデザイン -->
+      <div class="work-card" data-category="logo">
+        <div class="work-thumb">
+          <img src="images/logos/cafe-sora-logotype.jpg" alt="カフェSORA ロゴ・キャラクター">
+        </div>
+        <div class="work-info">
+          <p class="work-cat">LOGO DESIGN</p>
+          <p class="work-title">カフェSORA ロゴ・キャラクター</p>
+          <p class="work-note">2025年 / ブランディング・ノベルティ</p>
+        </div>
+      </div>
+
+      <div class="work-card" data-category="logo">
+        <div class="work-thumb">
+          <img src="images/logos/site-logo-a.png" alt="種の杜 ロゴデザイン">
+        </div>
+        <div class="work-info">
+          <p class="work-cat">LOGO DESIGN</p>
+          <p class="work-title">種の杜 ロゴデザイン</p>
+          <p class="work-note">2026年 / 模型制作代行サイト</p>
+        </div>
+      </div>
+
+      <div class="work-card" data-category="logo game">
+        <div class="work-thumb">
+          <img src="images/logos/subarashiki-logo.jpg" alt="すばらしきこのせかい">
+        </div>
+        <div class="work-info">
+          <p class="work-cat">GAME / LOGO DESIGN</p>
+          <p class="work-title">すばらしきこのせかい</p>
+          <p class="work-note">2006年 / スクウェア・エニックス</p>
+        </div>
+      </div>
+
+      <!-- プロモーションムービー -->
+      <div class="work-card work-card-tall work-card-slideshow" data-category="video" onclick="openWorkModal({
+        title: 'カフェSORA Instagram向けPV',
+        category: 'VIDEO / MARKETING',
+        videoUrl: 'MarketingMovies/CafeSORA_PV.mp4',
+        client: 'Webデザインスクール課題',
+        year: '2025年（約1週間）',
+        role: '各種デザイン、素材作成、作曲、編集',
+        tools: 'Canva、Figma、Grok、Suno',
+        overview: '宇宙(SORA)をイメージした都会のユニークなカフェSORAのためのムービーを作成した。マーケティング授業の課題として設定された架空の喫茶店のInstagram向けPV。Z世代がメインターゲットのため、生成AIを使用したアニメーション表現でSORAの持つ世界観が伝わるよう制作した。',
+        points: '曲や詩に合わせてシーンを構成。青空、夕焼け、星空。それぞれを見上げる人々がカフェSORAに集うイメージをテンポよく構成した。',
+        links: [
+          { label: 'プレゼン資料PDF', url: 'MarketingPDF/CafeSORA_presentation01.pdf' }
+        ]
+      })">
+        <div class="work-thumb work-thumb-slideshow">
+          <img src="images/syoka-web-Images/cafe-sora-cap01.PNG" alt="カフェSORA 1" class="slideshow-image active">
+          <img src="images/syoka-web-Images/cafe-sora-cap02.PNG" alt="カフェSORA 2" class="slideshow-image">
+          <img src="images/syoka-web-Images/cafe-sora-cap03.PNG" alt="カフェSORA 3" class="slideshow-image">
+        </div>
+        <div class="work-info">
+          <p class="work-cat">VIDEO / MARKETING</p>
+          <p class="work-title">カフェSORA Instagram向けPV</p>
+          <p class="work-note">2025年 / AI活用・作曲・編集</p>
+        </div>
+      </div>
+
+      <div class="work-card work-card-tall" data-category="video" onclick="openWorkModal({
+        title: '米子ほのかや PV',
+        category: 'VIDEO / MARKETING',
+        videoUrl: 'MarketingMovies/HonokayaWebCM.mp4',
+        client: 'Webデザインスクール課題',
+        year: '2025年',
+        role: '企画、デザイン、編集',
+        tools: 'Canva、Figma',
+        overview: '古民家旅館「米子ほのかや」のプロモーション動画。',
+        points: '',
+        links: [
+          { label: '企画書PDF', url: 'MarketingPDF/HonokayaHotel_PDF_.pdf' }
+        ]
+      })">
+        <div class="work-thumb">
+          <img src="images/honokaya.png" alt="米子ほのかや PV">
+        </div>
+        <div class="work-info">
+          <p class="work-cat">VIDEO / MARKETING</p>
+          <p class="work-title">米子ほのかや PV</p>
+          <p class="work-note">2025年 / 古民家旅館プロモーション</p>
+        </div>
+      </div>
+
+      <div class="work-card work-card-tall" data-category="video" onclick="openWorkModal({
+        title: 'StationeryTachi PV',
+        category: 'VIDEO / MARKETING',
+        videoUrl: 'MarketingMovies/TachiWebCM.mp4',
+        client: 'Webデザインスクール課題',
+        year: '2025年',
+        role: '企画、デザイン、編集',
+        tools: 'Canva、Figma',
+        overview: '立川の文具店「StationeryTachi」のプロモーション動画。',
+        points: '',
+        links: [
+          { label: '企画書PDF', url: 'MarketingPDF/StationeryTACHI_PDF.pdf' }
+        ]
+      })">
+        <div class="work-thumb">
+          <img src="images/tachi.png" alt="StationeryTachi PV">
+        </div>
+        <div class="work-info">
+          <p class="work-cat">VIDEO / MARKETING</p>
+          <p class="work-title">StationeryTachi PV</p>
+          <p class="work-note">2025年 / 文具店プロモーション</p>
+        </div>
+      </div>
+
+      <!-- ゲーム向けデザイン -->
+      <div class="work-card" data-category="game">
+        <div class="work-thumb">
+          <img src="images/illustration/poster-data-pix-800.jpg" alt="ファイナルファンタジーIX">
+        </div>
+        <div class="work-info">
+          <p class="work-cat">GAME / CONCEPT ART</p>
+          <p class="work-title">ファイナルファンタジーIX</p>
+          <p class="work-note">1998-2000年 / 2Dセクションリーダー</p>
+        </div>
+      </div>
+
+      <div class="work-card" data-category="game">
+        <div class="work-thumb">
+          <img src="images/illustration/illust-robo.jpg" alt="クロノ・トリガー">
+        </div>
+        <div class="work-info">
+          <p class="work-cat">GAME / PIXEL ART</p>
+          <p class="work-title">クロノ・トリガー</p>
+          <p class="work-note">1993年 / 背景デザイン・ドット絵</p>
+        </div>
+      </div>
+
+      <div class="work-card" data-category="game">
+        <div class="work-thumb">
+          <img src="images/illustration/illust-niiya.png" alt="ピクセルリマスター FF3">
+        </div>
+        <div class="work-info">
+          <p class="work-cat">GAME / PIXEL ART</p>
+          <p class="work-title">ピクセルリマスター FF3</p>
+          <p class="work-note">2023年 / 背景デザイン</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WORK DETAIL MODAL -->
+  <div class="work-modal" id="workModal">
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="閉じる">×</button>
+
+      <div class="modal-header">
+        <p class="modal-category" id="modalCategory"></p>
+        <h2 class="modal-title" id="modalTitle"></h2>
+      </div>
+
+      <div class="modal-body">
+        <!-- メディア（動画 or 画像） -->
+        <div class="modal-media" id="modalMedia"></div>
+
+        <!-- 基本情報 -->
+        <div class="modal-section info-section">
+          <h3 class="modal-section-title">基本情報</h3>
+          <ul class="modal-info-list" id="modalInfo"></ul>
+        </div>
+
+        <!-- 概要 -->
+        <div class="modal-section overview-section">
+          <h3 class="modal-section-title">概要</h3>
+          <p class="modal-text" id="modalOverview"></p>
+        </div>
+
+        <!-- こだわりポイント -->
+        <div class="modal-section points-section">
+          <h3 class="modal-section-title">こだわりポイント</h3>
+          <p class="modal-text" id="modalPoints"></p>
+        </div>
+
+        <!-- 外部リンク -->
+        <div class="modal-links" id="modalLinks"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-copy">© 2025 Shinichiro Okaniwa. All rights reserved.</p>
+    <ul class="footer-nav">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="works.html">Works</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#profile">Profile</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="#" class="back-top">
+      <div class="back-top-icon">↑</div>
+      <span>TOP</span>
+    </a>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/filter.js"></script>
+  <script src="js/modal.js"></script>
+
+</body>
+
+</html>

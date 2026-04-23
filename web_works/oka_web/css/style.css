@@ -263,6 +263,10 @@ section {
   align-items: center;
   gap: 2rem;
   margin-bottom: 5rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2rem;
 }
 
 .section-num {
@@ -278,6 +282,9 @@ section {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .section-label {
@@ -325,7 +332,7 @@ section {
   grid-template-columns: 1fr 1fr;
   gap: 6rem;
   align-items: center;
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -451,7 +458,7 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -461,14 +468,18 @@ section {
   cursor: pointer;
   background: var(--sub);
   transition: transform 0.4s ease;
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 .work-card:hover {
   transform: translateY(-4px);
 }
 
-.work-card:nth-child(2) {
+.works-grid .work-card:nth-child(2) {
   grid-row: span 2;
+  grid-column: 2;
 }
 
 .work-thumb {
@@ -481,9 +492,48 @@ section {
   overflow: hidden;
 }
 
-.work-card:nth-child(2) .work-thumb {
+.works-grid .work-card:nth-child(2) .work-thumb {
   aspect-ratio: auto;
   height: 100%;
+}
+
+/* 縦長カード専用のレイアウト */
+.work-card-tall {
+  display: flex;
+  flex-direction: column;
+}
+
+.work-card-tall .work-thumb {
+  flex: 1;
+  min-height: 0;
+  aspect-ratio: auto !important;
+  height: 100%;
+}
+
+.work-card-tall .work-info {
+  flex-shrink: 0;
+}
+
+.work-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.work-thumb .slideshow-image {
+  transition: opacity 1.5s ease-in-out;
+}
+
+/* 画像が読み込めない場合のフォールバック */
+.work-thumb img:not([src]),
+.work-thumb img[src=""] {
+  display: none;
+}
+
+.work-card:hover .work-thumb img {
+  transform: scale(1.05);
 }
 
 .work-thumb-placeholder {
@@ -532,7 +582,7 @@ section {
 .career-works {
   padding: 3rem;
   border: 1px solid var(--border);
-  max-width: 1100px;
+  max-width: 1000px;
   margin-top: 4rem;
   margin-left: auto;
   margin-right: auto;
@@ -572,13 +622,90 @@ section {
   color: var(--text-sub);
 }
 
+/* Works CTA */
+.works-cta {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.btn-view-all {
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: var(--base);
+  background: var(--accent);
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-view-all:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+}
+
+/* ── WORKS PAGE ── */
+.works-page-header {
+  padding: 12rem 4rem 4rem;
+  background: var(--sub);
+  text-align: center;
+}
+
+.works-page-hero {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.works-page-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.works-page-subtitle {
+  font-size: 0.9rem;
+  letter-spacing: 0.3em;
+  color: var(--text-sub);
+}
+
+#works-page {
+  padding: 6rem 4rem;
+  background: var(--base);
+}
+
+#works-page .works-filter {
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.works-all-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.works-all-grid .work-card {
+  transition: all 0.4s ease;
+}
+
+.works-all-grid .work-card.hidden {
+  display: none;
+}
+
 /* ── SKILLS ── */
 #skills {
   background: var(--sub);
 }
 
 .skills-inner {
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -1054,19 +1181,25 @@ footer {
     gap: 3rem;
   }
 
-  .about-visual {
-    display: none;
-  }
-
   .works-grid {
     grid-template-columns: 1fr 1fr;
   }
 
-  .work-card:nth-child(2) {
-    grid-row: auto;
+  .works-grid .work-card:nth-child(2) {
+    grid-column: 2;
   }
 
-  .work-card:nth-child(2) .work-thumb {
+  .works-all-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .works-grid .work-card:nth-child(2) {
+    grid-row: auto;
+    grid-column: auto;
+  }
+
+  .works-grid .work-card:nth-child(2) .work-thumb {
     aspect-ratio: 4/3;
     height: auto;
   }
@@ -1115,4 +1248,361 @@ footer {
   .footer-nav {
     justify-content: center;
   }
+
+  .works-page-header {
+    padding: 10rem 2rem 3rem;
+  }
+
+  .works-page-title {
+    font-size: 2.5rem;
+  }
+
+  #works-page {
+    padding: 4rem 2rem;
+  }
+
+  #works-page .works-filter {
+    gap: 0.75rem;
+  }
+
+  .works-all-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* ── WORK MODAL ── */
+.work-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.work-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  position: relative;
+  background: var(--base);
+  max-width: 900px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  z-index: 1;
+  animation: modalSlideUp 0.4s ease-out;
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: var(--sub);
+  color: var(--text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.3s, transform 0.2s;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  background: var(--accent);
+  color: var(--base);
+  transform: rotate(90deg);
+}
+
+.modal-header {
+  padding: 3rem 3rem 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-category {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.modal-body {
+  padding: 2rem 3rem 3rem;
+}
+
+.modal-media {
+  margin-bottom: 3rem;
+  background: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.modal-video {
+  width: auto;
+  max-width: 100%;
+  max-height: 70vh;
+  display: block;
+}
+
+.modal-video::-webkit-media-controls-download-button {
+  display: none !important;
+}
+
+.modal-video::-webkit-media-controls-playback-rate-button {
+  display: none !important;
+}
+
+.modal-video::-webkit-media-controls-picture-in-picture-button {
+  display: none !important;
+}
+
+/* Chromeの三点リーダーメニューを非表示 */
+.modal-video::-webkit-media-controls-overflow-button {
+  display: none !important;
+}
+
+.modal-video::-internal-media-controls-overflow-button {
+  display: none !important;
+}
+
+/* PC: 2カラムレイアウト */
+@media (min-width: 769px) {
+  .modal-body {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 3rem;
+    grid-template-areas:
+      "media info"
+      "overview overview"
+      "points points"
+      "links links";
+  }
+
+  .modal-media {
+    grid-area: media;
+    margin-bottom: 0;
+  }
+
+  .modal-section.info-section {
+    grid-area: info;
+  }
+
+  .modal-section.overview-section {
+    grid-area: overview;
+  }
+
+  .modal-section.points-section {
+    grid-area: points;
+  }
+
+  .modal-links {
+    grid-area: links;
+    justify-content: center;
+  }
+}
+
+.modal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.modal-section {
+  margin-bottom: 2.5rem;
+}
+
+.modal-section:last-of-type {
+  margin-bottom: 0;
+}
+
+.modal-section-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-info-list li {
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  border-bottom: 1px dashed var(--border);
+}
+
+.modal-info-list li:last-child {
+  border-bottom: none;
+}
+
+.modal-info-list strong {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.modal-text {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.modal-links {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.modal-link-btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--base);
+  background: var(--accent);
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.modal-link-btn:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+}
+
+/* Modal responsive */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    max-height: 95vh;
+  }
+
+  .modal-header {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+
+  .modal-title {
+    font-size: 1.4rem;
+  }
+
+  .modal-body {
+    padding: 1.5rem;
+    display: block;
+  }
+
+  .modal-media {
+    margin-bottom: 2rem;
+  }
+
+  .modal-close {
+    top: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+  }
+
+  .modal-links {
+    flex-direction: column;
+  }
+
+  .modal-link-btn {
+    text-align: center;
+  }
+}
+
+/* Slideshow for vertical card */
+.work-thumb-slideshow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slideshow-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.slideshow-image.active {
+  opacity: 1;
+}
+
+/* 最初の画像で高さを確保（通常カード用） */
+.slideshow-image:first-child {
+  position: relative;
+  opacity: 0;
+}
+
+.slideshow-image:first-child.active {
+  opacity: 1;
+}
+
+/* 縦長カードでは全ての画像を絶対配置 */
+.work-card-tall .slideshow-image:first-child {
+  position: absolute;
+}
+
+/* Works page: PV cards as tall */
+.works-all-grid .work-card-tall {
+  grid-row: span 2;
+}
+
+/* Works all grid layout adjustment */
+.works-all-grid {
+  grid-auto-flow: dense;
+}
+
+/* Filter animation initial state */
+.works-all-grid .work-card {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s, transform 0.3s;
 }

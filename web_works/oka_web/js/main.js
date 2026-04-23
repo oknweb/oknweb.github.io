@@ -65,4 +65,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Slideshow for vertical work card
+  const slideshowImages = document.querySelectorAll('.slideshow-image');
+  if (slideshowImages.length > 0) {
+    let currentIndex = 0;
+    setInterval(() => {
+      slideshowImages[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % slideshowImages.length;
+      slideshowImages[currentIndex].classList.add('active');
+    }, 3000); // 3秒ごとに切り替え
+  }
+
 }); // DOMContentLoaded
