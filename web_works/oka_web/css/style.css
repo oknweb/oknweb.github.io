@@ -1601,6 +1601,12 @@ footer {
     grid-row: auto;
   }
 
+  .work-card-tall .work-thumb {
+    flex: none;
+    height: auto !important;
+    aspect-ratio: 3/4 !important;
+  }
+
   .modal-content {
     width: 95%;
     max-height: 95vh;
