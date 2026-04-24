@@ -18,8 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // メディアコンテンツ（動画 or 画像）
     const mediaContainer = document.getElementById('modalMedia');
     mediaContainer.innerHTML = '';
-    
+    const modalBody = document.querySelector('.modal-body');
+
     if (workData.videoUrl) {
+      modalBody.classList.add('modal-body--video');
       const audioPreference = localStorage.getItem('videoAudioPreference');
 
       const video = document.createElement('video');
@@ -87,13 +89,44 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       mediaContainer.appendChild(wrapper);
-    } else if (workData.imageUrl) {
-      // 画像の場合
-      const img = document.createElement('img');
-      img.src = workData.imageUrl;
-      img.alt = workData.title;
-      img.className = 'modal-image';
-      mediaContainer.appendChild(img);
+    } else {
+      modalBody.classList.remove('modal-body--video');
+
+      // images 配列 or imageUrl（単体）どちらも受け付ける
+      const images = workData.images && workData.images.length > 0
+        ? workData.images
+        : workData.imageUrl ? [workData.imageUrl] : [];
+
+      if (images.length > 0) {
+        const mainWrap = document.createElement('div');
+        mainWrap.className = 'modal-main-image-wrap';
+
+        const mainImg = document.createElement('img');
+        mainImg.src = images[0];
+        mainImg.alt = workData.title;
+        mainImg.className = 'modal-image';
+        mainWrap.appendChild(mainImg);
+        mediaContainer.appendChild(mainWrap);
+
+        if (images.length > 1) {
+          const thumbsWrap = document.createElement('div');
+          thumbsWrap.className = 'modal-thumbnails';
+
+          images.forEach((src, i) => {
+            const thumb = document.createElement('img');
+            thumb.src = src;
+            thumb.alt = `${workData.title} ${i + 1}`;
+            thumb.className = 'modal-thumbnail' + (i === 0 ? ' active' : '');
+            thumb.addEventListener('click', () => {
+              mainImg.src = src;
+              thumbsWrap.querySelectorAll('.modal-thumbnail').forEach(t => t.classList.remove('active'));
+              thumb.classList.add('active');
+            });
+            thumbsWrap.appendChild(thumb);
+          });
+          mediaContainer.appendChild(thumbsWrap);
+        }
+      }
     }
     
     // 基本情報

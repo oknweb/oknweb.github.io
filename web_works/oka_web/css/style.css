@@ -1402,11 +1402,11 @@ footer {
 }
 
 .modal-media {
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
   background: var(--text);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
 }
 
 .modal-video {
@@ -1504,9 +1504,9 @@ footer {
   outline-offset: 2px;
 }
 
-/* PC: 2カラムレイアウト */
+/* PC: 動画は2カラム、画像は1カラム */
 @media (min-width: 769px) {
-  .modal-body {
+  .modal-body--video {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 3rem;
@@ -1517,34 +1517,66 @@ footer {
       "links links";
   }
 
-  .modal-media {
+  .modal-body--video .modal-media {
     grid-area: media;
     margin-bottom: 0;
   }
 
-  .modal-section.info-section {
+  .modal-body--video .modal-section.info-section {
     grid-area: info;
   }
 
-  .modal-section.overview-section {
+  .modal-body--video .modal-section.overview-section {
     grid-area: overview;
   }
 
-  .modal-section.points-section {
+  .modal-body--video .modal-section.points-section {
     grid-area: points;
   }
 
-  .modal-links {
+  .modal-body--video .modal-links {
     grid-area: links;
     justify-content: center;
   }
 }
 
 .modal-image {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 55vh;
   object-fit: contain;
   display: block;
+}
+
+.modal-main-image-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-thumbnails {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  width: 100%;
+  padding: 0.75rem 0 0;
+  scrollbar-width: thin;
+}
+
+.modal-thumbnail {
+  flex-shrink: 0;
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  opacity: 0.55;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+
+.modal-thumbnail.active,
+.modal-thumbnail:hover {
+  opacity: 1;
+  border-color: var(--accent);
 }
 
 .modal-section {
