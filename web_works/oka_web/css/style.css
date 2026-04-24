@@ -534,7 +534,36 @@ section {
   pointer-events: none;
 }
 
+/* グレイン順次フォーカスアニメーション */
+@keyframes grain-focus-anim {
+  0%    { opacity: 0.45; }
+  6%    { opacity: 0; }
+  14%   { opacity: 0; }
+  20%   { opacity: 0.45; }
+  100%  { opacity: 0.45; }
+}
+
+/* index: works-grid（5枚 / 15s サイクル） */
+.works-grid .work-card:nth-child(1) .work-thumb::before { animation: grain-focus-anim 15s 0s   ease-in-out infinite; }
+.works-grid .work-card:nth-child(2) .work-thumb::before { animation: grain-focus-anim 15s 3s   ease-in-out infinite; }
+.works-grid .work-card:nth-child(3) .work-thumb::before { animation: grain-focus-anim 15s 6s   ease-in-out infinite; }
+.works-grid .work-card:nth-child(4) .work-thumb::before { animation: grain-focus-anim 15s 9s   ease-in-out infinite; }
+.works-grid .work-card:nth-child(5) .work-thumb::before { animation: grain-focus-anim 15s 12s  ease-in-out infinite; }
+
+/* works: works-all-grid（9枚 / 27s サイクル） */
+.works-all-grid .work-card:nth-child(1) .work-thumb::before { animation: grain-focus-anim 27s 0s   ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(2) .work-thumb::before { animation: grain-focus-anim 27s 3s   ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(3) .work-thumb::before { animation: grain-focus-anim 27s 6s   ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(4) .work-thumb::before { animation: grain-focus-anim 27s 9s   ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(5) .work-thumb::before { animation: grain-focus-anim 27s 12s  ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(6) .work-thumb::before { animation: grain-focus-anim 27s 15s  ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(7) .work-thumb::before { animation: grain-focus-anim 27s 18s  ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(8) .work-thumb::before { animation: grain-focus-anim 27s 21s  ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(9) .work-thumb::before { animation: grain-focus-anim 27s 24s  ease-in-out infinite; }
+
+/* ホバー時はアニメーションをキャンセルしてグレインOFF */
 .work-card:hover .work-thumb::before {
+  animation: none;
   opacity: 0;
 }
 
@@ -902,34 +931,23 @@ section {
   color: var(--text-sub);
 }
 
-.major-titles {
-  margin-top: 4rem;
-  padding: 3rem;
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
-}
-
-.major-titles-head {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem;
-  font-style: italic;
-  color: var(--text-sub);
+.btn-profile-pdf {
+  display: inline-block;
+  margin-top: 3rem;
+  padding: 0.85rem 2.5rem;
+  font-size: 0.85rem;
   letter-spacing: 0.15em;
-  margin-bottom: 1.5rem;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
 }
 
-.titles-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.title-badge {
-  font-size: 0.72rem;
-  padding: 0.35rem 0.8rem;
-  background: var(--sub);
-  border: 1px solid var(--border);
-  color: var(--text);
+.btn-profile-pdf:hover {
+  background: var(--accent);
+  color: var(--base);
+  transform: translateY(-2px);
 }
 
 /* ── CONTACT ── */
@@ -1414,6 +1432,7 @@ footer {
   max-width: 100%;
   max-height: 70vh;
   display: block;
+  background: var(--base);
 }
 
 .modal-video::-webkit-media-controls-download-button {
