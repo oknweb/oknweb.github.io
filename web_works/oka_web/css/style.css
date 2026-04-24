@@ -1119,6 +1119,7 @@ footer {
 @media (max-width: 900px) {
   nav {
     padding: 1.5rem 2rem;
+    padding-top: calc(1.5rem + env(safe-area-inset-top, 0px));
   }
 
   .nav-links {
