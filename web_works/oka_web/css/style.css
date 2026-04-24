@@ -534,58 +534,59 @@ section {
   pointer-events: none;
 }
 
-/* グレイン＋画像color 順次フォーカスアニメーション */
+/* グレイン＋画像color 順次フォーカスアニメーション
+   10sサイクル基準: fade=0.9s(9%), hold=1.2s(12%), 合計active=30% */
 @keyframes grain-focus-anim {
   0%    { opacity: 0.45; }
-  6%    { opacity: 0; }
-  14%   { opacity: 0; }
-  20%   { opacity: 0.45; }
+  9%    { opacity: 0; }
+  21%   { opacity: 0; }
+  30%   { opacity: 0.45; }
   100%  { opacity: 0.45; }
 }
 
 @keyframes img-focus-anim {
   0%    { filter: saturate(0.3) brightness(1.28); }
-  6%    { filter: saturate(1.0) brightness(1.0); }
-  14%   { filter: saturate(1.0) brightness(1.0); }
-  20%   { filter: saturate(0.3) brightness(1.28); }
+  9%    { filter: saturate(1.0) brightness(1.0); }
+  21%   { filter: saturate(1.0) brightness(1.0); }
+  30%   { filter: saturate(0.3) brightness(1.28); }
   100%  { filter: saturate(0.3) brightness(1.28); }
 }
 
-/* index: works-grid（5枚 / 15s サイクル） */
-.works-grid .work-card:nth-child(1) .work-thumb::before { animation: grain-focus-anim 15s 0s   ease-in-out infinite; }
-.works-grid .work-card:nth-child(2) .work-thumb::before { animation: grain-focus-anim 15s 3s   ease-in-out infinite; }
-.works-grid .work-card:nth-child(3) .work-thumb::before { animation: grain-focus-anim 15s 6s   ease-in-out infinite; }
-.works-grid .work-card:nth-child(4) .work-thumb::before { animation: grain-focus-anim 15s 9s   ease-in-out infinite; }
-.works-grid .work-card:nth-child(5) .work-thumb::before { animation: grain-focus-anim 15s 12s  ease-in-out infinite; }
+/* index: works-grid（5枚 / 10s サイクル / 2s 間隔） */
+.works-grid .work-card:nth-child(1) .work-thumb::before { animation: grain-focus-anim 10s 0s  ease-in-out infinite; }
+.works-grid .work-card:nth-child(2) .work-thumb::before { animation: grain-focus-anim 10s 2s  ease-in-out infinite; }
+.works-grid .work-card:nth-child(3) .work-thumb::before { animation: grain-focus-anim 10s 4s  ease-in-out infinite; }
+.works-grid .work-card:nth-child(4) .work-thumb::before { animation: grain-focus-anim 10s 6s  ease-in-out infinite; }
+.works-grid .work-card:nth-child(5) .work-thumb::before { animation: grain-focus-anim 10s 8s  ease-in-out infinite; }
 
-/* works: works-all-grid（9枚 / 27s サイクル） */
-.works-all-grid .work-card:nth-child(1) .work-thumb::before { animation: grain-focus-anim 27s 0s   ease-in-out infinite; }
-.works-all-grid .work-card:nth-child(2) .work-thumb::before { animation: grain-focus-anim 27s 3s   ease-in-out infinite; }
-.works-all-grid .work-card:nth-child(3) .work-thumb::before { animation: grain-focus-anim 27s 6s   ease-in-out infinite; }
-.works-all-grid .work-card:nth-child(4) .work-thumb::before { animation: grain-focus-anim 27s 9s   ease-in-out infinite; }
-.works-all-grid .work-card:nth-child(5) .work-thumb::before { animation: grain-focus-anim 27s 12s  ease-in-out infinite; }
-.works-all-grid .work-card:nth-child(6) .work-thumb::before { animation: grain-focus-anim 27s 15s  ease-in-out infinite; }
-.works-all-grid .work-card:nth-child(7) .work-thumb::before { animation: grain-focus-anim 27s 18s  ease-in-out infinite; }
-.works-all-grid .work-card:nth-child(8) .work-thumb::before { animation: grain-focus-anim 27s 21s  ease-in-out infinite; }
-.works-all-grid .work-card:nth-child(9) .work-thumb::before { animation: grain-focus-anim 27s 24s  ease-in-out infinite; }
+/* works: works-all-grid（9枚 / 18s サイクル / 2s 間隔） */
+.works-all-grid .work-card:nth-child(1) .work-thumb::before { animation: grain-focus-anim 18s 0s   ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(2) .work-thumb::before { animation: grain-focus-anim 18s 2s   ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(3) .work-thumb::before { animation: grain-focus-anim 18s 4s   ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(4) .work-thumb::before { animation: grain-focus-anim 18s 6s   ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(5) .work-thumb::before { animation: grain-focus-anim 18s 8s   ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(6) .work-thumb::before { animation: grain-focus-anim 18s 10s  ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(7) .work-thumb::before { animation: grain-focus-anim 18s 12s  ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(8) .work-thumb::before { animation: grain-focus-anim 18s 14s  ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(9) .work-thumb::before { animation: grain-focus-anim 18s 16s  ease-in-out infinite; }
 
-/* index: works-grid 画像filter（grain と同タイミング） */
-.works-grid .work-card:nth-child(1) .work-thumb img { animation: img-focus-anim 15s 0s   ease-in-out infinite; }
-.works-grid .work-card:nth-child(2) .work-thumb img { animation: img-focus-anim 15s 3s   ease-in-out infinite; }
-.works-grid .work-card:nth-child(3) .work-thumb img { animation: img-focus-anim 15s 6s   ease-in-out infinite; }
-.works-grid .work-card:nth-child(4) .work-thumb img { animation: img-focus-anim 15s 9s   ease-in-out infinite; }
-.works-grid .work-card:nth-child(5) .work-thumb img { animation: img-focus-anim 15s 12s  ease-in-out infinite; }
+/* index: works-grid 画像filter */
+.works-grid .work-card:nth-child(1) .work-thumb img { animation: img-focus-anim 10s 0s  ease-in-out infinite; }
+.works-grid .work-card:nth-child(2) .work-thumb img { animation: img-focus-anim 10s 2s  ease-in-out infinite; }
+.works-grid .work-card:nth-child(3) .work-thumb img { animation: img-focus-anim 10s 4s  ease-in-out infinite; }
+.works-grid .work-card:nth-child(4) .work-thumb img { animation: img-focus-anim 10s 6s  ease-in-out infinite; }
+.works-grid .work-card:nth-child(5) .work-thumb img { animation: img-focus-anim 10s 8s  ease-in-out infinite; }
 
 /* works: works-all-grid 画像filter */
-.works-all-grid .work-card:nth-child(1) .work-thumb img { animation: img-focus-anim 27s 0s   ease-in-out infinite; }
-.works-all-grid .work-card:nth-child(2) .work-thumb img { animation: img-focus-anim 27s 3s   ease-in-out infinite; }
-.works-all-grid .work-card:nth-child(3) .work-thumb img { animation: img-focus-anim 27s 6s   ease-in-out infinite; }
-.works-all-grid .work-card:nth-child(4) .work-thumb img { animation: img-focus-anim 27s 9s   ease-in-out infinite; }
-.works-all-grid .work-card:nth-child(5) .work-thumb img { animation: img-focus-anim 27s 12s  ease-in-out infinite; }
-.works-all-grid .work-card:nth-child(6) .work-thumb img { animation: img-focus-anim 27s 15s  ease-in-out infinite; }
-.works-all-grid .work-card:nth-child(7) .work-thumb img { animation: img-focus-anim 27s 18s  ease-in-out infinite; }
-.works-all-grid .work-card:nth-child(8) .work-thumb img { animation: img-focus-anim 27s 21s  ease-in-out infinite; }
-.works-all-grid .work-card:nth-child(9) .work-thumb img { animation: img-focus-anim 27s 24s  ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(1) .work-thumb img { animation: img-focus-anim 18s 0s   ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(2) .work-thumb img { animation: img-focus-anim 18s 2s   ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(3) .work-thumb img { animation: img-focus-anim 18s 4s   ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(4) .work-thumb img { animation: img-focus-anim 18s 6s   ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(5) .work-thumb img { animation: img-focus-anim 18s 8s   ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(6) .work-thumb img { animation: img-focus-anim 18s 10s  ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(7) .work-thumb img { animation: img-focus-anim 18s 12s  ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(8) .work-thumb img { animation: img-focus-anim 18s 14s  ease-in-out infinite; }
+.works-all-grid .work-card:nth-child(9) .work-thumb img { animation: img-focus-anim 18s 16s  ease-in-out infinite; }
 
 /* ホバー時はアニメーションをキャンセル */
 .work-card:hover .work-thumb::before {
