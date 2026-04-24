@@ -16,24 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // カードのフィルタリング
       workCards.forEach(card => {
-        const cardCategories = card.getAttribute('data-category');
-        
-        if (category === 'all') {
-          // Allの場合は全て表示
-          card.classList.remove('hidden');
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          }, 10);
-        } else if (cardCategories.includes(category)) {
-          // カテゴリーが一致する場合は表示
+        const cardCategories = card.getAttribute('data-category') || '';
+        const isVisible = category === 'all' || cardCategories.includes(category);
+
+        if (isVisible) {
           card.classList.remove('hidden');
           setTimeout(() => {
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
           }, 10);
         } else {
-          // 一致しない場合は非表示
           card.style.opacity = '0';
           card.style.transform = 'translateY(20px)';
           setTimeout(() => {

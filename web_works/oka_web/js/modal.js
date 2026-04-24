@@ -49,9 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('videoAudioPreference', 'off');
           }
           
-          // イベントリスナーを削除（1回だけ実行）
-          video.removeEventListener('play', askAudioPreference);
-          
           // 再生を再開
           video.play();
         }, { once: true });
@@ -118,13 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
         a.href = link.url;
         a.textContent = link.label;
         a.className = 'modal-link-btn';
-        // PDFの場合は同じタブで開く（ブラウザプレビュー）
-        if (link.url.toLowerCase().endsWith('.pdf')) {
-          a.target = '_blank';
-          a.rel = 'noopener noreferrer';
-        } else {
-          a.target = '_blank';
-        }
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
         linksContainer.appendChild(a);
       });
     }
