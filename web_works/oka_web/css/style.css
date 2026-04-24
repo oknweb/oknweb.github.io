@@ -97,7 +97,9 @@ nav.scrolled {
   display: none;
 }
 
-/* PC時は非表示 */
+.sp-menu {
+  display: none;
+}
 
 /* ── HERO ── */
 #hero {
