@@ -1106,6 +1106,20 @@ section {
   flex-shrink: 0;
 }
 
+.contact-info-item a,
+.contact-info-item a:visited {
+  color: #7DD6D1;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(125, 214, 209, 0.4);
+  padding-bottom: 1px;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.contact-info-item a:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
 /* ── FOOTER ── */
 footer {
   background: #111;
