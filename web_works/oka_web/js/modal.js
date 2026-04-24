@@ -20,57 +20,48 @@ document.addEventListener('DOMContentLoaded', () => {
     mediaContainer.innerHTML = '';
     
     if (workData.videoUrl) {
-      // 動画の場合
+      const audioPreference = localStorage.getItem('videoAudioPreference');
+
       const video = document.createElement('video');
       video.controls = true;
       video.className = 'modal-video';
       video.controlsList = 'nodownload nofullscreen noremoteplayback';
       video.disablePictureInPicture = true;
-      
-      // 音量設定の確認（初回のみ）
-      const audioPreference = localStorage.getItem('videoAudioPreference');
-      
-      if (audioPreference === null) {
-        // 初回：デフォルトでミュート
-        video.muted = true;
-        video.volume = 1.0;
-        
-        // 再生ボタンが押されたときに確認
-        video.addEventListener('play', function askAudioPreference() {
-          video.pause(); // 一時停止
-          
-          const userChoice = confirm('動画の音声をONにしますか？');
-          
-          if (userChoice) {
-            video.muted = false;
-            localStorage.setItem('videoAudioPreference', 'on');
-          } else {
-            video.muted = true;
-            localStorage.setItem('videoAudioPreference', 'off');
-          }
-          
-          // 再生を再開
-          video.play();
-        }, { once: true });
-      } else {
-        // 2回目以降：保存された設定を使用
-        if (audioPreference === 'on') {
-          video.muted = false;
-          video.volume = parseFloat(localStorage.getItem('videoVolume') || '1.0');
-        } else {
-          video.muted = true;
-        }
+      video.muted = audioPreference !== 'on';
+      if (!video.muted) {
+        video.volume = parseFloat(localStorage.getItem('videoVolume') || '1.0');
       }
-      
-      // 音量変更時に保存（ミュート解除後の音量調整用）
-      video.addEventListener('volumechange', function() {
+      video.innerHTML = `<source src="${workData.videoUrl}" type="video/mp4">お使いのブラウザは動画タグをサポートしていません。`;
+
+      const muteBtn = document.createElement('button');
+      muteBtn.className = 'modal-mute-btn';
+      const updateMuteBtn = () => {
+        muteBtn.textContent = video.muted ? '🔇' : '🔊';
+        muteBtn.setAttribute('aria-label', video.muted ? '音声をオンにする' : '音声をオフにする');
+      };
+      updateMuteBtn();
+
+      muteBtn.addEventListener('click', () => {
+        video.muted = !video.muted;
+        localStorage.setItem('videoAudioPreference', video.muted ? 'off' : 'on');
+        updateMuteBtn();
+      });
+
+      video.addEventListener('volumechange', () => {
         if (!video.muted) {
           localStorage.setItem('videoVolume', video.volume);
+          localStorage.setItem('videoAudioPreference', 'on');
+        } else {
+          localStorage.setItem('videoAudioPreference', 'off');
         }
+        updateMuteBtn();
       });
-      
-      video.innerHTML = `<source src="${workData.videoUrl}" type="video/mp4">お使いのブラウザは動画タグをサポートしていません。`;
-      mediaContainer.appendChild(video);
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'modal-video-wrapper';
+      wrapper.appendChild(video);
+      wrapper.appendChild(muteBtn);
+      mediaContainer.appendChild(wrapper);
     } else if (workData.imageUrl) {
       // 画像の場合
       const img = document.createElement('img');
