@@ -51,6 +51,8 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 4rem;
+  /* env(safe-area-inset-top): iOS のノッチ・Dynamic Island・Liquid Glass アドレスバー対応 */
+  padding-top: calc(1.5rem + env(safe-area-inset-top, 0px));
   background: rgba(250, 250, 247, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
