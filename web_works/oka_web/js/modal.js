@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       video.innerHTML = `<source src="${workData.videoUrl}" type="video/mp4">お使いのブラウザは動画タグをサポートしていません。`;
 
+      // ネイティブコントロールで変更された音量・ミュート設定を保存
       video.addEventListener('volumechange', () => {
         localStorage.setItem('videoAudioPreference', video.muted ? 'off' : 'on');
         if (!video.muted) {
@@ -40,7 +41,50 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      mediaContainer.appendChild(video);
+      const wrapper = document.createElement('div');
+      wrapper.className = 'modal-video-wrapper';
+      wrapper.appendChild(video);
+
+      // 初回のみ音声確認ダイアログを表示
+      if (audioPreference === null) {
+        const dialog = document.createElement('div');
+        dialog.className = 'audio-pref-dialog';
+
+        const text = document.createElement('p');
+        text.className = 'audio-pref-text';
+        text.textContent = '動画の音声をオンにしますか？';
+
+        const btns = document.createElement('div');
+        btns.className = 'audio-pref-btns';
+
+        const onBtn = document.createElement('button');
+        onBtn.className = 'audio-pref-btn audio-pref-on';
+        onBtn.textContent = '🔊 音声ON';
+
+        const offBtn = document.createElement('button');
+        offBtn.className = 'audio-pref-btn audio-pref-off';
+        offBtn.textContent = '🔇 ミュートで再生';
+
+        onBtn.addEventListener('click', () => {
+          video.muted = false;
+          localStorage.setItem('videoAudioPreference', 'on');
+          dialog.remove();
+        });
+
+        offBtn.addEventListener('click', () => {
+          video.muted = true;
+          localStorage.setItem('videoAudioPreference', 'off');
+          dialog.remove();
+        });
+
+        btns.appendChild(onBtn);
+        btns.appendChild(offBtn);
+        dialog.appendChild(text);
+        dialog.appendChild(btns);
+        wrapper.appendChild(dialog);
+      }
+
+      mediaContainer.appendChild(wrapper);
     } else if (workData.imageUrl) {
       // 画像の場合
       const img = document.createElement('img');
