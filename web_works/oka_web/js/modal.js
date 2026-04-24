@@ -69,12 +69,14 @@ document.addEventListener('DOMContentLoaded', () => {
           video.muted = false;
           localStorage.setItem('videoAudioPreference', 'on');
           dialog.remove();
+          video.play();
         });
 
         offBtn.addEventListener('click', () => {
           video.muted = true;
           localStorage.setItem('videoAudioPreference', 'off');
           dialog.remove();
+          video.play();
         });
 
         btns.appendChild(onBtn);
