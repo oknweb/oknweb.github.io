@@ -336,7 +336,7 @@
           <div class="skill-item">
             <div class="skill-label">
               <span class="skill-name">Figma</span>
-              <span class="skill-level">学習中</span>
+              <span class="skill-level">WIP</span>
             </div>
             <div class="skill-bar">
               <div class="skill-fill" style="--w:55%"></div>
@@ -345,7 +345,7 @@
           <div class="skill-item">
             <div class="skill-label">
               <span class="skill-name">Canva</span>
-              <span class="skill-level">中級</span>
+              <span class="skill-level">WIP</span>
             </div>
             <div class="skill-bar">
               <div class="skill-fill" style="--w:60%"></div>
@@ -385,7 +385,7 @@
           <div class="skill-item">
             <div class="skill-label">
               <span class="skill-name">Webマーケティング・ペルソナ設計</span>
-              <span class="skill-level">学習済み</span>
+              <span class="skill-level">WIP</span>
             </div>
             <div class="skill-bar">
               <div class="skill-fill" style="--w:55%"></div>
@@ -408,8 +408,9 @@
           <span class="skill-tag">メカデザイン</span>
           <span class="skill-tag">コンセプトアート</span>
           <span class="skill-tag">SNSバナー</span>
-          <span class="skill-tag">プロモーション素材</span>
-          <span class="skill-tag">Webデザイン（学習中）</span>
+          <span class="skill-tag">プロモーション素材作成</span>
+          <span class="skill-tag">AI活用</span>
+          <span class="skill-tag">Webデザイン</span>
         </div>
       </div>
     </div>
@@ -470,7 +471,7 @@
           </div>
         </div>
         <div class="timeline-item reveal">
-          <span class="timeline-date">2018–現在</span>
+          <span class="timeline-date">2018–2021</span>
           <div class="timeline-content">
             <p class="timeline-org">株式会社コンフィデンス</p>
             <p class="timeline-role">グラフィックデザイナー</p>
@@ -482,13 +483,14 @@
           <div class="timeline-content">
             <p class="timeline-org">Webデザイン・マーケティングスクール</p>
             <p class="timeline-role">受講・修了</p>
-            <p class="timeline-detail">Webデザイン（Figma・HTML/CSS）、Webマーケティング（ペルソナ設計・SNSプロモーション・動画制作）を履修</p>
+            <p class="timeline-detail">Webデザイン（Figma・canva・HTML/CSS）、Webマーケティング（ペルソナ設計・SNSプロモーション・動画制作）を履修</p>
           </div>
         </div>
       </div>
 
       <div class="reveal" style="text-align:center;">
-        <a href="PortfolioPDF/Shyokumu202604.pdf" class="btn-profile-pdf" target="_blank" rel="noopener noreferrer">職務経歴書を見る（PDF）</a>
+        <a href="PortfolioPDF/Shyokumu202604.pdf" class="btn-profile-pdf" target="_blank"
+          rel="noopener noreferrer">職務経歴書を見る（PDF）</a>
       </div>
     </div>
   </section>
@@ -510,18 +512,18 @@
         平日3営業日以内にご返信いたします。
       </p>
 
-      <form class="contact-form reveal">
+      <form class="contact-form reveal" action="https://formspree.io/f/mkokyzrn" method="POST">
         <div class="form-group">
           <label class="form-label">お名前 / Name</label>
-          <input type="text" class="form-input" placeholder="山田 太郎">
+          <input type="text" name="name" class="form-input" placeholder="山田 太郎" required>
         </div>
         <div class="form-group">
           <label class="form-label">メールアドレス / Email</label>
-          <input type="email" class="form-input" placeholder="example@company.co.jp">
+          <input type="email" name="email" class="form-input" placeholder="example@company.co.jp" required>
         </div>
         <div class="form-group">
           <label class="form-label">お問い合わせ種別 / Type</label>
-          <select class="form-select">
+          <select name="type" class="form-select">
             <option value="">選択してください</option>
             <option>採用検討</option>
             <option>業務委託・外注</option>
@@ -530,7 +532,7 @@
         </div>
         <div class="form-group">
           <label class="form-label">メッセージ / Message</label>
-          <textarea class="form-textarea" placeholder="お気軽にご連絡ください。"></textarea>
+          <textarea name="message" class="form-textarea" placeholder="お気軽にご連絡ください。" required></textarea>
         </div>
         <button type="submit" class="form-submit">送信する →</button>
       </form>
