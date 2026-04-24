@@ -1583,6 +1583,24 @@ footer {
 
 /* Modal responsive */
 @media (max-width: 768px) {
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .works-grid .work-card:nth-child(2) {
+    grid-row: auto;
+    grid-column: auto;
+  }
+
+  .works-grid .work-card:nth-child(2) .work-thumb {
+    aspect-ratio: 4/3;
+    height: auto;
+  }
+
+  .work-card-tall {
+    grid-row: auto;
+  }
+
   .modal-content {
     width: 95%;
     max-height: 95vh;
