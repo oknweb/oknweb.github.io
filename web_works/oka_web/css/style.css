@@ -1604,7 +1604,7 @@ footer {
   .work-card-tall .work-thumb {
     flex: none;
     height: auto !important;
-    aspect-ratio: 3/4 !important;
+    aspect-ratio: 9/16 !important;
   }
 
   .modal-content {
