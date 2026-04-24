@@ -341,7 +341,7 @@ section {
 }
 
 .about-frame {
-  width: 80%;
+  width: 75%;
   aspect-ratio: 3/4;
   background: var(--border);
   position: relative;
