@@ -116,10 +116,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // 概要
     const overview = document.getElementById('modalOverview');
     overview.textContent = workData.overview || '';
-    
+    overview.closest('.modal-section').style.display = workData.overview ? '' : 'none';
+
     // こだわりポイント
     const points = document.getElementById('modalPoints');
     points.textContent = workData.points || '';
+    points.closest('.modal-section').style.display = workData.points ? '' : 'none';
     
     // 外部リンク
     const linksContainer = document.getElementById('modalLinks');

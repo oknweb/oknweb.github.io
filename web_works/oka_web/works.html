@@ -60,8 +60,20 @@
     <div class="works-all-grid">
 
       <!-- Webサイト -->
-      <a href="https://oknweb.github.io//web_works/portfolio_tea-shop-site/" target="_blank" class="work-card"
-        data-category="web">
+      <div class="work-card" data-category="web" onclick="openWorkModal({
+        title: '喫茶ショカ Webページ',
+        category: 'WEB DESIGN',
+        imageUrl: 'images/syoka-web-Images/shyoko-screenshot.png',
+        client: '自主制作・架空案件',
+        year: '2026年（約2週間）',
+        role: '企画・デザイン・コーディング',
+        tools: 'HTML / CSS / JavaScript',
+        overview: 'モバイルファーストのサイトデザインを試作してみました。PCでは3ペイン構成で中央部分がメインコンテンツ。左が大きめの写真をスライドショー。SPではPCメインコンテンツを1ペインで表示。',
+        points: '紅茶を連想させるオレンジとダークブラウンの配色に気を使いました。書籍紹介など量の多い文章は折りたためるようにしてシンプルに見やすくしています。',
+        links: [
+          { label: 'サイトを見る →', url: 'https://oknweb.github.io//web_works/portfolio_tea-shop-site/' }
+        ]
+      })">
         <div class="work-thumb">
           <img src="images/syoka-web-Images/shyoko-screenshot.png" alt="喫茶ショカ Webページ" loading="lazy">
         </div>
@@ -70,10 +82,21 @@
           <p class="work-title">喫茶ショカ Webページ</p>
           <p class="work-note">2026年 / HTML・CSS・JavaScript</p>
         </div>
-      </a>
+      </div>
 
       <!-- ロゴデザイン -->
-      <div class="work-card" data-category="logo">
+      <div class="work-card" data-category="logo" onclick="openWorkModal({
+        title: 'カフェSora ショップロゴ・キャラクターステッカー',
+        category: 'LOGO / GRAPHIC DESIGN',
+        imageUrl: 'images/logos/cafe-sora-logotype.jpg',
+        client: 'Webデザインスクール課題',
+        year: '2025年',
+        role: 'ショップロゴデザイン・キャラクターイラスト',
+        tools: 'CLIP STUDIO PAINT、Figma',
+        overview: '宇宙(Sora)をイメージした都会のユニークなカフェSoraのためのロゴデザインを制作した。マーケティング授業の課題として設定された架空の喫茶店のためのデザイン。',
+        points: 'Z世代へ向けた、ちょっと可愛くわかりやすくポップなロゴ。イラストテイストのコーヒーを持った宇宙飛行士のステッカーデザイン。Webサイトや名刺の他、マグカップやエコバッグなどのノベルティ展開にも使用する想定。',
+        links: []
+      })">
         <div class="work-thumb">
           <img src="images/logos/cafe-sora-logotype.jpg" alt="カフェSORA ロゴ・キャラクター" loading="lazy">
         </div>
@@ -84,7 +107,18 @@
         </div>
       </div>
 
-      <div class="work-card" data-category="logo">
+      <div class="work-card" data-category="logo" onclick="openWorkModal({
+        title: '種の杜 ロゴデザイン',
+        category: 'LOGO DESIGN',
+        imageUrl: 'images/logos/site-logo-a.png',
+        client: '茶種様（模型制作代行）',
+        year: '2026年（1日）',
+        role: 'Webサイトロゴデザイン',
+        tools: 'Canva、Photoshop',
+        overview: '種の杜という一風変わった名前の模型制作代行業のサイトのためのデザイン。木や種などのモチーフと緑のイメージカラー、和風や職人、工務店的なイメージがご希望とのこと。丸いマーク的なイメージで3種類のロゴを作成した。',
+        points: '',
+        links: []
+      })">
         <div class="work-thumb">
           <img src="images/logos/site-logo-a.png" alt="種の杜 ロゴデザイン" loading="lazy">
         </div>
@@ -95,7 +129,18 @@
         </div>
       </div>
 
-      <div class="work-card" data-category="logo game">
+      <div class="work-card" data-category="logo game" onclick="openWorkModal({
+        title: 'すばらしきこのせかい ゲームタイトルロゴ',
+        category: 'GAME / LOGO DESIGN',
+        imageUrl: 'images/logos/subarashiki-logo.jpg',
+        client: '株式会社スクウェア・エニックス',
+        year: '2006年',
+        role: 'デザイン',
+        tools: 'Photoshop',
+        overview: 'ニンテンドーDS向けRPG「すばらしきこのせかい」のメインロゴデザインを担当。現代の渋谷を舞台としたゲームの世界観に合わせてストリートファッションテイストで構成した。',
+        points: '',
+        links: []
+      })">
         <div class="work-thumb">
           <img src="images/logos/subarashiki-logo.jpg" alt="すばらしきこのせかい" loading="lazy">
         </div>
@@ -182,7 +227,18 @@
       </div>
 
       <!-- ゲーム向けデザイン -->
-      <div class="work-card" data-category="game">
+      <div class="work-card" data-category="game" onclick="openWorkModal({
+        title: 'ファイナルファンタジーIX 背景スケッチ',
+        category: 'GAME / CONCEPT ART',
+        imageUrl: 'images/illustration/poster-data-pix-800.jpg',
+        client: '株式会社スクウェア',
+        year: '1998〜2000年',
+        role: '2Dセクションリーダー・背景スケッチ',
+        tools: '鉛筆、Photoshop',
+        overview: 'ファンタジーRPG「ファイナルファンタジーIX」のためのコンセプトアート。物語の最初の街、アレクサンドリアをメインに3D背景モデル作成のためのアートを作成した。',
+        points: '昔のディズニーのようなデフォルメのある背景作成のために試行錯誤した。海外ウケもいいように多くのファンタジーアートを参照して、架空世界に生活感や温かみが感じられるよう仕上げた。',
+        links: []
+      })">
         <div class="work-thumb">
           <img src="images/illustration/poster-data-pix-800.jpg" alt="ファイナルファンタジーIX" loading="lazy">
         </div>
@@ -193,7 +249,17 @@
         </div>
       </div>
 
-      <div class="work-card" data-category="game">
+      <div class="work-card" data-category="game" onclick="openWorkModal({
+        title: 'クロノ・トリガー 背景デザイン',
+        category: 'GAME / PIXEL ART',
+        imageUrl: 'images/illustration/illust-robo.jpg',
+        client: '株式会社スクウェア',
+        year: '1993年（2年間）',
+        role: 'ドット絵制作',
+        overview: 'スーパーファミコン向けRPG「クロノ・トリガー」のための背景デザイン。古代編をメインに室内マップ、ダンジョンマップ、シルバードなどを担当した。',
+        points: '',
+        links: []
+      })">
         <div class="work-thumb">
           <img src="images/illustration/illust-robo.jpg" alt="クロノ・トリガー" loading="lazy">
         </div>
@@ -204,7 +270,17 @@
         </div>
       </div>
 
-      <div class="work-card" data-category="game">
+      <div class="work-card" data-category="game" onclick="openWorkModal({
+        title: 'ピクセルリマスター ファイナルファンタジーIII 背景デザイン',
+        category: 'GAME / PIXEL ART',
+        imageUrl: 'images/illustration/illust-niiya.png',
+        client: '株式会社スクウェア・エニックス',
+        year: '2023年（6ヶ月）',
+        role: 'ドット絵制作',
+        overview: 'リメイク版「ファイナルファンタジーIII」のための背景デザイン。城、船、飛空艇やバトル背景、イベント背景などを担当した。',
+        points: 'オリジナルのファミコン版ドットを比率や構成を変えずタッチを現代的にリファイン。元々のデザイナーのデザイン意図を汲んで再現するという考古学的なアプローチの仕事でした。',
+        links: []
+      })">
         <div class="work-thumb">
           <img src="images/illustration/illust-niiya.png" alt="ピクセルリマスター FF3" loading="lazy">
         </div>
