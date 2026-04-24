@@ -33,35 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       video.innerHTML = `<source src="${workData.videoUrl}" type="video/mp4">お使いのブラウザは動画タグをサポートしていません。`;
 
-      const muteBtn = document.createElement('button');
-      muteBtn.className = 'modal-mute-btn';
-      const updateMuteBtn = () => {
-        muteBtn.textContent = video.muted ? '🔇' : '🔊';
-        muteBtn.setAttribute('aria-label', video.muted ? '音声をオンにする' : '音声をオフにする');
-      };
-      updateMuteBtn();
-
-      muteBtn.addEventListener('click', () => {
-        video.muted = !video.muted;
-        localStorage.setItem('videoAudioPreference', video.muted ? 'off' : 'on');
-        updateMuteBtn();
-      });
-
       video.addEventListener('volumechange', () => {
+        localStorage.setItem('videoAudioPreference', video.muted ? 'off' : 'on');
         if (!video.muted) {
           localStorage.setItem('videoVolume', video.volume);
-          localStorage.setItem('videoAudioPreference', 'on');
-        } else {
-          localStorage.setItem('videoAudioPreference', 'off');
         }
-        updateMuteBtn();
       });
 
-      const wrapper = document.createElement('div');
-      wrapper.className = 'modal-video-wrapper';
-      wrapper.appendChild(video);
-      wrapper.appendChild(muteBtn);
-      mediaContainer.appendChild(wrapper);
+      mediaContainer.appendChild(video);
     } else if (workData.imageUrl) {
       // 画像の場合
       const img = document.createElement('img');
