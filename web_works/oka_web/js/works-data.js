@@ -159,7 +159,7 @@ const worksData = [
   {
     cardClasses: [],
     dataCategory: 'game',
-    thumbSrc: 'images/FF9line01.jpg',
+    thumbSrc: 'images/FF9_01.JPG',
     thumbAlt: 'ファイナルファンタジーIX',
     slideshowImages: null,
     workCat: 'GAME / CONCEPT ART',
@@ -170,7 +170,13 @@ const worksData = [
     modal: {
       title: 'ファイナルファンタジーIX 背景スケッチ',
       category: 'GAME / CONCEPT ART',
-      imageUrl: 'images/FF9line01.jpg',
+      images: [
+        'images/FF9_01.JPG',
+        'images/FF9_02.JPG',
+        'images/FF9_03.JPG',
+        'images/FF9_04.png',
+        'images/ff9_05.jpg'
+      ],
       client: '株式会社スクウェア',
       year: '1998〜2000年',
       role: '2Dセクションリーダー・背景スケッチ',
@@ -210,7 +216,7 @@ const worksData = [
   {
     cardClasses: [],
     dataCategory: 'game',
-    thumbSrc: 'images/',
+    thumbSrc: 'images/FFPR_01.png',
     thumbAlt: 'ピクセルリマスター FF3',
     slideshowImages: null,
     workCat: 'GAME / PIXEL ART',
@@ -221,7 +227,12 @@ const worksData = [
     modal: {
       title: 'ピクセルリマスター ファイナルファンタジーIII 背景デザイン',
       category: 'GAME / PIXEL ART',
-      imageUrl: 'images/FFPR_01.png',
+      images: [
+        'images/FFPR_01.png',
+        'images/FFPR_02.png',
+        'images/FFPR_03.png',
+        'images/FFPR04.png'
+      ],
       client: '株式会社スクウェア・エニックス',
       year: '2023年（6ヶ月）',
       role: 'ドット絵制作',
