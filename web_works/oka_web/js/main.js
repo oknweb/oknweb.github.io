@@ -65,18 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // キーボードアクセシビリティ: onclick付き作品カードをTabキー・Enterで操作可能に
-  document.querySelectorAll('.work-card[onclick]').forEach(card => {
-    card.setAttribute('tabindex', '0');
-    card.setAttribute('role', 'button');
-    card.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        card.click();
-      }
-    });
-  });
-
   // Slideshow for vertical work card
   const slideshowImages = document.querySelectorAll('.slideshow-image');
   if (slideshowImages.length > 0) {
