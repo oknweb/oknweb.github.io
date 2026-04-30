@@ -64,7 +64,11 @@ const worksData = [
     modal: {
       title: 'すばらしきこのせかい ゲームタイトルロゴ',
       category: 'GAME / LOGO DESIGN',
-      imageUrl: 'images/logos/subarashiki-logo.jpg',
+      images: [
+        'images/stride_01.jpg',
+        'images/stride_02.png',
+        'images/stride_03.png',
+      ],
       client: '株式会社スクウェア・エニックス',
       year: '2006年',
       role: 'デザイン',
