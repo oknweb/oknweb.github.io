@@ -27,36 +27,6 @@ const worksData = [
     }
   },
   {
-    cardClasses: ['work-card-slideshow', 'work-card-tall'],
-    dataCategory: 'video',
-    thumbSrc: null,
-    thumbAlt: null,
-    slideshowImages: [
-      { src: 'images/syoka-web-Images/cafe-sora-cap01.png', alt: 'カフェSORA 1' },
-      { src: 'images/syoka-web-Images/cafe-sora-cap02.png', alt: 'カフェSORA 2' },
-      { src: 'images/syoka-web-Images/cafe-sora-cap03.png', alt: 'カフェSORA 3' }
-    ],
-    workCat: 'VIDEO / MARKETING',
-    workTitle: 'カフェSORA Instagram向けPV',
-    workNote: '2025年 / AI活用・作曲・編集',
-    showOnIndex: true,
-    indexOrder: 2,
-    modal: {
-      title: 'カフェSORA Instagram向けPV',
-      category: 'VIDEO / MARKETING',
-      videoUrl: 'MarketingMovies/CafeSORA_PV.mp4',
-      client: 'Webデザインスクール課題',
-      year: '2025年（約1週間）',
-      role: '各種デザイン、素材作成、作曲、編集',
-      tools: 'Canva、Figma、Grok、Suno',
-      overview: '宇宙(SORA)をイメージした都会のユニークなカフェSORAのためのムービーを作成した。マーケティング授業の課題として設定された架空の喫茶店のInstagram向けPV。Z世代がメインターゲットのため、生成AIを使用したアニメーション表現でSORAの持つユニークな世界観が伝わるよう制作した。',
-      points: '曲や詩に合わせてシーンを構成。青空、夕焼け、星空。それぞれを見上げる人々がカフェSORAに集うイメージをテンポよく構成した。',
-      links: [
-        { label: 'プレゼン資料PDF', url: 'MarketingPDF/CafeSORA_presentation01.pdf' }
-      ]
-    }
-  },
-  {
     cardClasses: [],
     dataCategory: 'logo',
     thumbSrc: 'images/logos/cafe-sora-eyecatch.jpg',
@@ -105,27 +75,33 @@ const worksData = [
     }
   },
   {
-    cardClasses: [],
-    dataCategory: 'game',
-    thumbSrc: 'images/FF9line01.jpg',
-    thumbAlt: 'ファイナルファンタジーIX',
-    slideshowImages: null,
-    workCat: 'GAME / CONCEPT ART',
-    workTitle: 'ファイナルファンタジーIX',
-    workNote: '1998-2000年 / 2Dセクションリーダー',
+    cardClasses: ['work-card-slideshow', 'work-card-tall'],
+    dataCategory: 'video',
+    thumbSrc: null,
+    thumbAlt: null,
+    slideshowImages: [
+      { src: 'images/cafe-sora-cap01.png', alt: 'カフェSORA 1' },
+      { src: 'images/cafe-sora-cap02.png', alt: 'カフェSORA 2' },
+      { src: 'images/cafe-sora-cap03.png', alt: 'カフェSORA 3' }
+    ],
+    workCat: 'VIDEO / MARKETING',
+    workTitle: 'カフェSORA Instagram向けPV',
+    workNote: '2025年 / AI活用・作曲・編集',
     showOnIndex: true,
-    indexOrder: 5,
+    indexOrder: 2,
     modal: {
-      title: 'ファイナルファンタジーIX 背景スケッチ',
-      category: 'GAME / CONCEPT ART',
-      imageUrl: 'images/FF9line01.jpg',
-      client: '株式会社スクウェア',
-      year: '1998〜2000年',
-      role: '2Dセクションリーダー・背景スケッチ',
-      tools: '鉛筆、Photoshop',
-      overview: 'ファンタジーRPG「ファイナルファンタジーIX」のためのコンセプトアート。物語の最初の街、アレクサンドリアをメインに3D背景モデル作成のためのアートを作成した。',
-      points: '昔のディズニーのようなデフォルメのある背景作成のために試行錯誤した。海外ウケもいいように多くのファンタジーアートを参照して、架空世界に生活感や温かみが感じられるよう仕上げた。',
-      links: []
+      title: 'カフェSORA Instagram向けPV',
+      category: 'VIDEO / MARKETING',
+      videoUrl: 'MarketingMovies/CafeSORA_PV.mp4',
+      client: 'Webデザインスクール課題',
+      year: '2025年（約1週間）',
+      role: '各種デザイン、素材作成、作曲、編集',
+      tools: 'Canva、Figma、Grok、Suno',
+      overview: '宇宙(SORA)をイメージした都会のユニークなカフェSORAのためのムービーを作成した。マーケティング授業の課題として設定された架空の喫茶店のInstagram向けPV。Z世代がメインターゲットのため、生成AIを使用したアニメーション表現でSORAの持つユニークな世界観が伝わるよう制作した。',
+      points: '曲や詩に合わせてシーンを構成。青空、夕焼け、星空。それぞれを見上げる人々がカフェSORAに集うイメージをテンポよく構成した。',
+      links: [
+        { label: 'プレゼン資料PDF', url: 'MarketingPDF/CafeSORA_presentation01.pdf' }
+      ]
     }
   },
   {
@@ -183,7 +159,31 @@ const worksData = [
   {
     cardClasses: [],
     dataCategory: 'game',
-    thumbSrc: 'images/illustration/illust-robo.jpg',
+    thumbSrc: 'images/FF9line01.jpg',
+    thumbAlt: 'ファイナルファンタジーIX',
+    slideshowImages: null,
+    workCat: 'GAME / CONCEPT ART',
+    workTitle: 'ファイナルファンタジーIX',
+    workNote: '1998-2000年 / 2Dセクションリーダー',
+    showOnIndex: true,
+    indexOrder: 5,
+    modal: {
+      title: 'ファイナルファンタジーIX 背景スケッチ',
+      category: 'GAME / CONCEPT ART',
+      imageUrl: 'images/FF9line01.jpg',
+      client: '株式会社スクウェア',
+      year: '1998〜2000年',
+      role: '2Dセクションリーダー・背景スケッチ',
+      tools: '鉛筆、Photoshop',
+      overview: 'ファンタジーRPG「ファイナルファンタジーIX」のためのコンセプトアート。物語の最初の街、アレクサンドリアをメインに3D背景モデル作成のためのアートを作成した。',
+      points: '昔のディズニーのようなデフォルメのある背景作成のために試行錯誤した。海外ウケもいいように多くのファンタジーアートを参照して、架空世界に生活感や温かみが感じられるよう仕上げた。',
+      links: []
+    }
+  },
+  {
+    cardClasses: [],
+    dataCategory: 'game',
+    thumbSrc: 'images/CT_01.jpg',
     thumbAlt: 'クロノ・トリガー',
     slideshowImages: null,
     workCat: 'GAME / PIXEL ART',
@@ -194,7 +194,11 @@ const worksData = [
     modal: {
       title: 'クロノ・トリガー 背景デザイン',
       category: 'GAME / PIXEL ART',
-      imageUrl: 'images/illustration/illust-robo.jpg',
+      images: [
+        'images/CT_01.jpg',
+        'images/CT_02.jpg',
+        'images/CT_03.png'
+      ],
       client: '株式会社スクウェア',
       year: '1993年（2年間）',
       role: 'ドット絵制作',
@@ -206,7 +210,7 @@ const worksData = [
   {
     cardClasses: [],
     dataCategory: 'game',
-    thumbSrc: 'images/illustration/illust-niiya.png',
+    thumbSrc: 'images/',
     thumbAlt: 'ピクセルリマスター FF3',
     slideshowImages: null,
     workCat: 'GAME / PIXEL ART',
@@ -217,7 +221,7 @@ const worksData = [
     modal: {
       title: 'ピクセルリマスター ファイナルファンタジーIII 背景デザイン',
       category: 'GAME / PIXEL ART',
-      imageUrl: 'images/illustration/illust-niiya.png',
+      imageUrl: 'images/FFPR_01.png',
       client: '株式会社スクウェア・エニックス',
       year: '2023年（6ヶ月）',
       role: 'ドット絵制作',
