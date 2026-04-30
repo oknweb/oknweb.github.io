@@ -2,7 +2,7 @@ const worksData = [
   {
     cardClasses: [],
     dataCategory: 'web',
-    thumbSrc: 'images/syoka-web-Images/shyoko-screenshot.png',
+    thumbSrc: 'images/syoka-web-Images/shoka_ss_01.jpg',
     thumbAlt: '喫茶ショカ Webページ',
     slideshowImages: null,
     workCat: 'WEB DESIGN',
@@ -13,7 +13,7 @@ const worksData = [
     modal: {
       title: '喫茶ショカ Webページ',
       category: 'WEB DESIGN',
-      imageUrl: 'images/syoka-web-Images/shyoko-screenshot.png',
+      imageUrl: 'images/syoka-web-Images/shoka_ss_02.png',
       client: '自主制作・架空案件',
       year: '2026年（約2週間）',
       role: '企画・デザイン・コーディング',
@@ -29,7 +29,7 @@ const worksData = [
   {
     cardClasses: [],
     dataCategory: 'logo',
-    thumbSrc: 'images/logos/cafe-sora-eyecatch.jpg',
+    thumbSrc: 'images/CafeSORA_01.jpg',
     thumbAlt: 'カフェSORA ロゴ・キャラクター',
     slideshowImages: null,
     workCat: 'LOGO DESIGN',
@@ -40,7 +40,12 @@ const worksData = [
     modal: {
       title: 'カフェSora ショップロゴ・キャラクターステッカー',
       category: 'LOGO DESIGN',
-      imageUrl: 'images/logos/cafe-sora-eyecatch.jpg',
+      images: [
+        'images/CafeSORA_01.jpg',
+        'images/CafeSORA_02.jpg',
+        'images/CafeSORA_03.jpg',
+        'images/CafeSORA_04.jpg'
+      ],
       client: 'Webデザインスクール課題',
       year: '2025年',
       role: 'ショップロゴデザイン・キャラクターイラスト',
