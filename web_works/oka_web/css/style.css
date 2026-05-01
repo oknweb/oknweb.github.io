@@ -1393,6 +1393,7 @@ footer {
   .works-all-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    grid-auto-rows: auto;
   }
   .works-all-grid .work-card-tall {
     grid-row: auto;
