@@ -1845,6 +1845,12 @@ footer {
   grid-row: span 2;
 }
 
+.works-all-grid .work-card-tall .work-thumb {
+  flex: none;
+  height: auto;
+  aspect-ratio: 5/8 !important;
+}
+
 /* Works all grid layout adjustment */
 .works-all-grid {
   grid-auto-flow: dense;
