@@ -115,42 +115,6 @@
     --space-3xl: clamp(4rem, 3.6rem + 2vw, 6rem);
     /* 64px → 96px */
 
-    /* 上下パディング */
-    .py-xs {
-        padding-top: var(--space-xs);
-        padding-bottom: var(--space-xs);
-    }
-
-    .py-sm {
-        padding-top: var(--space-sm);
-        padding-bottom: var(--space-sm);
-    }
-
-    .py-md {
-        padding-top: var(--space-md);
-        padding-bottom: var(--space-md);
-    }
-
-    .py-lg {
-        padding-top: var(--space-lg);
-        padding-bottom: var(--space-lg);
-    }
-
-    .py-xl {
-        padding-top: var(--space-xl);
-        padding-bottom: var(--space-xl);
-    }
-
-    .py-2xl {
-        padding-top: var(--space-2xl);
-        padding-bottom: var(--space-2xl);
-    }
-
-    .py-3xl {
-        padding-top: var(--space-3xl);
-        padding-bottom: var(--space-3xl);
-    }
-
     /* --- レイアウト --- */
     /* コンテナ幅 */
     --container-max: 1140px;

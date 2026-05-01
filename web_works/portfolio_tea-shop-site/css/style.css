@@ -61,7 +61,7 @@ h4 {
 }
 
 .photo {
-    display: black;
+    display: block;
     margin: 0 auto 3rem auto;
     width: auto;
     height: 200px;
@@ -71,7 +71,7 @@ h4 {
 }
 
 .photo-v {
-    display: black;
+    display: block;
     margin: 2rem auto 1.5rem auto;
     width: 200px;
     height: auto;
@@ -412,7 +412,7 @@ section h2 {
     font-weight: 600;
     /* SemiBold */
     font-size: var(--fs-xl);
-    line-height: var(lh-tight);
+    line-height: var(--lh-tight);
     margin-bottom: 2rem;
 
 }
@@ -530,6 +530,11 @@ nav {
     width: 24px;
     height: 24px;
     z-index: 200;
+    appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    padding: 0;
 }
 
 .hamburger.open::before {
@@ -1194,6 +1199,7 @@ nav {
 /* アクセスエリア */
 .info-block {
     width: 500px;
+    max-width: 100%;
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
 }
@@ -1437,4 +1443,12 @@ footer {
 footer p {
     font-size: 0.85rem;
     letter-spacing: 0.1em;
+}
+
+/* キーボードフォーカスアウトライン */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: 2px;
 }

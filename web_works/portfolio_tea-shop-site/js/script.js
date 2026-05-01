@@ -14,33 +14,31 @@ if (window.innerWidth >= 1024) {
 
 // ハンバーガーメニュー
 $(function () {
+    function closeMenu() {
+        $('#hamburger').removeClass("open").attr('aria-expanded', 'false');
+        $('#header-menu').fadeOut(300);
+        $('body').css('overflow', '');
+    }
+
     // ハンバーガーボタンクリック
     $('#hamburger').on('click', function () {
         $('#hamburger').toggleClass("open");
+        const isOpen = $('#hamburger').hasClass('open');
+        $('#hamburger').attr('aria-expanded', isOpen ? 'true' : 'false');
         $('#header-menu').fadeToggle(300);
-
-        // bodyのスクロールを制御
-        if ($('#hamburger').hasClass('open')) {
-            $('body').css('overflow', 'hidden'); // スクロール無効
-        } else {
-            $('body').css('overflow', ''); // スクロール有効
-        }
+        $('body').css('overflow', isOpen ? 'hidden' : '');
     });
 
     // モーダル背景クリックで閉じる
     $('#header-menu').on('click', function (e) {
         if (!$(e.target).closest('a').length) {
-            $('#hamburger').removeClass("open");
-            $('#header-menu').fadeOut(300);
-            $('body').css('overflow', ''); // スクロール有効に戻す
+            closeMenu();
         }
     });
 
     // メニューリンククリックでモーダルを閉じる
     $('#header-menu a').on('click', function () {
-        $('#hamburger').removeClass("open");
-        $('#header-menu').fadeOut(300);
-        $('body').css('overflow', ''); // スクロール有効に戻す
+        closeMenu();
     });
 });
 
@@ -66,13 +64,15 @@ $('.slick01').slick({
                 arrows: false,
                 slidesToShow: 1,
                 slidesToScroll: 1,
-            },
+            }
+        },
+        {
             breakpoint: 380,
             settings: {
                 arrows: false,
                 slidesToShow: 2,
                 slidesToScroll: 1,
-            },
+            }
         }
     ]
 });

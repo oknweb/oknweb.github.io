@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>喫茶 ショカ Syoka - こだわりの書籍喫茶</title>
+    <meta name="description" content="東京都多摩市にある席数10の小さな書棚喫茶。元図書館司書の店主が選んだ本とこだわりの紅茶・コーヒーを楽しめる静かな読書空間です。">
+    <meta property="og:title" content="喫茶 ショカ Syoka - こだわりの書籍喫茶">
+    <meta property="og:description" content="東京都多摩市にある席数10の小さな書棚喫茶。元司書の店主が選んだ本と紅茶・コーヒーを楽しめる空間です。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./images/slide1.jpg">
     <link rel="icon" href="images/icon-tea.svg" type="image/svg+xml">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,12 +22,11 @@
 
     <link rel="stylesheet" href="css/ress.min.css">
     <link rel="stylesheet" type="text/css" href="css/slick.css" />
-    <link rel="stylesheet" href="slick/slick-theme.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body id="top">
     <div class="wrap">
         <!-- PC左側: ビジュアルセクション -->
         <div class="visual-area pc-only-lg">
@@ -38,11 +42,11 @@
         <div class="content-wrapper">
             <!-- モバイルヘッダー -->
             <header class="mobile-header sp-only-lg">
-                <a href="#" class="header-icon">
-                    <img class="mobile-cap-icon" src="./images/icon-tea.png">
+                <a href="#top" class="header-icon">
+                    <img class="mobile-cap-icon" src="./images/icon-tea.png" alt="喫茶ショカ アイコン">
                     <div class="mobile-logo">Syoka</div>
                 </a>
-                <a href="#" class="mobile-logo-sub">喫茶 ショカ</a>
+                <a href="#top" class="mobile-logo-sub">喫茶 ショカ</a>
 
             </header>
 
@@ -60,7 +64,7 @@
                 <!-- ハンバーガーメニュー -->
                 <nav id="header-menu" class="header-menu sp-only-lg">
                     <ul>
-                        <li><a href="#">TOP</a></li>
+                        <li><a href="#top">TOP</a></li>
                         <li><a href="#about">ABOUT</a></li>
                         <li><a href="#menu">MENU</a></li>
                         <li><a href="#books">BOOKS</a></li>
@@ -69,19 +73,19 @@
                         <li><a href="https://form.run/@okaniwa--kGTGecqEwLllQ4KafOOL">CONTACT</a></li>
                     </ul>
                 </nav>
-                <div id="hamburger" class="hamburger">
+                <button id="hamburger" class="hamburger" aria-label="ナビゲーションメニューを開く" aria-expanded="false">
                     <span></span><span></span><span></span>
-                </div>
+                </button>
 
                 <!-- フォトスライドセクション・カフェ -->
                 <section class="photo-slider">
                     <ul class="slick01">
-                        <li><img alt="画像1" src="./images/photo1.jpg" /></li>
-                        <li><img alt="画像2" src="./images/photo2.jpg" /></li>
-                        <li><img alt="画像3" src="./images/photo3.jpg" /></li>
-                        <li><img alt="画像1" src="./images/photo1.jpg" /></li>
-                        <li><img alt="画像2" src="./images/photo2.jpg" /></li>
-                        <li><img alt="画像3" src="./images/photo3.jpg" /></li>
+                        <li><img alt="ショカ 店内の雰囲気" src="./images/photo1.jpg" /></li>
+                        <li><img alt="ショカ こだわりの紅茶" src="./images/photo2.jpg" /></li>
+                        <li><img alt="ショカ 書棚とお茶" src="./images/photo3.jpg" /></li>
+                        <li><img alt="" src="./images/photo1.jpg" aria-hidden="true" /></li>
+                        <li><img alt="" src="./images/photo2.jpg" aria-hidden="true" /></li>
+                        <li><img alt="" src="./images/photo3.jpg" aria-hidden="true" /></li>
                     </ul>
                 </section>
                 <!-- ABOUTセクション -->
@@ -348,9 +352,6 @@
                             <br>メニューは季節により変更する場合があります
                         </p>
                     </div>
-                    <!-- <button class="view-more">
-                        <a href="#" class="btn-cup">メニューをすべて見る</a>
-                    </button> -->
                 </section>
 
                 <!-- BOOKSセクション -->
@@ -468,12 +469,12 @@
                 <!-- フォトスライドセクション・ブック -->
                 <section class="photo-slider">
                     <ul class="slick01">
-                        <li><img alt="画像1" src="./images/photo-b1.jpg" /></li>
-                        <li><img alt="画像2" src="./images/photo-b2.jpg" /></li>
-                        <li><img alt="画像3" src="./images/photo-b3.jpg" /></li>
-                        <li><img alt="画像1" src="./images/photo-b4.jpg" /></li>
-                        <li><img alt="画像2" src="./images/photo-b5.jpg" /></li>
-                        <li><img alt="画像3" src="./images/photo-b6.jpg" /></li>
+                        <li><img alt="ショカ 店内の本棚" src="./images/photo-b1.jpg" /></li>
+                        <li><img alt="ショカ 本とお茶" src="./images/photo-b2.jpg" /></li>
+                        <li><img alt="ショカ おすすめの一冊" src="./images/photo-b3.jpg" /></li>
+                        <li><img alt="ショカ 蔵書の様子" src="./images/photo-b4.jpg" /></li>
+                        <li><img alt="ショカ 読書タイム" src="./images/photo-b5.jpg" /></li>
+                        <li><img alt="ショカ ゆったりとした空間" src="./images/photo-b6.jpg" /></li>
                     </ul>
                 </section>
                 <!-- SHOPセクション -->
@@ -644,6 +645,7 @@
                             </div>
                         </div>
                         <div class="gmap"><iframe
+                                title="喫茶ショカの店舗位置を示す地図"
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.9661343201174!2d139.45481121664244!3d35.628561373025384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018fb5248d196bd%3A0x76611e6bc3fd07a4!2z44CSMjA2LTAwMjMg5p2x5Lqs6YO95aSa5pGp5biC6aas5byV5rKi77yS5LiB55uu!5e0!3m2!1sja!2sjp!4v1769705324811!5m2!1sja!2sjp"
                                 width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade"></iframe></div>
@@ -672,13 +674,13 @@
         <div class="nav-area-wrapper">
             <aside class="nav-area pc-only-lg">
                 <nav class="main-nav">
-                    <a href="#" class="logo-nav">
-                        <img src="./images/icon-tea.png">
+                    <a href="#top" class="logo-nav">
+                        <img src="./images/icon-tea.png" alt="喫茶ショカ アイコン">
                         <p class="small-font">書籍喫茶 ショカ</p>
                     </a>
                     <div class="small-font-bold">多摩市馬引沢<br>火曜 水曜 定休</div>
                     <ul class="link-menu">
-                        <li><a href="#">TOP</a></li>
+                        <li><a href="#top">TOP</a></li>
                         <li><a href="#about">ABOUT</a></li>
                         <li><a href="#menu">MENU</a></li>
                         <li><a href="#books">BOOKS</a></li>
@@ -687,20 +689,20 @@
                     </ul>
                     <ul class="social-links">
                         <li>
-                            <a href="#">
-                                <img class="sns-icon-insta" src="./images/Instagram_Glyph_Gradient.png" alt="Instagram">
+                            <a href="#" aria-label="Instagram（準備中）">
+                                <img class="sns-icon-insta" src="./images/Instagram_Glyph_Gradient.png" alt="">
                                 <span class="sns-name">Instagram</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <img class="sns-icon-x" src="./images/X-logo-black.png" alt="X">
+                            <a href="#" aria-label="X（準備中）">
+                                <img class="sns-icon-x" src="./images/X-logo-black.png" alt="">
                                 <span class="sns-name">X</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <img class="sns-icon-note" src="./images/note-logo.png" alt="note">
+                            <a href="#" aria-label="note（準備中）">
+                                <img class="sns-icon-note" src="./images/note-logo.png" alt="">
                                 <span class="sns-name">note</span>
                             </a>
                         </li>
@@ -713,7 +715,7 @@
         </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/slick.min.js"></script>
     <script src="js/script.js"></script>
 </body>
