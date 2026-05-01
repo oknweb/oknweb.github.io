@@ -41,17 +41,16 @@ body::before {
 }
 
 /* iOS 26 Liquid Glass: URL バー透過対策（記事参照: mix-blend-mode: lighten hack）
-   黒背景 + lighten = 視覚的に透明だが iOS 26 のガラス描画に影響する */
+   5pxの微小要素+mix-blend-mode:lightenでiOS 26ガラス処理を無効化するハック */
 .ios-top-cover {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: env(safe-area-inset-top, 0px);
-  min-height: 5px;
+  height: 5px;
   background: #000;
   mix-blend-mode: lighten;
-  z-index: 501;
+  z-index: 9999;
   pointer-events: none;
 }
 
