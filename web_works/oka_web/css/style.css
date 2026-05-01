@@ -117,8 +117,7 @@ nav.scrolled {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: url('../images/hero.jpg');
-  /* ← 画像をimages/hero.jpgに配置 */
+  background-image: url('../images/hero_01.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
