@@ -2,7 +2,7 @@ const worksData = [
   {
     cardClasses: [],
     dataCategory: 'web',
-    thumbSrc: 'images/syoka-web-Images/shoka_ss_01.jpg',
+    thumbSrc: 'images/syoka-web-Images/shyoko-screenshot.png',
     thumbAlt: '喫茶ショカ Webページ',
     slideshowImages: null,
     workCat: 'WEB DESIGN',
@@ -13,7 +13,7 @@ const worksData = [
     modal: {
       title: '喫茶ショカ Webページ',
       category: 'WEB DESIGN',
-      imageUrl: 'images/syoka-web-Images/shoka_ss_02.png',
+      imageUrl: 'images/syoka-web-Images/shoka_ss_01.jpg',
       client: '自主制作・架空案件',
       year: '2026年（約2週間）',
       role: '企画・デザイン・コーディング',
@@ -38,19 +38,14 @@ const worksData = [
     showOnIndex: true,
     indexOrder: 3,
     modal: {
-      title: 'カフェSora ショップロゴ・キャラクターステッカー',
+      title: 'カフェSORA ショップロゴ・キャラクターステッカー',
       category: 'LOGO DESIGN',
-      images: [
-        'images/CafeSORA_01.jpg',
-        'images/CafeSORA_02.jpg',
-        'images/CafeSORA_03.jpg',
-        'images/CafeSORA_04.jpg'
-      ],
+      imageUrl: 'images/logos/cafe-sora-eyecatch.jpg',
       client: 'Webデザインスクール課題',
       year: '2025年',
       role: 'ショップロゴデザイン・キャラクターイラスト',
       tools: 'CLIP STUDIO PAINT、Figma',
-      overview: '宇宙(Sora)をイメージした都会のユニークなカフェSoraのためのロゴデザインを制作した。マーケティング授業の課題として設定された架空の喫茶店のためのデザイン。',
+      overview: '宇宙(SORA)をイメージした都会のユニークなカフェSoraのためのロゴデザインを制作した。マーケティング授業の課題として設定された架空の喫茶店のためのデザイン。',
       points: 'Z世代へ向けた、ちょっと可愛くわかりやすくポップなロゴ。イラストテイストのコーヒーを持った宇宙飛行士のステッカーデザイン。Webサイトや名刺の他、マグカップやエコバッグなどのノベルティ展開にも使用する想定。',
       links: []
     }
