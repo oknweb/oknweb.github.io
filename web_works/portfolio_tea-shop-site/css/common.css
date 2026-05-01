@@ -606,6 +606,16 @@ p {
     padding-bottom: var(--space-xl);
 }
 
+.py-2xl {
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+}
+
+.py-3xl {
+    padding-top: var(--space-3xl);
+    padding-bottom: var(--space-3xl);
+}
+
 
 /* ============================================
    9. Typography（文字に関するスタイル）
