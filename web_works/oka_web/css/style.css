@@ -1848,7 +1848,7 @@ footer {
 .works-all-grid .work-card-tall .work-thumb {
   flex: none;
   height: auto;
-  aspect-ratio: 5/8 !important;
+  aspect-ratio: 3/4 !important;
 }
 
 /* Works all grid layout adjustment */
