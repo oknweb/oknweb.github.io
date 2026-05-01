@@ -491,8 +491,6 @@ section {
   width: 100%;
   aspect-ratio: 4/3;
   background: var(--sub);
-  display: grid;
-  place-items: center;
   position: relative;
   overflow: hidden;
 }
@@ -594,10 +592,13 @@ section {
 }
 
 .work-thumb img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
   display: block;
   filter: saturate(0.3) brightness(1.28);
   transition: transform 1.4s cubic-bezier(0.23, 1, 0.32, 1),
@@ -1200,6 +1201,7 @@ footer {
     background: none;
     border: none;
     padding: 0;
+    outline: none;
   }
 
   .hamburger span {
@@ -1616,6 +1618,7 @@ footer {
 
 .modal-thumbnails {
   display: flex;
+  justify-content: center;
   gap: 0.5rem;
   overflow-x: auto;
   width: 100%;
@@ -1788,7 +1791,7 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
   opacity: 0;
   transition: opacity 1.5s ease-in-out;
 }

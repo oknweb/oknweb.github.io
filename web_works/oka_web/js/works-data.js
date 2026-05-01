@@ -40,7 +40,12 @@ const worksData = [
     modal: {
       title: 'カフェSORA ショップロゴ・キャラクターステッカー',
       category: 'LOGO DESIGN',
-      imageUrl: 'images/logos/cafe-sora-eyecatch.jpg',
+      images: [
+        'images/CafeSORA_01.jpg',
+        'images/CafeSORA_02.jpg',
+        'images/CafeSORA_03.jpg',
+        'images/CafeSORA_04.jpg'
+      ],
       client: 'Webデザインスクール課題',
       year: '2025年',
       role: 'ショップロゴデザイン・キャラクターイラスト',
