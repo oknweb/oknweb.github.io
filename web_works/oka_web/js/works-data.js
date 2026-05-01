@@ -13,7 +13,7 @@ const worksData = [
     modal: {
       title: '喫茶ショカ Webページ',
       category: 'WEB DESIGN',
-      imageUrl: 'images/syoka-web-Images/shoka_ss_02.png',
+      images: ['images/syoka-web-Images/shoka_ss_02.png'],
       client: '自主制作（架空案件）',
       year: '2026年（約2週間）',
       role: '企画・デザイン・コーディング',

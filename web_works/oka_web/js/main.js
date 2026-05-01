@@ -65,15 +65,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Slideshow for vertical work card
-  const slideshowImages = document.querySelectorAll('.slideshow-image');
-  if (slideshowImages.length > 0) {
+  // Slideshow: カードごとに独立したインターバルで制御
+  document.querySelectorAll('.work-thumb-slideshow').forEach(thumb => {
+    const images = thumb.querySelectorAll('.slideshow-image');
+    if (images.length <= 1) return;
     let currentIndex = 0;
     setInterval(() => {
-      slideshowImages[currentIndex].classList.remove('active');
-      currentIndex = (currentIndex + 1) % slideshowImages.length;
-      slideshowImages[currentIndex].classList.add('active');
-    }, 3000); // 3秒ごとに切り替え
-  }
+      images[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add('active');
+    }, 3000);
+  });
 
 }); // DOMContentLoaded

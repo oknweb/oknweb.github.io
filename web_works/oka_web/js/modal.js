@@ -1,6 +1,14 @@
 // Work detail modal functionality
+
+function getStorage(key) {
+  try { return localStorage.getItem(key); } catch (e) { return null; }
+}
+function setStorage(key, value) {
+  try { localStorage.setItem(key, value); } catch (e) { /* private mode */ }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  
+
   const modal = document.getElementById('workModal');
   const modalClose = document.getElementById('modalClose');
   const modalOverlay = document.getElementById('modalOverlay');
@@ -22,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (workData.videoUrl) {
       modalBody.classList.add('modal-body--video');
-      const audioPreference = localStorage.getItem('videoAudioPreference');
+      const audioPreference = getStorage('videoAudioPreference');
 
       const video = document.createElement('video');
       video.controls = true;
@@ -31,15 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
       video.disablePictureInPicture = true;
       video.muted = audioPreference !== 'on';
       if (!video.muted) {
-        video.volume = parseFloat(localStorage.getItem('videoVolume') || '1.0');
+        video.volume = parseFloat(getStorage('videoVolume') || '1.0');
       }
       video.innerHTML = `<source src="${workData.videoUrl}" type="video/mp4">お使いのブラウザは動画タグをサポートしていません。`;
 
       // ネイティブコントロールで変更された音量・ミュート設定を保存
       video.addEventListener('volumechange', () => {
-        localStorage.setItem('videoAudioPreference', video.muted ? 'off' : 'on');
+        setStorage('videoAudioPreference', video.muted ? 'off' : 'on');
         if (!video.muted) {
-          localStorage.setItem('videoVolume', video.volume);
+          setStorage('videoVolume', video.volume);
         }
       });
 
@@ -69,14 +77,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         onBtn.addEventListener('click', () => {
           video.muted = false;
-          localStorage.setItem('videoAudioPreference', 'on');
+          setStorage('videoAudioPreference', 'on');
           dialog.remove();
           video.play();
         });
 
         offBtn.addEventListener('click', () => {
           video.muted = true;
-          localStorage.setItem('videoAudioPreference', 'off');
+          setStorage('videoAudioPreference', 'off');
           dialog.remove();
           video.play();
         });

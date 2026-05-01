@@ -376,28 +376,6 @@ section {
   border: 1px solid rgba(44, 110, 106, 0.3);
 }
 
-.about-frame-label {
-  position: absolute;
-  bottom: -2rem;
-  right: 0;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.3em;
-  color: var(--text-sub);
-  font-style: italic;
-}
-
-.about-placeholder {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.3em;
-  color: var(--text-sub);
-  font-style: italic;
-}
 
 .about-name {
   font-family: 'Cormorant Garamond', serif;
@@ -1860,4 +1838,17 @@ footer {
   opacity: 1;
   transform: translateY(0);
   transition: opacity 0.3s, transform 0.3s;
+}
+
+/* index.html のworksセクション内フィルターは非表示 */
+#works .works-filter {
+  display: none;
+}
+
+/* キーボードフォーカスアウトライン（全体） */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
