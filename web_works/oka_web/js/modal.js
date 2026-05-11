@@ -180,6 +180,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
     
+    // コピーライト
+    const copyright = document.getElementById('modalCopyright');
+    if (copyright) {
+      copyright.textContent = workData.copyright || '';
+      copyright.style.display = workData.copyright ? '' : 'none';
+    }
+
     // モーダルを表示
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';

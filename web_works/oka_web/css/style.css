@@ -172,6 +172,10 @@ nav.scrolled {
   color: var(--accent);
 }
 
+.sp-br {
+  display: none;
+}
+
 .hero-sub {
   display: flex;
   flex-direction: column;
@@ -756,7 +760,7 @@ section {
 }
 
 #works-page {
-  padding: 6rem 4rem;
+  padding: 8rem 4rem;
   background: var(--base);
 }
 
@@ -771,8 +775,8 @@ section {
   gap: 2rem;
   max-width: 1000px;
   margin: 0 auto;
-  /* 通常カード1行分の高さ = thumb(4/3×列幅) + work-info(約90px) */
-  grid-auto-rows: calc((min(100vw - 8rem, 1000px) - 4rem) / 4 + 90px);
+  /* 通常カード1行分の高さ = thumb(4/3×列幅) + work-info(約110px) */
+  grid-auto-rows: calc((min(100vw - 8rem, 1000px) - 4rem) / 4 + 110px);
 }
 
 .works-all-grid .work-card {
@@ -1290,7 +1294,7 @@ footer {
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
     /* 2列時: セクション横padding 2rem×2 + gap 1.5rem */
-    grid-auto-rows: calc((100vw - 5.5rem) * 0.375 + 90px);
+    grid-auto-rows: calc((100vw - 5.5rem) * 0.375 + 110px);
   }
 
   .works-grid .work-card:nth-child(2) {
@@ -1367,6 +1371,10 @@ footer {
 
 /* 640px以下: works-all-grid を1カラムに、縦長カードのスパンを解除 */
 @media (max-width: 640px) {
+  .sp-br {
+    display: inline;
+  }
+
   .works-all-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -1717,6 +1725,17 @@ footer {
 .modal-link-btn:hover {
   background: var(--accent-light);
   transform: translateY(-2px);
+}
+
+.modal-copyright {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  color: var(--text-sub);
+  opacity: 0.6;
+  text-align: right;
 }
 
 /* Modal responsive */
