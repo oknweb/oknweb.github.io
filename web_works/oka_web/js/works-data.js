@@ -63,7 +63,7 @@ const worksData = [
     slideshowImages: null,
     workCat: 'GAME / LOGO DESIGN',
     workTitle: 'すばらしきこのせかい',
-    workNote: '2006年 / スクウェア・エニックス',
+    workNote: '2006年 / ロゴデザイン ピクセルアート',
     showOnIndex: true,
     indexOrder: 4,
     modal: {
@@ -78,7 +78,7 @@ const worksData = [
       year: '2006年',
       role: 'デザイン',
       tools: 'Photoshop',
-      overview: 'ニンテンドーDS向けRPG「すばらしきこのせかい」のメインロゴデザインを担当。現代の渋谷を舞台としたゲームの世界観に合わせてストリートファッションテイストで構成した。ゲーム内のドット絵作成とキャラクター関連のドットデザイン監修も行った',
+      overview: 'ニンテンドーDS向けRPG「すばらしきこのせかい」のメインロゴデザインを開発。現代の渋谷を舞台としたゲームの世界観に合わせてストリートファッションテイストで構成しました。ゲーム内のドット絵作成とキャラクター関連のドットデザイン監修も行いました。',
       points: '',
       links: [],
       copyright: '© 株式会社スクウェア・エニックス'
@@ -233,7 +233,7 @@ const worksData = [
     slideshowImages: null,
     workCat: 'GAME / PIXEL ART',
     workTitle: 'ピクセルリマスター FF3',
-    workNote: '2023年 / 背景デザイン',
+    workNote: '2023年 / 背景デザイン・ドット絵',
     showOnIndex: false,
     indexOrder: null,
     modal: {
@@ -249,7 +249,7 @@ const worksData = [
       year: '2023年（6ヶ月）',
       role: 'ドット絵制作',
       overview: 'リメイク版「ファイナルファンタジーIII」のための背景デザイン。城、船、飛空艇やバトル背景、イベント背景などを担当した。',
-      points: 'オリジナルのファミコン版ドットを比率や構成を変えずタッチを現代的にリファイン。元々のデザイナーのデザイン意図を汲んで再現するという考古学的なアプローチの仕事でした。',
+      points: 'オリジナルのファミコン版ドットを比率や構成を変えずタッチを現代的にリファイン。ファミコン版のデザイナーのデザイン意図を汲んでスーパーファミコン後期のテイストで再現する、という考古学的なアプローチの仕事でした。',
       links: [],
       copyright: '© 株式会社スクウェア・エニックス'
     }

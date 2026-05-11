@@ -176,6 +176,10 @@ nav.scrolled {
   display: none;
 }
 
+.pc-br {
+  display: inline;
+}
+
 .hero-sub {
   display: flex;
   flex-direction: column;
@@ -1282,6 +1286,10 @@ footer {
     gap: 3rem;
   }
 
+  .about-frame {
+    max-width: 260px;
+  }
+
   .works-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1346,10 +1354,12 @@ footer {
     flex-direction: column;
     gap: 2rem;
     text-align: center;
+    padding: 2.5rem 1.5rem;
   }
 
   .footer-nav {
     justify-content: center;
+    gap: 1rem;
   }
 
   .works-page-header {
@@ -1373,6 +1383,10 @@ footer {
 @media (max-width: 640px) {
   .sp-br {
     display: inline;
+  }
+
+  .pc-br {
+    display: none;
   }
 
   .works-all-grid {
