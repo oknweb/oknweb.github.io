@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    font-family: 'Shippori Mincho', serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 78px 1fr;
+    min-height: 100vh;
+}
+
+.side-nav {
+    position: fixed;
+    width: 78px;
+    height: 100vh;
+    background-color: #72B649;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+}
+
+.side-nav-text {
+    writing-mode: vertical-rl;
+    color: #ffffff;
+}
+
+.nav-mark {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-mark img {
+    width: 48px;
+}
+
+.nav-mark figcaption {
+    font-size: 0.8rem;
+    color: #ffffff;
+    writing-mode: horizontal-tb;
+    white-space: nowrap;
+}
+
+.site-title {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
