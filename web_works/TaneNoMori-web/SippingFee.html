@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>配送料金表</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --ink: #1a1a2e;
+      --ink-light: #4a4a6a;
+      --accent: #2d6a4f;
+      --accent-light: #52b788;
+      --accent-pale: #d8f3dc;
+      --rule: #b7e4c7;
+      --bg: #f8faf9;
+      --white: #ffffff;
+      --price-col: #1b4332;
+    }
+
+    body {
+      font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "YuGothic", "Meiryo", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      padding: 3rem 1.5rem;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .header {
+      margin-bottom: 2.5rem;
+      border-left: 4px solid var(--accent-light);
+      padding-left: 1rem;
+    }
+
+    .header h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: 0.04em;
+    }
+
+    .header .subtitle {
+      margin-top: 0.4rem;
+      font-size: 0.85rem;
+      color: var(--ink-light);
+      letter-spacing: 0.02em;
+    }
+
+    .header .date {
+      margin-top: 0.35rem;
+      font-size: 0.78rem;
+      color: var(--ink-light);
+    }
+
+    .table-wrap {
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(45, 106, 79, 0.07);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead tr {
+      background: var(--accent);
+    }
+
+    thead th {
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 0.9rem 1.2rem;
+      text-align: left;
+    }
+
+    thead th:last-child {
+      text-align: right;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid var(--rule);
+      transition: background 0.15s;
+      background: var(--white);
+    }
+
+    tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    tbody tr:nth-child(even) {
+      background: var(--accent-pale);
+    }
+
+    tbody tr:hover {
+      background: #c7f0d4;
+    }
+
+    td {
+      padding: 0.85rem 1.2rem;
+      font-size: 0.92rem;
+      vertical-align: middle;
+      color: var(--ink);
+    }
+
+    .col-region {
+      width: 5.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    .col-prefs {
+      color: var(--ink-light);
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    .col-price {
+      text-align: right;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--price-col);
+    }
+
+    .note {
+      margin-top: 1.25rem;
+      padding: 0.9rem 1.1rem;
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      font-size: 0.82rem;
+      color: var(--ink-light);
+      line-height: 1.7;
+    }
+
+    .note strong {
+      color: var(--ink);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>配送料金表 <span style="font-size:0.75rem;font-weight:400;color:var(--ink-light);">（税込）</span></h1>
+      <p class="subtitle">配送料一覧となります。</p>
+      <p class="date">2026年5月現在</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>地域</th>
+            <th>都道府県</th>
+            <th>配送料</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-region">県内</td>
+            <td class="col-prefs">千葉県</td>
+            <td class="col-price">1,090円</td>
+          </tr>
+          <tr>
+            <td class="col-region">北海道</td>
+            <td class="col-prefs">北海道</td>
+            <td class="col-price">1,740円</td>
+          </tr>
+          <tr>
+            <td class="col-region">北東北</td>
+            <td class="col-prefs">青森県、岩手県、秋田県</td>
+            <td class="col-price">1,350円</td>
+          </tr>
+          <tr>
+            <td class="col-region">南東北</td>
+            <td class="col-prefs">宮城県、山形県、福島県</td>
+            <td class="col-price">1,230円</td>
+          </tr>
+          <tr>
+            <td class="col-region">関東</td>
+            <td class="col-prefs">東京都、神奈川県、埼玉県、茨城県、栃木県、群馬県、山梨県</td>
+            <td class="col-price">1,230円</td>
+          </tr>
+          <tr>
+            <td class="col-region">信越</td>
+            <td class="col-prefs">新潟県、長野県</td>
+            <td class="col-price">1,230円</td>
+          </tr>
+          <tr>
+            <td class="col-region">中部</td>
+            <td class="col-prefs">愛知県、岐阜県、静岡県、三重県</td>
+            <td class="col-price">1,230円</td>
+          </tr>
+          <tr>
+            <td class="col-region">北陸</td>
+            <td class="col-prefs">富山県、石川県、福井県</td>
+            <td class="col-price">1,230円</td>
+          </tr>
+          <tr>
+            <td class="col-region">関西</td>
+            <td class="col-prefs">大阪府、兵庫県、京都府、滋賀県、奈良県、和歌山県</td>
+            <td class="col-price">1,350円</td>
+          </tr>
+          <tr>
+            <td class="col-region">中国</td>
+            <td class="col-prefs">鳥取県、島根県、岡山県、広島県、山口県</td>
+            <td class="col-price">1,480円</td>
+          </tr>
+          <tr>
+            <td class="col-region">四国</td>
+            <td class="col-prefs">徳島県、香川県、愛媛県、高知県</td>
+            <td class="col-price">1,480円</td>
+          </tr>
+          <tr>
+            <td class="col-region">北九州</td>
+            <td class="col-prefs">福岡県、佐賀県、長崎県、熊本県</td>
+            <td class="col-price">1,740円</td>
+          </tr>
+          <tr>
+            <td class="col-region">南九州</td>
+            <td class="col-prefs">大分県、宮崎県、鹿児島県</td>
+            <td class="col-price">1,740円</td>
+          </tr>
+          <tr>
+            <td class="col-region">沖縄</td>
+            <td class="col-prefs">沖縄県</td>
+            <td class="col-price">2,070円</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">※ この商品は、3辺の大きさ <strong>75cm</strong>（30×30×15cm）以下、重さ <strong>2kg
+        以下</strong>、<strong>千葉県</strong>からの発送となります。</p>
+  </div>
+</body>
+
+</html>

@@ -4,29 +4,878 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex">
-    <title>種の杜　模型工房／製作代行</title>
+    <title>種の杜 — プラモデル制作代行サービス</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/@acab.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div class="wrapper">
-        <!-- 固定ナビ -->
-        <nav class="side-nav">
-            <h1 class="site-title side-nav-text">種の杜</h1>
-            <figure class="nav-mark">
-                <img src="images/site-mark.svg" alt="メニューボタン">
-                <figcaption>メニュー</figcaption>
-            </figure>
-            <p class="side-nav-text">模型工房／製作代行</p>
+<div class="wrapper">
+
+    <!-- ============================================================
+     SIDEBAR（style.css の構造を維持）
+============================================================ -->
+    <nav class="side-nav">
+        <h1 class="site-title side-nav-text">種の杜</h1>
+        <figure class="nav-mark" id="menuBtn">
+            <img src="images/site-mark.svg" alt="メニューボタン">
+            <figcaption>メニュー</figcaption>
+        </figure>
+        <p class="side-nav-text">模型工房／製作代行</p>
+    </nav>
+
+    <div class="main-container">
+
+    <!-- SP用 浮きメニューボタン（右上） -->
+    <button class="sp-menu-btn" id="spMenuBtn" aria-label="メニューを開く">
+        <img src="images/site-mark.svg" alt="メニューを開く">
+    </button>
+
+    <!-- ドロワーメニュー -->
+    <div class="drawer" id="drawer">
+        <div class="drawer-site-name">種の杜</div>
+        <div class="drawer-label">Page Menu</div>
+        <nav>
+            <a href="#s01">TOP</a>
+            <a href="#s03">茶種よりご挨拶</a>
+            <a href="#s02">更新情報</a>
+            <a href="#s06">3つのコース</a>
+            <a href="#s05">こだわりの塗装</a>
+            <a href="#s12">よくある質問</a>
+            <a href="#s10">納期・送料</a>
+            <a href="#s11">その他の活動</a>
+            <a href="#s10">お問い合わせ</a>
         </nav>
-        <div class="main-container">
-            <main class="content"></main>
-            <footer class="footer"></footer>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ============================================================
+     MAIN
+============================================================ -->
+    <main class="main">
+
+        <!-- S01 ファーストビュー ————————————————————————————————— -->
+        <section id="s01">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-inner">
+                <div class="hero-top">
+                    <a href="#s10" class="btn-hero-cta">お申し込みはこちら</a>
+                </div>
+                <div class="hero-body">
+                    <p class="hero-copy">あなたの<br>こうしたいを<br>形にします</p>
+                </div>
+                <div class="hero-bottom">
+                    <div class="hero-logo">
+                        <span class="hero-logo-small">模型工房</span>
+                        <span class="hero-logo-name">種の杜</span>
+                    </div>
+                    <p class="hero-message">
+                        オリジナルカラーで作成してみたいけどきれいに塗れる自信がない<br>
+                        市販品カラーでは色が納得できない…<br>
+                        そんな「欲しい」を作るお手伝いをさせていただきます
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- S02 ブログ更新情報 ——————————————————————— 白BG -->
+        <section id="s02" class="sec sec-white">
+            <div class="eyebrow">Blog Updates</div>
+            <h2 class="sec-title">最新情報</h2>
+            <p class="sec-sub">noteブログの最新記事です。制作過程・展示会レポートなどを更新しています。</p>
+            <div class="blog-list">
+                <a href="#" class="blog-item">
+                    <span class="blog-date">2026.02.20</span>
+                    <span class="blog-title">画像を貼るテストというエントリー（検証用）</span>
+                </a>
+                <a href="#" class="blog-item">
+                    <span class="blog-date">2026.02.20</span>
+                    <span class="blog-title">観たい映画を書いてみるエントリー</span>
+                </a>
+                <a href="#" class="blog-item">
+                    <span class="blog-date">2026.02.20</span>
+                    <span class="blog-title">noteアカウント作成しました。のご挨拶</span>
+                </a>
+            </div>
+            <div class="blog-footer">
+                <a href="#" class="btn-outline">noteをもっと見る ↗</a>
+            </div>
+        </section>
+
+        <!-- S03 ご挨拶メッセージ ————————————————————— 緑BG -->
+        <section id="s03" class="sec sec-green">
+            <div class="eyebrow">Message</div>
+            <h2 class="sec-title">茶種よりご挨拶</h2>
+            <div class="greeting-area">
+                <p>
+                    はじめまして。模型工房「種の杜」の茶種と申します。<br>
+                    2021年9月よりモデラー・フィニッシャーとして活動を始め、これまで毎月1〜4体のペースで全塗装作品を製作してまいりました。
+                </p>
+                <p>
+                    キャンディ仕上げ・メタリック仕上げ、そして緑系の調色を得意としております。<br>
+                    推しキャラカラーやオリジナルカラーの再現も、可能な限り対応させていただきます。
+                </p>
+                <p>
+                    作例を見てご興味を持っていただけたようなら、ぜひお気軽に一度ご相談ください。<br>
+                    あなたの「こうしたい」を、一緒に形にしましょう。
+                </p>
+                <p class="greeting-sig">— 茶種</p>
+                <a href="#" class="btn-outline">詳しいご挨拶を読む</a>
+            </div>
+        </section>
+
+        <!-- S04 制作代行サービス紹介 ————————————————— 白BG -->
+        <section id="s04" class="sec sec-white">
+            <div class="eyebrow">Service Introduction</div>
+            <h2 class="sec-title">制作代行サービスのご案内</h2>
+            <p class="sec-sub">制作代行サービスって難しそうだと思っていませんか？ ネットのホームページの情報をさがしても……</p>
+
+            <div class="worries">
+                <div class="worry-card">
+                    <div class="worry-icon">❌</div>
+                    <div class="worry-title">仕上がりがわからない</div>
+                    <div class="worry-desc">どんなクオリティで仕上がるのか、イメージしにくい</div>
+                </div>
+                <div class="worry-card">
+                    <div class="worry-icon">❌</div>
+                    <div class="worry-title">お値段がわからない</div>
+                    <div class="worry-desc">価格が明確でなく、予算が立てられない</div>
+                </div>
+                <div class="worry-card">
+                    <div class="worry-icon">❌</div>
+                    <div class="worry-title">納期がわからない</div>
+                    <div class="worry-desc">いつ完成するのか、予定が立てられない</div>
+                </div>
+            </div>
+
+            <div class="solutions">
+                <div class="solution-card">
+                    <div class="solution-title">✅ 美しい仕上がりを</div>
+                    <div class="solution-desc">作例写真で技術力を確認できます。こだわりの塗装で、あなたの理想を実現します。</div>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-title">✅ わかりやすく</div>
+                    <div class="solution-desc">3つのコースで明確な価格例をご提示。見積もりは無料で、納得してからのお申し込みです。</div>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-title">✅ 手軽に依頼できます</div>
+                    <div class="solution-desc">フォームやLINEから気軽にご相談。お打ち合わせで細かな要望にも対応します。</div>
+                </div>
+            </div>
+
+            <p class="s04-catch">「あなたの『こうしたい』をかたちにします」</p>
+        </section>
+
+        <!-- S05 当工房が得意な3種の塗装 ——————————————— 緑BG -->
+        <section id="s05" class="sec sec-green">
+            <div class="eyebrow">Specialty Painting</div>
+            <h2 class="sec-title">当工房が得意な3種の塗装についてご紹介します</h2>
+            <div class="paint-cards">
+                <div class="paint-card">
+                    <div class="paint-photo-placeholder">作例写真</div>
+                    <div class="paint-body">
+                        <div class="paint-num">Finish 01</div>
+                        <div class="paint-heading">キャンディ仕上げとは？</div>
+                        <p class="paint-desc">
+                            つやつやな光沢感と深みのある透明感が特徴です。クリアカラーを何層にも重ねることで生まれる独特の発色と、まるで飴のような美しい輝き。光の角度によって表情が変わる、高級感あふれる仕上がりです。
+                        </p>
+                    </div>
+                </div>
+                <div class="paint-card">
+                    <div class="paint-photo-placeholder">作例写真</div>
+                    <div class="paint-body">
+                        <div class="paint-num">Finish 02</div>
+                        <div class="paint-heading">メタリック仕上げとは</div>
+                        <p class="paint-desc">
+                            メタリックの輝きと光の反射で、リアルなメカニック感を演出します。金属粒子が生み出す繊細な輝きが、プラモデルに本物の金属のような質感を与えます。高級感のある仕上がりです。</p>
+                    </div>
+                </div>
+                <div class="paint-card">
+                    <div class="paint-photo-placeholder">作例写真</div>
+                    <div class="paint-body">
+                        <div class="paint-num">Finish 03</div>
+                        <div class="paint-heading">緑系の塗装が得意</div>
+                        <p class="paint-desc">
+                            オリジナル調色と細かい色味調整で、推しカラーを再現します。深緑から明るい黄緑まで、微妙な色味の違いを表現。あなたのイメージする「その緑」を、可能な限り再現いたします。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="s05-footer">
+                <a href="#" class="btn-outline">さらに作例を見る ↗</a>
+            </div>
+        </section>
+
+        <!-- S06 選べる3つのコース ————————————————————— 白BG -->
+        <section id="s06" class="sec sec-white">
+            <div class="eyebrow">Course</div>
+            <h2 class="sec-title">選べる3つのコース</h2>
+            <p class="sec-sub">パーツ数や複雑さにより価格は変動します。気になる点は見積もり発行やお打ち合わせで解消できます。</p>
+            <div class="course-cards">
+
+                <div class="course-card">
+                    <div class="course-head">
+                        <div class="course-badge badge-easy">EASY</div>
+                        <div class="course-name">かんたんコース</div>
+                        <div class="course-tagline">「キットを送るだけで、次のステップへ」</div>
+                    </div>
+                    <div class="course-body">
+                        <div class="block-label">こんな方におすすめ</div>
+                        <div class="target-tags">
+                            <span class="target-tag">プラモデル初心者</span>
+                            <span class="target-tag">まずは完成させたい</span>
+                            <span class="target-tag">手軽に依頼したい</span>
+                        </div>
+                        <div class="block-label">内容</div>
+                        <ul class="include-list">
+                            <li>ヒケ・ゲート跡の処理</li>
+                            <li>パーティングラインの処理</li>
+                            <li>付属シールの貼り付け</li>
+                            <li>（部分塗装）色分け部分の塗装</li>
+                            <li>お好みのトップコート仕上げ</li>
+                        </ul>
+                        <div class="block-label">価格例</div>
+                        <div class="price-block">
+                            <div class="price-row"><span>HG（素組み）</span><span class="price">8,000円〜</span></div>
+                            <div class="price-row"><span>HG（部分塗装）</span><span class="price">15,000円〜</span></div>
+                            <div class="price-row"><span>MG（素組み）</span><span class="price">12,000円〜</span></div>
+                            <div class="price-row"><span>MG（部分塗装）</span><span class="price">22,000円〜</span></div>
+                        </div>
+                        <div class="duration">🕐 納期目安：<strong>2週間〜1ヶ月</strong></div>
+                    </div>
+                </div>
+
+                <div class="course-card featured">
+                    <div class="course-head">
+                        <div class="course-badge badge-std">STANDARD</div>
+                        <div class="course-name">しっかりコース</div>
+                        <div class="course-tagline">「本気の仕上がり。あなたのイメージを実現」</div>
+                    </div>
+                    <div class="course-body">
+                        <div class="block-label">こんな方におすすめ</div>
+                        <div class="target-tags">
+                            <span class="target-tag">オリジナルカラーで仕上げたい</span>
+                            <span class="target-tag">クオリティ重視</span>
+                            <span class="target-tag">推しカラー再現</span>
+                        </div>
+                        <div class="block-label">内容</div>
+                        <ul class="include-list">
+                            <li>合わせ目消し・段落ちモールド処理</li>
+                            <li>全パーツ塗装</li>
+                            <li>お好みのカラーリング</li>
+                            <li>キャンディ・メタリック仕上げ対応</li>
+                            <li>スミ入れ・ウェザリング（ご要望に応じて）</li>
+                        </ul>
+                        <div class="block-label">価格例</div>
+                        <div class="price-block">
+                            <div class="price-row"><span>HGサイズ</span><span class="price">25,000円〜</span></div>
+                            <div class="price-row"><span>MGサイズ</span><span class="price">40,000円〜</span></div>
+                            <div class="price-row"><span>PGサイズ</span><span class="price">60,000円〜</span></div>
+                            <div class="price-row"><span>ガレージキット（小）</span><span class="price">35,000円〜</span></div>
+                        </div>
+                        <div class="duration">🕐 納期目安：<strong>1〜2ヶ月</strong></div>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-head">
+                        <div class="course-badge badge-ord">ORDER MADE</div>
+                        <div class="course-name">オーダーメイドコース</div>
+                        <div class="course-tagline">「こだわりを、全部形にする」</div>
+                    </div>
+                    <div class="course-body">
+                        <div class="block-label">こんな方におすすめ</div>
+                        <div class="target-tags">
+                            <span class="target-tag">完全オリジナルで仕上げたい</span>
+                            <span class="target-tag">細部まで指定したい</span>
+                            <span class="target-tag">世界に一つだけ</span>
+                        </div>
+                        <div class="block-label">内容（しっかりコース全内容に加えて）</div>
+                        <ul class="include-list">
+                            <li>製作過程の逐次連絡・写真共有</li>
+                            <li>細かな色味調整（何度でも）</li>
+                            <li>特定部位の色変え対応</li>
+                            <li>カスタマイズ・改造対応</li>
+                        </ul>
+                        <div class="block-label">価格例</div>
+                        <div class="price-block">
+                            <div class="price-custom">
+                                <strong>個別お見積もり</strong>
+                                参考：50,000円〜150,000円
+                            </div>
+                        </div>
+                        <div class="duration">🕐 納期目安：<strong>2〜3ヶ月</strong>（内容により変動）</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="supplement">📌
+                <strong>補足事項</strong><br>こちらはほんの一例です。パーツ数や複雑さにより価格は変動します。気になる点は見積もり発行やお打ち合わせで解消できます。まずは一度ご相談ください。</div>
+            <div class="s06-cta">
+                <a href="#s10" class="btn-primary">フォームから相談する・相談無料！</a>
+            </div>
+        </section>
+
+        <!-- S07 仕上げの種類 ———————————————————————— 緑BG -->
+        <section id="s07" class="sec sec-green">
+            <div class="eyebrow">Finish Details</div>
+            <h2 class="sec-title">仕上げの種類</h2>
+            <table class="finish-table">
+                <thead>
+                    <tr>
+                        <th>コース</th>
+                        <th>内容</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>共通仕上げ<br><small style="font-weight:400;font-size:0.7rem;opacity:0.75;">全コース共通</small></th>
+                        <td>ヒケやゲート跡、パーティングラインは600〜800のマジックヤスリで処理しています</td>
+                    </tr>
+                    <tr>
+                        <th>素組コース</th>
+                        <td>共通処理に加えて付属のシールを貼ります。デカール等が多い場合、別途追加料金がかかる場合があります。</td>
+                    </tr>
+                    <tr>
+                        <th>部分塗装コース</th>
+                        <td>共通処理に加えてシールなどで色分けされている部分をエアブラシや筆などで塗装します。光沢・つや消しお好みのトップコートも施します。スミ入れもご希望でしたら承ります。</td>
+                    </tr>
+                    <tr>
+                        <th>全塗装コース</th>
+                        <td>合わせ目消しや段落ちモールド処理などを行い、基本的に全パーツ塗装します。イメージや指定の色がある場合はお伝えいただければ可能な限り再現いたします。PETシートや軟質シートなど特殊なものはご相談ください。
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="finish-cards">
+                <div class="finish-card">
+                    <div class="finish-card-head">共通仕上げ（全コース）</div>
+                    <div class="finish-card-body">ヒケやゲート跡、パーティングラインは600〜800のマジックヤスリで処理しています</div>
+                </div>
+                <div class="finish-card">
+                    <div class="finish-card-head">素組コース</div>
+                    <div class="finish-card-body">共通処理に加えて付属のシールを貼ります。デカール等が多い場合は別途追加料金あり。</div>
+                </div>
+                <div class="finish-card">
+                    <div class="finish-card-head">部分塗装コース</div>
+                    <div class="finish-card-body">共通処理＋色分け部分をエアブラシや筆で塗装。お好みのトップコート仕上げ。スミ入れも対応。</div>
+                </div>
+                <div class="finish-card">
+                    <div class="finish-card-head">全塗装コース</div>
+                    <div class="finish-card-body">合わせ目消し・段落ちモールド処理を行い全パーツ塗装。色の指定・再現に対応。</div>
+                </div>
+            </div>
+            <div class="finish-note">📌 <strong>全コース共通の補足事項</strong><br>細かい色分けや色味の調整などしたい場合、別途料金がかかる場合があります。</div>
+        </section>
+
+        <!-- S08 ご依頼から納品までの流れ ——————————— 白BG -->
+        <section id="s08" class="sec sec-white">
+            <div class="eyebrow">Production Flow</div>
+            <h2 class="sec-title">ご依頼から納品までの流れ</h2>
+            <div class="flow">
+                <div class="step">
+                    <div class="step-num"><span class="num-label">STEP</span><span class="num-val">1</span></div>
+                    <div class="step-card">
+                        <span class="step-tag">まずはここから</span>
+                        <h3>お問い合わせ・ご相談</h3>
+                        <p class="step-desc">フォームまたはLINEからお気軽にご相談ください</p>
+                        <ul class="step-items">
+                            <li>作りたいキットの情報</li>
+                            <li>ご希望のコース</li>
+                            <li>イメージカラーやご要望</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="step-arrow">↓</div>
+                <div class="step">
+                    <div class="step-num"><span class="num-label">STEP</span><span class="num-val">2</span></div>
+                    <div class="step-card">
+                        <span class="step-tag step-tag-gold">無料</span>
+                        <h3>お見積もり</h3>
+                        <p class="step-desc">内容を確認し、お見積もりを作成いたします</p>
+                        <ul class="step-items">
+                            <li>作業内容の確認</li>
+                            <li>価格のご提示</li>
+                            <li>納期の目安</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="step-arrow">↓</div>
+                <div class="step">
+                    <div class="step-num"><span class="num-label">STEP</span><span class="num-val">3</span></div>
+                    <div class="step-card">
+                        <h3>お申し込み・キット送付</h3>
+                        <p class="step-desc">お見積もりにご納得いただけましたら正式お申し込み</p>
+                        <ul class="step-items">
+                            <li>キットを当工房へ送付</li>
+                            <li>詳細な打ち合わせ</li>
+                            <li>製作費のお支払い</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="step-arrow">↓</div>
+                <div class="step">
+                    <div class="step-num"><span class="num-label">STEP</span><span class="num-val">4</span></div>
+                    <div class="step-card">
+                        <h3>製作開始</h3>
+                        <p class="step-desc">丁寧に製作いたします</p>
+                        <ul class="step-items">
+                            <li>製作過程の写真共有（オーダーメイドコース）</li>
+                            <li>色味の調整確認（必要に応じて）</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="step-arrow">↓</div>
+                <div class="step">
+                    <div class="step-num"><span class="num-label">STEP</span><span class="num-val">5</span></div>
+                    <div class="step-card">
+                        <h3>完成・お支払い確認</h3>
+                        <p class="step-desc">完成写真をお送りします</p>
+                        <ul class="step-items">
+                            <li>完成写真で最終確認</li>
+                            <li>お支払い確認後、発送準備</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="step-arrow">↓</div>
+                <div class="step">
+                    <div class="step-num"><span class="num-label">STEP</span><span class="num-val">6</span></div>
+                    <div class="step-card">
+                        <span class="step-tag step-tag-red">ゴール</span>
+                        <h3>発送・お届け</h3>
+                        <p class="step-desc">大切に梱包してお届けします</p>
+                        <ul class="step-items">
+                            <li>配送方法のご案内</li>
+                            <li>追跡番号のお知らせ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p class="flow-closing">製作過程でご不明な点があれば、いつでもお気軽にお問い合わせください</p>
+        </section>
+
+        <!-- S09 ご依頼前にご確認ください —————————————— 緑BG -->
+        <section id="s09" class="sec sec-green">
+            <div class="eyebrow">Before You Order</div>
+            <h2 class="sec-title">ご依頼前にご確認ください</h2>
+            <div class="restrictions">
+                <div>
+                    <div class="restr-group-title">❌ 対応できないもの</div>
+                    <div class="restr-items">
+                        <div class="restr-item">
+                            <div class="restr-icon">❌</div>
+                            <div>
+                                <div class="restr-title">海賊版キット</div>
+                                <div class="restr-desc">正規品のみ対応させていただきます。</div>
+                            </div>
+                        </div>
+                        <div class="restr-item">
+                            <div class="restr-icon">❌</div>
+                            <div>
+                                <div class="restr-title">アイペイント（目の塗装）</div>
+                                <div class="restr-desc">デカール付属のキットのみ対応可能です。フリーハンドでのアイペイントには対応しておりません。</div>
+                            </div>
+                        </div>
+                        <div class="restr-item">
+                            <div class="restr-icon">❌</div>
+                            <div>
+                                <div class="restr-title">PETシートや軟質パーツ</div>
+                                <div class="restr-desc">素材によっては対応できない場合があります。事前にご相談ください。</div>
+                            </div>
+                        </div>
+                        <div class="restr-item">
+                            <div class="restr-icon">❌</div>
+                            <div>
+                                <div class="restr-title">極端に短納期のご依頼</div>
+                                <div class="restr-desc">丁寧な製作を心がけておりますため、通常1ヶ月以上のお時間をいただいております。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="restr-group-title">⚠️ ご注意いただきたいこと</div>
+                    <div class="restr-items">
+                        <div class="restr-item">
+                            <div class="restr-icon">⚠️</div>
+                            <div>
+                                <div class="restr-title">非専業のため納期が変動します</div>
+                                <div class="restr-desc">本業との兼ね合いで、納期が前後する場合がございます。お急ぎの方は事前にご相談ください。</div>
+                            </div>
+                        </div>
+                        <div class="restr-item">
+                            <div class="restr-icon">⚠️</div>
+                            <div>
+                                <div class="restr-title">製作中の破損について</div>
+                                <div class="restr-desc">細心の注意を払って製作いたしますが、万が一破損した場合は修理・パーツ取り寄せで対応いたします。</div>
+                            </div>
+                        </div>
+                        <div class="restr-item">
+                            <div class="restr-icon">⚠️</div>
+                            <div>
+                                <div class="restr-title">手作業のため微細なムラが生じる場合があります</div>
+                                <div class="restr-desc">スマホ拡大による細かなご指摘や、環境による色の差異については免責とさせていただきます。</div>
+                            </div>
+                        </div>
+                        <div class="restr-item">
+                            <div class="restr-icon">⚠️</div>
+                            <div>
+                                <div class="restr-title">付属品の取り扱い</div>
+                                <div class="restr-desc">空箱や不要パーツは原則破棄いたします。返却ご希望の場合は注文時にお申し出ください（別途送料）。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="s09-closing">
+                <p>それでもご不明な点は、まずはお気軽にご相談ください！</p>
+                <sub>ご不安な点はどんな小さなことでも事前にお聞きします。お気軽にどうぞ。</sub>
+            </div>
+        </section>
+
+        <!-- S10 納期・送料・フォーム ——————————————————— 白BG -->
+        <section id="s10" class="sec sec-white">
+            <div class="eyebrow">Delivery &amp; Form</div>
+            <h2 class="sec-title">納期・送料・フォーム</h2>
+            <div class="delivery-blocks">
+                <div>
+                    <div class="d-block-head">
+                        <div class="d-block-num">1</div>
+                        <h3>現在の混雑状況</h3>
+                    </div>
+                    <div id="congestion-status"></div>
+                </div>
+                <div>
+                    <div class="d-block-head">
+                        <div class="d-block-num">2</div>
+                        <h3>配送料について</h3>
+                    </div>
+                    <p class="ship-desc">往復送料は別途ご負担いただきます。詳細は送料表をご確認ください。</p>
+                    <a href="SippingFee.html" class="btn-outline" target="_blank">送料表を見る</a>
+                </div>
+                <div>
+                    <div class="d-block-head">
+                        <div class="d-block-num">3</div>
+                        <h3>ご依頼・お見積もり</h3>
+                    </div>
+                    <p class="form-desc">ご依頼の見積もりやご相談はこちらから。お気軽にお問い合わせください。<br><strong>見積もりは無料です。</strong></p>
+                    <div class="cta-stack">
+                        <a href="#" class="btn-primary">お問い合わせフォーム</a>
+                        <a href="#" class="btn-line"><span>💬</span>LINEで相談する</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- S11 その他の活動 ————————————————————————— 緑BG -->
+        <section id="s11" class="sec sec-green">
+            <div class="eyebrow">Other Activities</div>
+            <h2 class="sec-title">その他の活動</h2>
+            <div class="activities">
+                <div class="activity-card">
+                    <div class="activity-banner">
+                        <div class="activity-banner-icon">🏷️</div>
+                        <div class="activity-banner-label">Yahoo! Auction</div>
+                    </div>
+                    <div class="activity-body">
+                        <div class="activity-title">ヤフーオークション</div>
+                        <p class="activity-desc">依頼の合間に不定期にオークション出品しております。キット入手やお打ち合わせの手間が入りません。よかったら覗いてみてください。</p>
+                        <a href="#" class="btn-outline">オークションページを見る ↗</a>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-banner">
+                        <div class="activity-banner-icon">🎨</div>
+                        <div class="activity-banner-label">Exhibition</div>
+                    </div>
+                    <div class="activity-body">
+                        <div class="activity-title">展示会参加情報</div>
+                        <p class="activity-desc">展示会、定期的に出品参加しています。わたしの作品を直接ご覧いただく機会です。今後の参加情報や過去の参加レポートはブログにて。</p>
+                        <a href="#" class="btn-outline">参加レポートを見る ↗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- S12 よくあるご質問 —————————————————————— 白BG -->
+        <section id="s12" class="sec sec-white">
+            <div class="eyebrow">FAQ</div>
+            <h2 class="sec-title">よくあるご質問</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">
+                        <div class="q-badge">Q</div>
+                        <div class="q-text">見積もりは無料ですか？</div>
+                        <div class="q-toggle">▾</div>
+                    </div>
+                    <div class="faq-a">
+                        <div class="a-inner">
+                            <div class="a-badge">A</div>
+                            <div class="a-text">はい、お見積もりは無料です。お気軽にご相談ください。</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">
+                        <div class="q-badge">Q</div>
+                        <div class="q-text">キットは自分で用意する必要がありますか？</div>
+                        <div class="q-toggle">▾</div>
+                    </div>
+                    <div class="faq-a">
+                        <div class="a-inner">
+                            <div class="a-badge">A</div>
+                            <div class="a-text">はい、基本的にはお客様にてご用意いただきます。入手困難な場合はご相談ください。</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">
+                        <div class="q-badge">Q</div>
+                        <div class="q-text">製作期間はどのくらいですか？</div>
+                        <div class="q-toggle">▾</div>
+                    </div>
+                    <div class="faq-a">
+                        <div class="a-inner">
+                            <div class="a-badge">A</div>
+                            <div class="a-text">コースやキットの規模により異なりますが、<strong>1〜3ヶ月程度</strong>が目安です。詳細はお見積もり時にご案内いたします。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">
+                        <div class="q-badge">Q</div>
+                        <div class="q-text">色の指定はできますか？</div>
+                        <div class="q-toggle">▾</div>
+                    </div>
+                    <div class="faq-a">
+                        <div class="a-inner">
+                            <div class="a-badge">A</div>
+                            <div class="a-text">はい、可能です。推しキャラカラーやオリジナルカラーなど、ご希望をお聞かせください。</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">
+                        <div class="q-badge">Q</div>
+                        <div class="q-text">製作途中で色味の確認はできますか？</div>
+                        <div class="q-toggle">▾</div>
+                    </div>
+                    <div class="faq-a">
+                        <div class="a-inner">
+                            <div class="a-badge">A</div>
+                            <div class="a-text"><strong>オーダーメイドコース</strong>では製作過程の写真を共有し、色味の調整も可能です。</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">
+                        <div class="q-badge">Q</div>
+                        <div class="q-text">完成後に気に入らなかった場合は？</div>
+                        <div class="q-toggle">▾</div>
+                    </div>
+                    <div class="faq-a">
+                        <div class="a-inner">
+                            <div class="a-badge">A</div>
+                            <div class="a-text">
+                                <strong>1回まで無料で修正</strong>いたします。それでもご納得いただけない場合は、条件に応じて返金対応も可能です（詳細は特定商取引法表記をご覧ください）。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">
+                        <div class="q-badge">Q</div>
+                        <div class="q-text">海外からの依頼は可能ですか？</div>
+                        <div class="q-toggle">▾</div>
+                    </div>
+                    <div class="faq-a">
+                        <div class="a-inner">
+                            <div class="a-badge">A</div>
+                            <div class="a-text">申し訳ございません、現在は<strong>国内のみ</strong>の対応となっております。</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">
+                        <div class="q-badge">Q</div>
+                        <div class="q-text">デカールやリアリスティックデカールは貼ってもらえますか？</div>
+                        <div class="q-toggle">▾</div>
+                    </div>
+                    <div class="faq-a">
+                        <div class="a-inner">
+                            <div class="a-badge">A</div>
+                            <div class="a-text">数が少ない場合は<strong>基本料金内で対応可能</strong>です。数が多い場合は別途料金が発生する場合があります。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- S13 クロージング ————————————————————————— 緑BG -->
+        <section id="s13" class="sec sec-green">
+            <p class="closing-main">まずはお気軽にご相談ください</p>
+            <p class="closing-sub">
+                作例を見てご興味を持っていただけたようなら、ぜひお気軽に一度ご相談ください。<br>
+                お見積もりは無料です。
+            </p>
+            <div class="closing-btns">
+                <a href="#" class="btn-closing">お申し込みはこちらから</a>
+                <a href="#" class="btn-line"><span>💬</span>LINEで気軽に相談</a>
+            </div>
+        </section>
+
+        <!-- FOOTER ——————————————————————————————————— 深緑BG -->
+        <footer>
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <div class="f-name">種の杜</div>
+                    <div class="f-en">TANE NO MORI</div>
+                    <p class="f-desc">プラモデル制作代行サービス<br>あなたの「こうしたい」を形にします</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#s03">種の杜のこと</a></li>
+                        <li><a href="#s04">サービス紹介</a></li>
+                        <li><a href="#s06">選べるコース</a></li>
+                        <li><a href="#s12">よくある質問</a></li>
+                        <li><a href="#s10">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <div class="f-mail">teaseed1125@gmail.com</div>
+                    <div class="f-sns">
+                        <a href="#" target="_blank">𝕏 Twitter</a>
+                        <a href="#" target="_blank">note</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span class="footer-copy">© 2025 茶種. All rights reserved.</span>
+                <button class="footer-legal-btn" onclick="openModal()">特定商取引法に基づく表記</button>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- ============================================================
+     特定商取引法 モーダル
+============================================================ -->
+    <div class="modal-overlay" id="legalModal">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal-head">
+                <span class="modal-head-title" id="modalTitle">特定商取引法に基づく表記</span>
+                <button class="modal-close" onclick="closeModal()" aria-label="閉じる">✕</button>
+            </div>
+            <div class="modal-body">
+                <table class="tokusho-table">
+                    <tr>
+                        <th>販売事業者</th>
+                        <td>種の杜</td>
+                    </tr>
+                    <tr>
+                        <th>運営統括責任者</th>
+                        <td>鈴木 友悠</td>
+                    </tr>
+                    <tr>
+                        <th>所在地</th>
+                        <td>〒272-0823 千葉県市川市東菅野4-27-18</td>
+                    </tr>
+                    <tr>
+                        <th>電話番号</th>
+                        <td>080-1591-9892</td>
+                    </tr>
+                    <tr>
+                        <th>メールアドレス</th>
+                        <td>teaseed1125@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <th>お支払い方法</th>
+                        <td>・銀行振込<br>・PayPay</td>
+                    </tr>
+                    <tr>
+                        <th>製作費以外の必要料金</th>
+                        <td><strong>【送料】</strong><br>完成後の送料：着払い（クロネコヤマトまたは佐川急便）<br>※大型商品は別途梱包料が発生する場合があります。<br><strong>【手数料】</strong><br>銀行振込手数料：お客様負担
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>お申込み有効期限</th>
+                        <td>完成連絡後<span class="tokusho-important">7日以内</span>。連絡後7日間ご入金またはご連絡がない場合は、キャンセルとさせていただきます。</td>
+                    </tr>
+                    <tr>
+                        <th>引渡し時期</th>
+                        <td>詳細打ち合わせ完了から製作に<strong>1〜3ヶ月</strong>程度。完成・お支払い確認後の納品となります。</td>
+                    </tr>
+                    <tr>
+                        <th>リテイクについて</th>
+                        <td>お手元に届いた完成品にご納得いただけない場合、ご指摘ポイントを<strong>1回まで無料で修正</strong>いたします。<br><small>※大幅な改修・改造を伴う場合や、送料・振込手数料はお客様負担となります。</small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>返品・キャンセル</th>
+                        <td>・万が一お気に召さず修正もご要望されない場合は全額返金いたします（製作費税込22,000円以上の案件のみ、到着後30日以内のお申し出に限る）。<br>・返金時の返送送料・振込手数料はお客様負担。<br>・当店都合のキャンセルは全額返金いたします。<br>・お客様都合のキャンセルの場合、作品はオークションへ出品させていただく場合がございます。
+                        </td>
+                    </tr>
+                </table>
+                <h3 class="tokusho-heading">製作代行に関する注意事項（免責事項）</h3>
+                <div class="tokusho-notes">
+                    <ul>
+                        <li><strong>仕上がり：</strong>手作業のため微細な塗料のはみ出し、色ムラ、ズレ、傷、ほこり等が生じる場合があります。スマホ拡大による細かなご指摘や、環境による色の差異は免責とさせていただきます。
+                        </li>
+                        <li><strong>仕様：</strong>スジボリやパーツ置換等のアレンジを加える場合があります。不要な場合は事前にお申し付けください。</li>
+                        <li><strong>破損・紛失：</strong>製作中に発生した場合は修理・取り寄せ対応しますが、入手困難な場合は他パーツでの代用となります。</li>
+                        <li><strong>納期・天災：</strong>天災時はキット代（定価）の返金対応となります。納期遅延に伴う補償・返金は致しかねます。</li>
+                        <li><strong>付属品：</strong>空箱・不要パーツは原則破棄します。返却希望は注文時にお申し出ください（別梱包・送料負担）。</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-</body>
 
+    </div><!-- /.main-container -->
+</div><!-- /.wrapper -->
+
+    <!-- ============================================================
+     JavaScript
+============================================================ -->
+    <script>
+        // ハンバーガーメニュー
+        const menuBtn = document.getElementById('menuBtn');
+        const drawer = document.getElementById('drawer');
+        const overlay = document.getElementById('overlay');
+
+        function openDrawer() { menuBtn.classList.add('open'); drawer.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+        function closeDrawer() { menuBtn.classList.remove('open'); drawer.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow = ''; }
+
+        menuBtn.addEventListener('click', () => drawer.classList.contains('open') ? closeDrawer() : openDrawer());
+        const spMenuBtn = document.getElementById('spMenuBtn');
+        if (spMenuBtn) spMenuBtn.addEventListener('click', () => drawer.classList.contains('open') ? closeDrawer() : openDrawer());
+        overlay.addEventListener('click', closeDrawer);
+        drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+        // FAQ アコーディオン
+        function toggleFaq(qEl) {
+            const item = qEl.closest('.faq-item');
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+            if (!isOpen) item.classList.add('open');
+        }
+        const firstFaq = document.querySelector('.faq-item');
+        if (firstFaq) firstFaq.classList.add('open');
+
+        // 特定商取引法 モーダル
+        const legalModal = document.getElementById('legalModal');
+        function openModal() { legalModal.classList.add('open'); document.body.style.overflow = 'hidden'; }
+        function closeModal() { legalModal.classList.remove('open'); document.body.style.overflow = ''; }
+        legalModal.addEventListener('click', e => { if (e.target === legalModal) closeModal(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeDrawer(); } });
+    </script>
+
+    <script src="js/congestion-status.js"></script>
+</body>
 
 </html>
