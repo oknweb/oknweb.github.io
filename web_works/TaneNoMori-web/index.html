@@ -19,20 +19,17 @@
      SIDEBAR（style.css の構造を維持）
 ============================================================ -->
     <nav class="side-nav">
-        <h1 class="site-title side-nav-text">種の杜</h1>
+        <a href="#s01" class="site-link">
+            <h1 class="site-title side-nav-text">種の杜</h1>
+            <p class="side-nav-text">模型工房／製作代行</p>
+        </a>
         <figure class="nav-mark" id="menuBtn">
-            <img src="images/site-mark.svg" alt="メニューボタン">
+            <img src="images/site-mark.svg" alt="メニューを開く">
             <figcaption>メニュー</figcaption>
         </figure>
-        <p class="side-nav-text">模型工房／製作代行</p>
     </nav>
 
     <div class="main-container">
-
-    <!-- SP用 浮きメニューボタン（右上） -->
-    <button class="sp-menu-btn" id="spMenuBtn" aria-label="メニューを開く">
-        <img src="images/site-mark.svg" alt="メニューを開く">
-    </button>
 
     <!-- ドロワーメニュー -->
     <div class="drawer" id="drawer">
@@ -852,8 +849,6 @@
         function closeDrawer() { menuBtn.classList.remove('open'); drawer.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow = ''; }
 
         menuBtn.addEventListener('click', () => drawer.classList.contains('open') ? closeDrawer() : openDrawer());
-        const spMenuBtn = document.getElementById('spMenuBtn');
-        if (spMenuBtn) spMenuBtn.addEventListener('click', () => drawer.classList.contains('open') ? closeDrawer() : openDrawer());
         overlay.addEventListener('click', closeDrawer);
         drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
 
