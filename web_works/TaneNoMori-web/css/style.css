@@ -3,7 +3,7 @@
 ============================================================ */
 body {
     margin: 0;
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     -webkit-font-smoothing: antialiased;
     color: #1C1C1C;
     background: #fff;
@@ -39,7 +39,11 @@ html { scroll-behavior: smooth; }
 .side-nav-text {
     writing-mode: vertical-rl;
     color: #ffffff;
+    letter-spacing: 0.25em;
 }
+
+.site-title { letter-spacing: 0.3em; }
+p.side-nav-text { letter-spacing: 0.2em; }
 
 .nav-mark {
     display: flex;
@@ -95,6 +99,19 @@ p.side-nav-text { order: 3; }
     --ink-light:   #555;
     --border:      #D4C9B0;
     --sidebar-w:   78px;
+
+    /* Typography */
+    --font-serif:      'Shippori Mincho', serif;
+    --font-sans:       'Noto Sans JP', sans-serif;
+
+    /* Layout */
+    --content-w:       640px;
+
+    /* Eyebrow label */
+    --eyebrow-size:    0.60rem;
+    --eyebrow-weight:  400;
+    --eyebrow-spacing: 0.3em;
+    --eyebrow-mb:      0.6rem;
 }
 
 /* ============================================================
@@ -128,7 +145,7 @@ p.side-nav-text { order: 3; }
 }
 
 .drawer-site-name {
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-weight: 900;
     font-size: 1.1rem;
     color: var(--cream);
@@ -202,19 +219,19 @@ p.side-nav-text { order: 3; }
 }
 
 .eyebrow {
-    font-size: 0.62rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-bottom: 0.6rem;
+    font-family: var(--font-sans);
+    font-size: var(--eyebrow-size);
+    letter-spacing: var(--eyebrow-spacing);
+    font-weight: var(--eyebrow-weight);
+    margin-bottom: var(--eyebrow-mb);
     text-align: center;
 }
 
-.sec-white .eyebrow { color: var(--green); }
-.sec-green .eyebrow { color: rgba(255, 255, 255, 0.7); }
+.sec-white .eyebrow { color: var(--gold); }
+.sec-green .eyebrow { color: rgba(255, 255, 255, 0.55); }
 
 .sec-title {
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-size: clamp(1.4rem, 3vw, 2rem);
     font-weight: 700;
     line-height: 1.4;
@@ -250,7 +267,7 @@ p.side-nav-text { order: 3; }
     display: inline-block;
     background: var(--red);
     color: #fff;
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-weight: 700;
     font-size: 0.95rem;
     padding: 0.85rem 2rem;
@@ -268,7 +285,7 @@ p.side-nav-text { order: 3; }
 
 .btn-outline {
     display: inline-block;
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-size: 0.9rem;
     font-weight: 700;
     padding: 0.7rem 1.5rem;
@@ -305,7 +322,7 @@ p.side-nav-text { order: 3; }
     gap: 0.5rem;
     background: #06C755;
     color: #fff;
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-weight: 700;
     font-size: 0.9rem;
     padding: 0.7rem 1.5rem;
@@ -320,7 +337,7 @@ p.side-nav-text { order: 3; }
 ============================================================ */
 #s01 {
     position: relative;
-    min-height: 100vh;
+    min-height: 65vh;
     display: flex;
     padding: 0;
     overflow: hidden;
@@ -350,8 +367,9 @@ p.side-nav-text { order: 3; }
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 1.5rem;
     padding: 1.75rem 2.5rem 2.5rem;
-    min-height: 100vh;
+    min-height: 65vh;
 }
 
 .hero-top {
@@ -362,7 +380,7 @@ p.side-nav-text { order: 3; }
 .btn-hero-cta {
     background: var(--red);
     color: #fff;
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-size: 0.9rem;
     font-weight: 700;
     padding: 0.75rem 1.5rem;
@@ -385,7 +403,7 @@ p.side-nav-text { order: 3; }
 
 .hero-copy {
     writing-mode: vertical-rl;
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-weight: 900;
     font-size: clamp(2rem, min(5vw, 6vh), 3.5rem);
     color: #fff;
@@ -411,7 +429,7 @@ p.side-nav-text { order: 3; }
 }
 
 .hero-message {
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     color: var(--ink-light);
     font-size: 0.95rem;
     line-height: 2.2;
@@ -428,6 +446,7 @@ p.side-nav-text { order: 3; }
     gap: 2rem;
 }
 
+
 @media (max-width: 540px) {
     .hero-msg-sec {
         padding-top: 2.5rem;
@@ -442,7 +461,7 @@ p.side-nav-text { order: 3; }
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
-    max-width: 640px;
+    max-width: var(--content-w);
     margin: 0 auto;
 }
 
@@ -498,7 +517,7 @@ p.side-nav-text { order: 3; }
    S03 GREETING
 ============================================================ */
 .greeting-area {
-    max-width: 640px;
+    max-width: var(--content-w);
     margin: 0 auto;
     text-align: center;
 }
@@ -511,7 +530,7 @@ p.side-nav-text { order: 3; }
 }
 
 .greeting-sig {
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-size: 1rem;
     font-weight: 700;
     color: #fff;
@@ -531,16 +550,16 @@ p.side-nav-text { order: 3; }
 }
 
 .greeting-modal-eyebrow {
-    font-size: 0.62rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: var(--green);
-    margin-bottom: 0.5rem;
+    font-family: var(--font-sans);
+    font-size: var(--eyebrow-size);
+    letter-spacing: var(--eyebrow-spacing);
+    font-weight: var(--eyebrow-weight);
+    color: var(--gold);
+    margin-bottom: var(--eyebrow-mb);
 }
 
 .greeting-modal-content h2 {
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--green-deep);
@@ -557,7 +576,7 @@ p.side-nav-text { order: 3; }
 }
 
 .greeting-modal-sig {
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-size: 1rem;
     font-weight: 700;
     color: var(--ink);
@@ -593,7 +612,7 @@ p.side-nav-text { order: 3; }
 .worry-icon { font-size: 1.4rem; margin-bottom: 0.5rem; }
 
 .worry-title {
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-weight: 700;
     font-size: 0.95rem;
     color: var(--red);
@@ -610,7 +629,7 @@ p.side-nav-text { order: 3; }
 }
 
 .solution-title {
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-weight: 700;
     font-size: 0.95rem;
     color: var(--green-deep);
@@ -621,7 +640,7 @@ p.side-nav-text { order: 3; }
 
 .s04-catch {
     text-align: center;
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-size: clamp(1.2rem, 2.5vw, 1.6rem);
     font-weight: 700;
     color: var(--green-deep);
@@ -687,7 +706,7 @@ p.side-nav-text { order: 3; }
 }
 
 .paint-heading {
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-weight: 700;
     font-size: 1rem;
     color: var(--green-deep);
@@ -765,7 +784,7 @@ p.side-nav-text { order: 3; }
 .badge-ord  { background: rgba(200, 56, 46, 0.1); color: var(--red); }
 
 .course-name {
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-weight: 700;
     font-size: 1.05rem;
     color: var(--green-deep);
@@ -865,7 +884,7 @@ p.side-nav-text { order: 3; }
 .price-row:last-child { border-bottom: none; }
 
 .price {
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-weight: 700;
     color: var(--green-deep);
 }
@@ -881,7 +900,7 @@ p.side-nav-text { order: 3; }
 
 .price-custom strong {
     display: block;
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     color: var(--red);
     font-size: 1rem;
     margin-bottom: 0.2rem;
@@ -919,7 +938,7 @@ p.side-nav-text { order: 3; }
 ============================================================ */
 .finish-table {
     width: 100%;
-    max-width: 640px;
+    max-width: var(--content-w);
     margin: 0 auto;
     border-collapse: collapse;
     font-size: 0.85rem;
@@ -940,7 +959,7 @@ p.side-nav-text { order: 3; }
 .finish-table thead th {
     background: var(--green-deep);
     color: #fff;
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-weight: 700;
     letter-spacing: 0.05em;
     border-color: rgba(255, 255, 255, 0.2);
@@ -961,7 +980,7 @@ p.side-nav-text { order: 3; }
 }
 
 .finish-note {
-    max-width: 640px;
+    max-width: var(--content-w);
     margin: 1.25rem auto 0;
     padding: 1rem 1.25rem;
     background: #fff;
@@ -988,7 +1007,7 @@ p.side-nav-text { order: 3; }
     .finish-card-head {
         background: var(--green-deep);
         color: #fff;
-        font-family: 'Shippori Mincho', serif;
+        font-family: var(--font-serif);
         font-weight: 700;
         font-size: 0.88rem;
         padding: 0.65rem 1rem;
@@ -1008,7 +1027,7 @@ p.side-nav-text { order: 3; }
     display: flex;
     flex-direction: column;
     gap: 0;
-    max-width: 640px;
+    max-width: var(--content-w);
     margin: 0 auto;
     position: relative;
 }
@@ -1051,7 +1070,7 @@ p.side-nav-text { order: 3; }
 }
 
 .step-num .num-val {
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-weight: 900;
     font-size: 1.3rem;
     line-height: 1;
@@ -1083,7 +1102,7 @@ p.side-nav-text { order: 3; }
 .step-tag-red  { background: var(--red); color: #fff; }
 
 .step-card h3 {
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-weight: 700;
     font-size: 1.05rem;
     color: var(--green-deep);
@@ -1116,7 +1135,7 @@ p.side-nav-text { order: 3; }
 }
 
 .flow-closing {
-    max-width: 640px;
+    max-width: var(--content-w);
     margin: 2.5rem auto 0;
     padding: 1.1rem 1.5rem;
     background: #fff;
@@ -1145,7 +1164,7 @@ p.side-nav-text { order: 3; }
 }
 
 .restr-group-title {
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-weight: 700;
     font-size: 1.05rem;
     color: #fff;
@@ -1189,7 +1208,7 @@ p.side-nav-text { order: 3; }
     margin-top: 2rem;
     text-align: center;
     color: rgba(255, 255, 255, 0.9);
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-size: 0.95rem;
     line-height: 2;
 }
@@ -1208,7 +1227,7 @@ p.side-nav-text { order: 3; }
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    max-width: 640px;
+    max-width: var(--content-w);
     margin: 0 auto;
 }
 
@@ -1238,7 +1257,7 @@ p.side-nav-text { order: 3; }
 }
 
 .d-block-head h3 {
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-weight: 700;
     font-size: 1.05rem;
     color: var(--green-deep);
@@ -1328,7 +1347,7 @@ p.side-nav-text { order: 3; }
 }
 
 .activity-title {
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-weight: 700;
     font-size: 1rem;
     color: var(--green-deep);
@@ -1345,7 +1364,7 @@ p.side-nav-text { order: 3; }
 /* ============================================================
    S12 FAQ
 ============================================================ */
-.faq-list { display: flex; flex-direction: column; gap: 0.75rem; max-width: 640px; margin: 0 auto; }
+.faq-list { display: flex; flex-direction: column; gap: 0.75rem; max-width: var(--content-w); margin: 0 auto; }
 
 .faq-item { background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(45,80,22,0.05); transition: box-shadow 0.2s; }
 .faq-item.open { box-shadow: 0 4px 20px rgba(45,80,22,0.12); border-color: #b0cca0; }
@@ -1371,7 +1390,7 @@ p.side-nav-text { order: 3; }
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-size: 0.85rem;
     font-weight: 900;
     flex-shrink: 0;
@@ -1396,7 +1415,7 @@ p.side-nav-text { order: 3; }
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-size: 0.85rem;
     font-weight: 900;
     flex-shrink: 0;
@@ -1415,7 +1434,7 @@ p.side-nav-text { order: 3; }
 }
 
 .closing-main {
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-size: clamp(1.6rem, 3.5vw, 2.4rem);
     font-weight: 700;
     color: #fff;
@@ -1426,7 +1445,7 @@ p.side-nav-text { order: 3; }
     font-size: 0.95rem;
     color: rgba(255, 255, 255, 0.85);
     line-height: 1.8;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3.5rem;
 }
 
 .closing-btns { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
@@ -1435,7 +1454,7 @@ p.side-nav-text { order: 3; }
     display: inline-block;
     background: var(--red);
     color: #fff;
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-weight: 700;
     font-size: clamp(1rem, 2vw, 1.2rem);
     padding: 1.1rem 3rem;
@@ -1469,7 +1488,7 @@ footer {
 }
 
 .footer-brand .f-name {
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-weight: 900;
     font-size: 1.3rem;
     color: #fff;
@@ -1492,7 +1511,7 @@ footer {
 
 .footer-nav h4,
 .footer-contact h4 {
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-size: 0.7rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -1552,7 +1571,7 @@ footer {
     padding: 0.35rem 0.85rem;
     border-radius: 4px;
     cursor: pointer;
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     transition: all 0.2s;
 }
 
@@ -1596,7 +1615,7 @@ footer {
 }
 
 .modal-head-title {
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-weight: 700;
     font-size: 1rem;
     color: #fff;
@@ -1671,7 +1690,7 @@ footer {
 .tokusho-notes li { margin-bottom: 0.4rem; list-style: disc; }
 
 .tokusho-heading {
-    font-family: 'Shippori Mincho', serif;
+    font-family: var(--font-serif);
     font-size: 0.85rem;
     font-weight: 700;
     color: var(--green-deep);
@@ -1718,8 +1737,8 @@ footer {
         white-space: nowrap;
     }
 
-    /* テキスト: 縦書き → 横書きに切り替え */
-    .side-nav-text { writing-mode: horizontal-tb; }
+    /* テキスト: 縦書き → 横書きに切り替え（letter-spacingも縮小） */
+    .side-nav-text { writing-mode: horizontal-tb; letter-spacing: 0.1em; }
 
     .site-title {
         font-size: 0.95rem;
@@ -1743,6 +1762,7 @@ footer {
     }
 
     /* ヒーロー: ヘッダー分の余白 + CTAボタンとコピーの間隔を確保 */
-    .hero-inner { padding-top: 2.5rem; }
+    #s01 { min-height: 100svh; }
+    .hero-inner { min-height: 100svh; padding-top: 2.5rem; }
     .hero-top { margin-bottom: 2.5rem; }
 }
