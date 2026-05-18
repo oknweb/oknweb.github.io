@@ -154,7 +154,7 @@ p.side-nav-text { order: 3; }
 
 .drawer-label {
     font-size: 0.6rem;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.2em;
     color: var(--gold);
     text-transform: uppercase;
     padding: 0 1.5rem 1rem;
@@ -407,7 +407,7 @@ p.side-nav-text { order: 3; }
     font-weight: 900;
     font-size: clamp(2rem, min(5vw, 6vh), 3.5rem);
     color: #fff;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.3em;
     line-height: 1.5;
     text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
 }
@@ -488,7 +488,7 @@ p.side-nav-text { order: 3; }
     color: var(--green);
     white-space: nowrap;
     flex-shrink: 0;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
 }
 
 .blog-title {
@@ -692,7 +692,7 @@ p.side-nav-text { order: 3; }
     justify-content: center;
     color: var(--ink-light);
     font-size: 0.75rem;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
 }
 
 .paint-body { padding: 1.25rem; }
@@ -772,7 +772,7 @@ p.side-nav-text { order: 3; }
 .course-badge {
     display: inline-block;
     font-size: 0.6rem;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     font-weight: 700;
     padding: 0.2rem 0.6rem;
     border-radius: 3px;
@@ -812,7 +812,7 @@ p.side-nav-text { order: 3; }
 
 .block-label {
     font-size: 0.65rem;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     font-weight: 700;
     color: var(--green);
@@ -1459,7 +1459,7 @@ p.side-nav-text { order: 3; }
     font-size: clamp(1rem, 2vw, 1.2rem);
     padding: 1.1rem 3rem;
     border-radius: 6px;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.05em;
     transition: background 0.2s, transform 0.2s;
 }
 
@@ -1497,7 +1497,7 @@ footer {
 
 .footer-brand .f-en {
     font-size: 0.6rem;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.2em;
     color: var(--gold);
     text-transform: uppercase;
     margin-bottom: 0.75rem;
