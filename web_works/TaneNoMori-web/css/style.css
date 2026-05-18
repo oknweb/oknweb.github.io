@@ -102,6 +102,7 @@ p.side-nav-text { order: 3; }
 ============================================================ */
 .main-container {
     grid-column: 2; /* fixed の side-nav は grid 外なので明示的に2列目に配置 */
+    min-width: 0;   /* グリッドアイテムのデフォルト min-width:auto による overflow を防ぐ */
 }
 
 /* ============================================================
@@ -206,6 +207,7 @@ p.side-nav-text { order: 3; }
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 0.6rem;
+    text-align: center;
 }
 
 .sec-white .eyebrow { color: var(--green); }
@@ -218,6 +220,7 @@ p.side-nav-text { order: 3; }
     line-height: 1.4;
     margin-bottom: 0.5rem;
     padding-bottom: 0.75rem;
+    text-align: center;
 }
 
 .sec-white .sec-title {
@@ -234,6 +237,7 @@ p.side-nav-text { order: 3; }
     font-size: 0.9rem;
     line-height: 1.8;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 .sec-white .sec-sub { color: var(--ink-light); }
@@ -253,6 +257,8 @@ p.side-nav-text { order: 3; }
     border-radius: 4px;
     letter-spacing: 0.05em;
     transition: background 0.2s, transform 0.2s;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-primary:hover {
@@ -269,6 +275,8 @@ p.side-nav-text { order: 3; }
     border-radius: 4px;
     letter-spacing: 0.05em;
     transition: all 0.2s;
+    background: transparent;
+    cursor: pointer;
 }
 
 .sec-white .btn-outline {
@@ -393,37 +401,38 @@ p.side-nav-text { order: 3; }
 }
 
 .hero-logo {
-    width: 96px;
-    height: 96px;
-    border-radius: 50%;
-    border: 2px solid var(--gold);
-    background: rgba(45, 80, 22, 0.85);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2px;
+    width: 140px;
 }
 
-.hero-logo-small {
-    font-family: 'Shippori Mincho', serif;
-    font-size: 0.5rem;
-    color: var(--gold);
-    letter-spacing: 0.1em;
-}
-
-.hero-logo-name {
-    font-family: 'Shippori Mincho', serif;
-    font-weight: 900;
-    font-size: 1rem;
-    color: #fff;
+.hero-logo img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
 }
 
 .hero-message {
     font-family: 'Shippori Mincho', serif;
-    color: rgba(255, 255, 255, 0.88);
-    font-size: 0.88rem;
-    line-height: 2.1;
+    color: var(--ink-light);
+    font-size: 0.95rem;
+    line-height: 2.2;
+}
+
+/* S01.5 ヒーローメッセージセクション */
+.hero-msg-sec {
+    background: #fff;
+    padding: 3rem max(1.5rem, calc((100% - 1100px) / 2)) 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+}
+
+@media (max-width: 540px) {
+    .hero-msg-sec {
+        padding-top: 2.5rem;
+        padding-bottom: 3rem;
+    }
 }
 
 /* ============================================================
@@ -432,35 +441,46 @@ p.side-nav-text { order: 3; }
 .blog-list {
     display: flex;
     flex-direction: column;
-    border-top: 1px solid var(--border);
+    gap: 0.6rem;
+    max-width: 640px;
+    margin: 0 auto;
 }
 
 .blog-item {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 1.25rem;
-    padding: 1rem 0.25rem;
-    border-bottom: 1px solid var(--border);
-    transition: background 0.15s, padding-left 0.15s;
+    padding: 0.9rem 1.25rem;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: background 0.2s, box-shadow 0.2s;
 }
 
 .blog-item:hover {
     background: var(--green-pale);
-    padding-left: 0.75rem;
+    box-shadow: 0 2px 12px rgba(45, 80, 22, 0.12);
+    border-color: #b0cca0;
 }
 
 .blog-date {
-    font-size: 0.75rem;
-    color: var(--ink-light);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--green);
     white-space: nowrap;
     flex-shrink: 0;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
 }
 
 .blog-title {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     color: var(--green-deep);
     line-height: 1.5;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    min-width: 0;  /* white-space:nowrap 時にflexアイテムが縮めるよう必須 */
+    flex: 1;
 }
 
 .blog-item:hover .blog-title { color: var(--red); }
@@ -496,6 +516,53 @@ p.side-nav-text { order: 3; }
     font-weight: 700;
     color: #fff;
     margin-bottom: 1.5rem;
+}
+
+/* S03 モーダルCTA */
+.s03-modal-cta {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* ご挨拶モーダル内コンテンツ */
+.greeting-modal-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.greeting-modal-eyebrow {
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+}
+
+.greeting-modal-content h2 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--green-deep);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--green-pale);
+}
+
+.greeting-modal-content p {
+    font-size: 0.92rem;
+    line-height: 2.1;
+    color: var(--ink-light);
+    margin-bottom: 1.25rem;
+}
+
+.greeting-modal-sig {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-top: 0.5rem;
+    text-align: right;
 }
 
 /* ============================================================
@@ -852,6 +919,8 @@ p.side-nav-text { order: 3; }
 ============================================================ */
 .finish-table {
     width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
     border-collapse: collapse;
     font-size: 0.85rem;
     line-height: 1.7;
@@ -892,7 +961,8 @@ p.side-nav-text { order: 3; }
 }
 
 .finish-note {
-    margin-top: 1.25rem;
+    max-width: 640px;
+    margin: 1.25rem auto 0;
     padding: 1rem 1.25rem;
     background: #fff;
     border: 1px solid var(--border);
@@ -938,7 +1008,7 @@ p.side-nav-text { order: 3; }
     display: flex;
     flex-direction: column;
     gap: 0;
-    max-width: 860px;
+    max-width: 640px;
     margin: 0 auto;
     position: relative;
 }
@@ -1046,7 +1116,8 @@ p.side-nav-text { order: 3; }
 }
 
 .flow-closing {
-    margin-top: 2.5rem;
+    max-width: 640px;
+    margin: 2.5rem auto 0;
     padding: 1.1rem 1.5rem;
     background: #fff;
     border: 1px solid var(--border);
@@ -1133,9 +1204,24 @@ p.side-nav-text { order: 3; }
 /* ============================================================
    S10 DELIVERY & FORM
 ============================================================ */
-.delivery-blocks { display: flex; flex-direction: column; gap: 2.5rem; }
+.delivery-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 640px;
+    margin: 0 auto;
+}
 
-.d-block-head { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+.delivery-blocks > div {
+    text-align: center;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: 0 2px 10px rgba(45, 80, 22, 0.05);
+}
+
+.d-block-head { display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 1rem; }
 
 .d-block-num {
     width: 28px;
@@ -1230,6 +1316,17 @@ p.side-nav-text { order: 3; }
 
 .activity-body { padding: 1.25rem; text-align: center; }
 
+/* 白カード内のボタンは緑系に上書き（.sec-green .btn-outline の白色指定を打ち消す） */
+.activity-body .btn-outline {
+    border: 2px solid var(--green-deep);
+    color: var(--green-deep);
+}
+
+.activity-body .btn-outline:hover {
+    background: var(--green-deep);
+    color: #fff;
+}
+
 .activity-title {
     font-family: 'Shippori Mincho', serif;
     font-weight: 700;
@@ -1248,7 +1345,7 @@ p.side-nav-text { order: 3; }
 /* ============================================================
    S12 FAQ
 ============================================================ */
-.faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+.faq-list { display: flex; flex-direction: column; gap: 0.75rem; max-width: 640px; margin: 0 auto; }
 
 .faq-item { background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(45,80,22,0.05); transition: box-shadow 0.2s; }
 .faq-item.open { box-shadow: 0 4px 20px rgba(45,80,22,0.12); border-color: #b0cca0; }

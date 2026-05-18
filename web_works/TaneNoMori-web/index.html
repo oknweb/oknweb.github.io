@@ -67,16 +67,20 @@
                 </div>
                 <div class="hero-bottom">
                     <div class="hero-logo">
-                        <span class="hero-logo-small">模型工房</span>
-                        <span class="hero-logo-name">種の杜</span>
+                        <img src="images/site-logo.png" alt="種の杜 模型工房">
                     </div>
-                    <p class="hero-message">
-                        オリジナルカラーで作成してみたいけどきれいに塗れる自信がない<br>
-                        市販品カラーでは色が納得できない…<br>
-                        そんな「欲しい」を作るお手伝いをさせていただきます
-                    </p>
                 </div>
             </div>
+        </section>
+
+        <!-- S01.5 ヒーローメッセージ ————————————————— 白BG -->
+        <section class="hero-msg-sec">
+            <p class="hero-message">
+                オリジナルカラーで作成してみたいけどきれいに塗れる自信がない<br>
+                市販品カラーでは色が納得できない…<br>
+                そんな「欲しい」を作るお手伝いをさせていただきます
+            </p>
+            <button class="btn-primary" id="greetingModalBtn">茶種よりご挨拶 ＞</button>
         </section>
 
         <!-- S02 ブログ更新情報 ——————————————————————— 白BG -->
@@ -84,22 +88,13 @@
             <div class="eyebrow">Blog Updates</div>
             <h2 class="sec-title">最新情報</h2>
             <p class="sec-sub">noteブログの最新記事です。制作過程・展示会レポートなどを更新しています。</p>
-            <div class="blog-list">
-                <a href="#" class="blog-item">
-                    <span class="blog-date">2026.02.20</span>
-                    <span class="blog-title">画像を貼るテストというエントリー（検証用）</span>
-                </a>
-                <a href="#" class="blog-item">
-                    <span class="blog-date">2026.02.20</span>
-                    <span class="blog-title">観たい映画を書いてみるエントリー</span>
-                </a>
-                <a href="#" class="blog-item">
-                    <span class="blog-date">2026.02.20</span>
-                    <span class="blog-title">noteアカウント作成しました。のご挨拶</span>
-                </a>
+            <div class="blog-list" id="note-article-list">
+                <div class="blog-item">
+                    <span class="blog-title">記事を読み込み中です...</span>
+                </div>
             </div>
             <div class="blog-footer">
-                <a href="#" class="btn-outline">noteをもっと見る ↗</a>
+                <a href="https://note.com/zprdoujin" target="_blank" rel="noopener noreferrer" class="btn-outline">noteをもっと見る ↗</a>
             </div>
         </section>
 
@@ -107,21 +102,8 @@
         <section id="s03" class="sec sec-green">
             <div class="eyebrow">Message</div>
             <h2 class="sec-title">茶種よりご挨拶</h2>
-            <div class="greeting-area">
-                <p>
-                    はじめまして。模型工房「種の杜」の茶種と申します。<br>
-                    2021年9月よりモデラー・フィニッシャーとして活動を始め、これまで毎月1〜4体のペースで全塗装作品を製作してまいりました。
-                </p>
-                <p>
-                    キャンディ仕上げ・メタリック仕上げ、そして緑系の調色を得意としております。<br>
-                    推しキャラカラーやオリジナルカラーの再現も、可能な限り対応させていただきます。
-                </p>
-                <p>
-                    作例を見てご興味を持っていただけたようなら、ぜひお気軽に一度ご相談ください。<br>
-                    あなたの「こうしたい」を、一緒に形にしましょう。
-                </p>
-                <p class="greeting-sig">— 茶種</p>
-                <a href="#" class="btn-outline">詳しいご挨拶を読む</a>
+            <div class="s03-modal-cta">
+                <button class="btn-outline" onclick="openGreetingModal()">ご挨拶を読む ＞</button>
             </div>
         </section>
 
@@ -760,6 +742,36 @@
     </main>
 
     <!-- ============================================================
+     ご挨拶 モーダル
+============================================================ -->
+    <div class="modal-overlay" id="greetingModal">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="greetingModalTitle">
+            <div class="modal-head">
+                <span class="modal-head-title" id="greetingModalTitle">茶種よりご挨拶</span>
+                <button class="modal-close" onclick="closeGreetingModal()" aria-label="閉じる">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="greeting-modal-content">
+                    <div class="greeting-modal-eyebrow">Message</div>
+                    <p>
+                        はじめまして。模型工房「種の杜」の茶種と申します。<br>
+                        2021年9月よりモデラー・フィニッシャーとして活動を始め、これまで毎月1〜4体のペースで全塗装作品を製作してまいりました。
+                    </p>
+                    <p>
+                        キャンディ仕上げ・メタリック仕上げ、そして緑系の調色を得意としております。<br>
+                        推しキャラカラーやオリジナルカラーの再現も、可能な限り対応させていただきます。
+                    </p>
+                    <p>
+                        作例を見てご興味を持っていただけたようなら、ぜひお気軽に一度ご相談ください。<br>
+                        あなたの「こうしたい」を、一緒に形にしましょう。
+                    </p>
+                    <p class="greeting-modal-sig">— 茶種</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
      特定商取引法 モーダル
 ============================================================ -->
     <div class="modal-overlay" id="legalModal">
@@ -867,7 +879,64 @@
         function openModal() { legalModal.classList.add('open'); document.body.style.overflow = 'hidden'; }
         function closeModal() { legalModal.classList.remove('open'); document.body.style.overflow = ''; }
         legalModal.addEventListener('click', e => { if (e.target === legalModal) closeModal(); });
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeDrawer(); } });
+
+        // ご挨拶モーダル
+        const greetingModal = document.getElementById('greetingModal');
+        function openGreetingModal() { greetingModal.classList.add('open'); document.body.style.overflow = 'hidden'; }
+        function closeGreetingModal() { greetingModal.classList.remove('open'); document.body.style.overflow = ''; }
+        document.getElementById('greetingModalBtn').addEventListener('click', openGreetingModal);
+        greetingModal.addEventListener('click', e => { if (e.target === greetingModal) closeGreetingModal(); });
+
+        // #s03 へのナビリンクはモーダルを開く
+        document.querySelectorAll('[href="#s03"]').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                openGreetingModal();
+                closeDrawer();
+            });
+        });
+
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeGreetingModal(); closeDrawer(); } });
+
+        // S02 RSS フィード（note.com）
+        const NOTE_API_URL = 'https://api.rss2json.com/v1/api.json?rss_url=https://note.com/zprdoujin/rss&count=10';
+        const noteListEl = document.getElementById('note-article-list');
+
+        function fetchNoteArticles() {
+            noteListEl.innerHTML = '';
+
+            fetch(NOTE_API_URL)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.status !== 'ok' || !data.items) {
+                        throw new Error('RSS2JSONで記事の取得に失敗しました。');
+                    }
+
+                    data.items.forEach(item => {
+                        const dateObj = new Date(item.pubDate);
+                        const formattedDate = `${dateObj.getFullYear()}.${String(dateObj.getMonth() + 1).padStart(2, '0')}.${String(dateObj.getDate()).padStart(2, '0')}`;
+
+                        const a = document.createElement('a');
+                        a.className = 'blog-item';
+                        a.href = item.link;
+                        a.target = '_blank';
+                        a.rel = 'noopener noreferrer';
+                        a.innerHTML = `<span class="blog-date">${formattedDate}</span><span class="blog-title">${item.title}</span>`;
+                        noteListEl.appendChild(a);
+                    });
+                })
+                .catch(error => {
+                    console.error('note記事の読み込み中にエラーが発生しました:', error);
+                    noteListEl.innerHTML = '<div class="blog-item"><span class="blog-title">記事の読み込みに失敗しました。</span></div>';
+                });
+        }
+
+        fetchNoteArticles();
     </script>
 
     <script src="js/congestion-status.js"></script>

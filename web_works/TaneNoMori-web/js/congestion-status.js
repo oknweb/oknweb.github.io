@@ -26,7 +26,7 @@
           display:inline-flex; flex-direction:column; align-items:flex-start;
           gap:0.3rem; padding:1rem 1.5rem;
           background:${s.bg}; border:1px solid ${s.border};
-          border-radius:12px; max-width:360px;
+          border-radius:12px; max-width:100%;
         ">
           <div style="font-size:1rem; font-weight:700; color:${s.color};">
             ${s.emoji} ${s.label}
