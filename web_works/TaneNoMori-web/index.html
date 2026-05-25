@@ -9,6 +9,8 @@
         href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/@acab.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -37,7 +39,7 @@
                 <div class="drawer-label">Page Menu</div>
                 <nav>
                     <a href="#s01">TOP</a>
-                    <a href="#s03">茶種よりご挨拶</a>
+                    <a href="#s03">作例ギャラリー</a>
                     <a href="#s02">更新情報</a>
                     <a href="#s06">3つのコース</a>
                     <a href="#s05">こだわりの塗装</a>
@@ -99,12 +101,18 @@
                     </div>
                 </section>
 
-                <!-- S03 ご挨拶メッセージ ————————————————————— 緑BG -->
-                <section id="s03" class="sec sec-green">
-                    <div class="eyebrow">ご挨拶</div>
-                    <h2 class="sec-title">茶種よりご挨拶</h2>
-                    <div class="s03-modal-cta">
-                        <button class="btn-outline" onclick="openGreetingModal()">ご挨拶を読む ＞</button>
+                <!-- S03 作例ギャラリー ————————————————————— 緑BG -->
+                <section id="s03" class="sec-gallery sec-green">
+                    <div class="s03-gallery">
+                        <div class="s03-slick">
+                            <div><img src="images/SSphoto01.jpg" alt="作例写真 01"></div>
+                            <div><img src="images/SSphoto02.jpg" alt="作例写真 02"></div>
+                            <div><img src="images/SSphoto03.jpg" alt="作例写真 03"></div>
+                            <div><img src="images/SSphoto04.jpg" alt="作例写真 04"></div>
+                            <div><img src="images/SSphoto05.jpg" alt="作例写真 05"></div>
+                            <div><img src="images/SSphoto06.jpg" alt="作例写真 06"></div>
+                            <div><img src="images/SSphoto07.jpg" alt="作例写真 07"></div>
+                        </div>
                     </div>
                 </section>
 
@@ -944,16 +952,7 @@
         document.getElementById('greetingModalBtn').addEventListener('click', openGreetingModal);
         greetingModal.addEventListener('click', e => { if (e.target === greetingModal) closeGreetingModal(); });
 
-        // #s03 へのナビリンクはモーダルを開く
-        document.querySelectorAll('[href="#s03"]').forEach(link => {
-            link.addEventListener('click', e => {
-                e.preventDefault();
-                openGreetingModal();
-                closeDrawer();
-            });
-        });
-
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeGreetingModal(); closeDrawer(); } });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeGreetingModal(); closeDrawer(); } });
 
         // S02 RSS フィード（note.com）
         const NOTE_API_URL = 'https://api.rss2json.com/v1/api.json?rss_url=https://note.com/teaseed46/rss&count=10';
@@ -997,6 +996,25 @@
     </script>
 
     <script src="js/congestion-status.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $('.s03-slick').slick({
+            centerMode: true,
+            centerPadding: '8%',
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3500,
+            speed: 600,
+            dots: true,
+            arrows: true,
+            responsive: [
+                { breakpoint: 820, settings: { slidesToShow: 2, centerPadding: '8%' } },
+                { breakpoint: 540, settings: { slidesToShow: 1, centerPadding: '10%' } }
+            ]
+        });
+    </script>
     <script>
         document.querySelectorAll('[data-slideshow]').forEach(function (slideshow) {
             var imgs = slideshow.querySelectorAll('.slideshow-img');

@@ -235,7 +235,7 @@ p.side-nav-text {
    SECTION COMMON
 ============================================================ */
 .sec {
-    padding: clamp(3rem, 7vw, 5.5rem) max(1.5rem, calc((100% - 1100px) / 2));
+    padding: clamp(3rem, 7vw, 5.5rem) max(1.5rem, calc((100% - 1000px) / 2));
 }
 
 /* 白BG（奇数） */
@@ -482,7 +482,7 @@ p.side-nav-text {
 /* S01.5 ヒーローメッセージセクション */
 .hero-msg-sec {
     background: #fff;
-    padding: 3rem max(1.5rem, calc((100% - 1100px) / 2)) 3.5rem;
+    padding: 3rem max(1.5rem, calc((100% - 1000px) / 2)) 3.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -558,6 +558,64 @@ p.side-nav-text {
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
+}
+
+/* ============================================================
+   S03 GALLERY SLIDESHOW (slick)
+============================================================ */
+.sec-gallery {
+    padding: 0;
+}
+
+.s03-gallery {
+    position: relative;
+}
+
+.s03-gallery .slick-slider,
+.s03-gallery .slick-dotted.slick-slider {
+    margin-bottom: 0;
+}
+
+.s03-slick .slick-slide > div {
+    padding: 0;
+}
+
+.s03-slick .slick-slide img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+.s03-gallery .slick-prev,
+.s03-gallery .slick-next {
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+}
+
+.s03-gallery .slick-prev { left: 12px; }
+.s03-gallery .slick-next { right: 12px; }
+
+.s03-gallery .slick-prev::before,
+.s03-gallery .slick-next::before {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 30px;
+}
+
+.s03-gallery .slick-dots {
+    bottom: 14px;
+}
+
+.s03-gallery .slick-dots li button::before {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 8px;
+}
+
+.s03-gallery .slick-dots li.slick-active button::before {
+    color: #fff;
+    opacity: 1;
 }
 
 /* ============================================================
@@ -1758,7 +1816,7 @@ p.side-nav-text {
 ============================================================ */
 #s13 {
     text-align: center;
-    padding: clamp(4rem, 8vw, 7rem) max(1.5rem, calc((100% - 1100px) / 2));
+    padding: clamp(4rem, 8vw, 7rem) max(1.5rem, calc((100% - 1000px) / 2));
 }
 
 .closing-main {
