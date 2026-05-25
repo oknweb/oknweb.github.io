@@ -813,7 +813,6 @@
                             <p>
                                 はじめまして、茶種（ちゃだね）と申します。<br>
                                 緑とテカリを好み、YouTubeの動画に憧れ塗装を始めたモデラーです。<br>
-
                             </p>
                             <p>
                                 好きな機体を緑のキャンディで作るんだ！とやり始め、今や展示会出展や代行業に手を出すに至りました。
@@ -823,7 +822,6 @@
                                 部屋の棚を眺めるだけでお茶やお酒が進みます。
                             </p>
                             <p>
-
                                 そんな部屋作りのお手伝いできたら幸いです。
                                 作例を見てご興味持っていただけたようなら、ぜひお気軽にご相談ください。
                             </p>
@@ -916,153 +914,12 @@
     <!-- ============================================================
      JavaScript
 ============================================================ -->
-    <script>
-        // ハンバーガーメニュー
-        const menuBtn = document.getElementById('menuBtn');
-        const drawer = document.getElementById('drawer');
-        const overlay = document.getElementById('overlay');
-
-        function openDrawer() { menuBtn.classList.add('open'); drawer.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
-        function closeDrawer() { menuBtn.classList.remove('open'); drawer.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow = ''; }
-
-        menuBtn.addEventListener('click', () => drawer.classList.contains('open') ? closeDrawer() : openDrawer());
-        overlay.addEventListener('click', closeDrawer);
-        drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
-
-        // FAQ アコーディオン
-        function toggleFaq(qEl) {
-            const item = qEl.closest('.faq-item');
-            const isOpen = item.classList.contains('open');
-            document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-            if (!isOpen) item.classList.add('open');
-        }
-        const firstFaq = document.querySelector('.faq-item');
-        if (firstFaq) firstFaq.classList.add('open');
-
-        // 特定商取引法 モーダル
-        const legalModal = document.getElementById('legalModal');
-        function openModal() { legalModal.classList.add('open'); document.body.style.overflow = 'hidden'; }
-        function closeModal() { legalModal.classList.remove('open'); document.body.style.overflow = ''; }
-        legalModal.addEventListener('click', e => { if (e.target === legalModal) closeModal(); });
-
-        // ご挨拶モーダル
-        const greetingModal = document.getElementById('greetingModal');
-        function openGreetingModal() { greetingModal.classList.add('open'); document.body.style.overflow = 'hidden'; }
-        function closeGreetingModal() { greetingModal.classList.remove('open'); document.body.style.overflow = ''; }
-        document.getElementById('greetingModalBtn').addEventListener('click', openGreetingModal);
-        greetingModal.addEventListener('click', e => { if (e.target === greetingModal) closeGreetingModal(); });
-
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeGreetingModal(); closeDrawer(); } });
-
-        // S02 RSS フィード（note.com）
-        const NOTE_API_URL = 'https://api.rss2json.com/v1/api.json?rss_url=https://note.com/teaseed46/rss&count=10';
-        const noteListEl = document.getElementById('note-article-list');
-
-        function fetchNoteArticles() {
-            noteListEl.innerHTML = '';
-
-            fetch(NOTE_API_URL)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    if (data.status !== 'ok' || !data.items) {
-                        throw new Error('RSS2JSONで記事の取得に失敗しました。');
-                    }
-
-                    data.items.forEach(item => {
-                        const dateObj = new Date(item.pubDate);
-                        const formattedDate = `${dateObj.getFullYear()}.${String(dateObj.getMonth() + 1).padStart(2, '0')}.${String(dateObj.getDate()).padStart(2, '0')}`;
-
-                        const a = document.createElement('a');
-                        a.className = 'blog-item';
-                        a.href = item.link;
-                        a.target = '_blank';
-                        a.rel = 'noopener noreferrer';
-                        a.innerHTML = `<span class="blog-date">${formattedDate}</span><span class="blog-title">${item.title}</span>`;
-                        noteListEl.appendChild(a);
-                    });
-                })
-                .catch(error => {
-                    console.error('note記事の読み込み中にエラーが発生しました:', error);
-                    noteListEl.innerHTML = '<div class="blog-item"><span class="blog-title">記事の読み込みに失敗しました。</span></div>';
-                });
-        }
-
-        fetchNoteArticles();
-    </script>
-
+    <script src="js/main.js"></script>
     <script src="js/congestion-status.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script>
-        var $s03 = $('.s03-slick');
-        var s03ResumeTimer = null;
-        var S03_RESUME_DELAY = 3000;
-
-        $s03.slick({
-            centerMode: true,
-            centerPadding: '8%',
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 3500,
-            speed: 600,
-            dots: true,
-            arrows: true,
-            pauseOnHover: false,
-            pauseOnFocus: false,
-            responsive: [
-                { breakpoint: 820, settings: { slidesToShow: 2, centerPadding: '8%' } },
-                { breakpoint: 540, settings: { slidesToShow: 1, centerPadding: '10%' } }
-            ]
-        });
-
-        function s03ScheduleResume() {
-            clearTimeout(s03ResumeTimer);
-            s03ResumeTimer = setTimeout(function () {
-                $s03.slick('slickPlay');
-            }, S03_RESUME_DELAY);
-        }
-
-        // PC: ホバー中は停止、離したら3秒後に再開
-        $s03.on('mouseenter', function () {
-            clearTimeout(s03ResumeTimer);
-            $s03.slick('slickPause');
-        });
-        $s03.on('mouseleave', function () {
-            s03ScheduleResume();
-        });
-
-        // iOS/タッチ: タッチ終了後3秒で再開
-        $s03.on('touchend', function () {
-            s03ScheduleResume();
-        });
-    </script>
-    <script>
-        document.querySelectorAll('[data-slideshow]').forEach(function (slideshow) {
-            var imgs = slideshow.querySelectorAll('.slideshow-img');
-            var dots = slideshow.querySelectorAll('.slideshow-dot');
-            var current = 0;
-
-            function goTo(index) {
-                imgs[current].classList.remove('active');
-                dots[current].classList.remove('active');
-                current = (index + imgs.length) % imgs.length;
-                imgs[current].classList.add('active');
-                dots[current].classList.add('active');
-            }
-
-            dots.forEach(function (dot, i) {
-                dot.addEventListener('click', function () { goTo(i); });
-            });
-
-            setInterval(function () { goTo(current + 1); }, 3000);
-        });
-    </script>
+    <script src="js/s03-gallery.js"></script>
+    <script src="js/slideshow.js"></script>
 </body>
 
 </html>
