@@ -14,6 +14,11 @@ a {
     text-decoration: none;
 }
 
+strong {
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
 ul {
     list-style: none;
     padding: 0;
@@ -1052,7 +1057,6 @@ p.side-nav-text {
     display: block;
     font-family: var(--font-serif);
     color: var(--red);
-    font-size: 1rem;
     margin-bottom: 0.2rem;
 }
 
