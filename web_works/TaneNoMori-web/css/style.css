@@ -36,6 +36,11 @@ html {
     min-height: 100vh;
 }
 
+.sns-icon {
+    width: 36px;
+
+}
+
 /* ============================================================
    SIDEBAR (from style.css provided — DO NOT CHANGE)
 ============================================================ */
@@ -122,8 +127,8 @@ p.side-nav-text {
     --green-light: #4A7F30;
     --green-pale: #E8F0E1;
     --gold: #C9A882;
-    --red: #C8382E;
-    --red-dark: #B02E24;
+    --red: #f7382a;
+    --red-dark: #790d05;
     --cream: #FEFEF8;
     --ink: #1C1C1C;
     --ink-light: #555;
@@ -331,7 +336,7 @@ p.side-nav-text {
     font-size: 0.9rem;
     font-weight: 700;
     padding: 0.7rem 1.5rem;
-    border-radius: 4px;
+    border-radius: 8px;
     letter-spacing: 0.05em;
     transition: all 0.2s;
     background: transparent;
@@ -362,18 +367,22 @@ p.side-nav-text {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: #06C755;
-    color: #fff;
+    background: #fff;
+    color: #06C755;
     font-family: var(--font-serif);
     font-weight: 700;
     font-size: 0.9rem;
     padding: 0.7rem 1.5rem;
-    border-radius: 4px;
-    transition: opacity 0.2s;
+    border: solid var(--green) 1px;
+    border-radius: 8px;
+    transition: all 0.2s;
 }
 
 .btn-line:hover {
-    opacity: 0.85;
+    background: #83ee83;
+    color: #06C755;
+    transform: scale(1.03);
+
 }
 
 /* ============================================================
@@ -412,7 +421,7 @@ p.side-nav-text {
     flex-direction: column;
     justify-content: space-between;
     gap: 1.5rem;
-    padding: 1.75rem 2.5rem 2.5rem;
+    padding: 0.75rem 1rem 2rem;
     min-height: 65vh;
 }
 
@@ -425,11 +434,11 @@ p.side-nav-text {
     background: var(--red);
     color: #fff;
     font-family: var(--font-serif);
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     font-weight: 700;
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-    letter-spacing: 0.05em;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    letter-spacing: 0.125em;
     transition: background 0.2s, transform 0.2s;
 }
 
@@ -576,7 +585,7 @@ p.side-nav-text {
     margin-bottom: 0;
 }
 
-.s03-slick .slick-slide > div {
+.s03-slick .slick-slide>div {
     padding: 0;
 }
 
@@ -595,8 +604,13 @@ p.side-nav-text {
     z-index: 10;
 }
 
-.s03-gallery .slick-prev { left: 12px; }
-.s03-gallery .slick-next { right: 12px; }
+.s03-gallery .slick-prev {
+    left: 12px;
+}
+
+.s03-gallery .slick-next {
+    right: 12px;
+}
 
 .s03-gallery .slick-prev::before,
 .s03-gallery .slick-next::before {
