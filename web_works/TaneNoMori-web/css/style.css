@@ -81,8 +81,34 @@ p.side-nav-text {
     /* figure要素のブラウザデフォルト margin-inline: 40px をリセット */
 }
 
-.nav-mark img {
-    width: 48px;
+.hamburger {
+    width: 28px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+}
+
+.nav-mark.open .hamburger span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.nav-mark.open .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-mark.open .hamburger span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
 }
 
 .nav-mark figcaption {
@@ -143,7 +169,7 @@ p.side-nav-text {
     --content-w: 640px;
 
     /* Eyebrow label */
-    --eyebrow-size: 0.60rem;
+    --eyebrow-size: 1rem;
     --eyebrow-weight: 400;
     --eyebrow-spacing: 0.3em;
     --eyebrow-mb: 0.6rem;
@@ -1828,7 +1854,7 @@ p.side-nav-text {
 /* ============================================================
    S13 CLOSING
 ============================================================ */
-#s13 {
+#s15 {
     text-align: center;
     padding: clamp(4rem, 8vw, 7rem) max(1.5rem, calc((100% - 1000px) / 2));
 }
@@ -2145,12 +2171,6 @@ footer {
     margin: 1.25rem 0 0.6rem;
 }
 
-/* ============================================================
-   NAV-MARK クリック状態（ドロワーオープン時）
-============================================================ */
-.nav-mark.open img {
-    opacity: 0.7;
-}
 
 /* ============================================================
    SP RESPONSIVE — サイドナビをトップヘッダーに変換
@@ -2221,8 +2241,17 @@ footer {
         display: none;
     }
 
-    .nav-mark img {
-        width: 36px;
+    .hamburger {
+        width: 24px;
+        height: 18px;
+    }
+
+    .nav-mark.open .hamburger span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .nav-mark.open .hamburger span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 
     /* ドロワー: ヘッダー(60px)の直下から開始 */
