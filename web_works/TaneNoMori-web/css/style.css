@@ -455,7 +455,8 @@ p.side-nav-text {
 
 .hero-top {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .btn-hero-cta {
@@ -475,12 +476,7 @@ p.side-nav-text {
     transform: scale(1.03);
 }
 
-.hero-body {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
+/* .hero-body は削除（hero-copy を hero-top に移動したため） */
 
 .hero-copy {
     writing-mode: vertical-rl;
@@ -495,8 +491,7 @@ p.side-nav-text {
 
 .hero-bottom {
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    justify-content: flex-end;
 }
 
 .hero-logo {
@@ -2425,6 +2420,6 @@ footer {
     }
 
     .hero-top {
-        margin-bottom: 2.5rem;
+        align-items: flex-start;
     }
 }
