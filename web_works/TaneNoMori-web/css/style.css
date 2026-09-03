@@ -27,6 +27,7 @@ ul {
 
 html {
     scroll-behavior: smooth;
+    font-size: 17px;
 }
 
 /* wrapper grid */
@@ -1308,6 +1309,10 @@ p.side-nav-text {
     background: linear-gradient(to bottom, var(--green), var(--green-pale));
 }
 
+.sec-green .flow::before {
+    background: linear-gradient(to bottom, rgba(255,255,255,0.35), rgba(255,255,255,0.1));
+}
+
 .step {
     display: flex;
     gap: 1.5rem;
@@ -1854,7 +1859,7 @@ p.side-nav-text {
 /* ============================================================
    S13 CLOSING
 ============================================================ */
-#s15 {
+#s14 {
     text-align: center;
     padding: clamp(4rem, 8vw, 7rem) max(1.5rem, calc((100% - 1000px) / 2));
 }
@@ -2169,6 +2174,152 @@ footer {
     font-weight: 700;
     color: var(--green-deep);
     margin: 1.25rem 0 0.6rem;
+}
+
+/* ============================================================
+   S08 混雑状況
+============================================================ */
+#congestion-status {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+/* ============================================================
+   SECTION SPACERS（SVGアーチ）
+============================================================ */
+.sec-spacer {
+    line-height: 0;
+    font-size: 0;
+    overflow: hidden;
+    margin-bottom: -2px;
+}
+
+.sec-spacer img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* 白→緑：白セクション末尾に置く、SVGはgreen fill */
+.sec-spacer-a {
+    background: #ffffff;
+}
+
+/* 緑→白：緑セクション末尾に置く、SVGはwhite fill */
+.sec-spacer-b {
+    background: #519C23;
+}
+
+/* ============================================================
+   MID-SECTION CTA
+============================================================ */
+.sec-cta-mid {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* ============================================================
+   FINISH DETAILS（S06内 折りたたみ）
+============================================================ */
+.finish-details {
+    margin-top: 2.5rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.finish-section-label {
+    margin: 0;
+    padding: 0.85rem 1.25rem;
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--green-deep);
+    background: #f0f6ea;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: 0.04em;
+}
+
+.finish-details-body {
+    padding: 1.25rem;
+    background: #fff;
+}
+
+/* テーブルはPC表示 */
+.finish-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.finish-table th,
+.finish-table td {
+    border: 1px solid var(--border);
+    padding: 0.6rem 0.9rem;
+    vertical-align: top;
+}
+
+.finish-table thead tr {
+    background: #e8f0e1;
+    color: var(--green-deep);
+}
+
+.finish-table th {
+    font-weight: 700;
+    width: 28%;
+    background: #f0f6ea;
+    color: var(--green-deep);
+}
+
+/* カードはSP表示 */
+.finish-cards {
+    display: none;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.finish-card {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 0.82rem;
+}
+
+.finish-card-head {
+    background: #f0f6ea;
+    color: var(--green-deep);
+    font-weight: 700;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.8rem;
+}
+
+.finish-card-body {
+    padding: 0.7rem 0.85rem;
+    line-height: 1.7;
+    color: var(--ink-light);
+}
+
+.finish-note {
+    font-size: 0.8rem;
+    color: var(--ink-light);
+    background: #fafafa;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    line-height: 1.7;
+}
+
+@media (max-width: 640px) {
+    .finish-table {
+        display: none;
+    }
+
+    .finish-cards {
+        display: flex;
+    }
 }
 
 
