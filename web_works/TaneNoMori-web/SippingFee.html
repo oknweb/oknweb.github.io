@@ -37,28 +37,12 @@
 
     /* ---- トップバー ---- */
     .top-bar {
-      background: var(--green-deep);
+      background: #72B649;
       color: #fff;
       padding: 0.7rem 1.5rem;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-    }
-
-    .top-bar-name {
-      font-family: var(--font-serif);
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: 0.15em;
-      color: #fff;
-    }
-
-    .top-bar-en {
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-top: 0.1rem;
+      justify-content: flex-end;
     }
 
     .btn-back {
@@ -235,10 +219,6 @@
 <body>
 
   <div class="top-bar">
-    <div>
-      <div class="top-bar-name">種の杜</div>
-      <div class="top-bar-en">Tane no Mori — Model Workshop</div>
-    </div>
     <button class="btn-back" onclick="window.close(); history.back();">✕ 閉じる</button>
   </div>
 
