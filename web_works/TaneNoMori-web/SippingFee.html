@@ -4,72 +4,130 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>配送料金表</title>
+  <title>配送料金表 — 種の杜</title>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    *,
-    *::before,
-    *::after {
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
     :root {
-      --ink: #1a1a2e;
-      --ink-light: #4a4a6a;
-      --accent: #2d6a4f;
-      --accent-light: #52b788;
-      --accent-pale: #d8f3dc;
-      --rule: #b7e4c7;
-      --bg: #f8faf9;
-      --white: #ffffff;
-      --price-col: #1b4332;
+      --green:      #519C23;
+      --green-side: #72B649;
+      --green-deep: #2D5016;
+      --green-pale: #E8F0E1;
+      --gold:       #C9A882;
+      --cream:      #FEFEF8;
+      --border:     #D4C9B0;
+      --ink:        #1C1C1C;
+      --ink-light:  #555;
+      --font-serif: "Shippori Mincho", "Times New Roman", serif;
+      --font-sans:  "Noto Sans JP", "Hiragino Sans", sans-serif;
     }
 
     body {
-      font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "YuGothic", "Meiryo", sans-serif;
-      background: var(--bg);
+      font-family: var(--font-sans);
+      background: var(--cream);
       color: var(--ink);
-      padding: 3rem 1.5rem;
+      padding: 0;
       min-height: 100vh;
     }
 
-    .container {
-      max-width: 680px;
-      margin: 0 auto;
+    /* ---- トップバー ---- */
+    .top-bar {
+      background: var(--green-deep);
+      color: #fff;
+      padding: 0.7rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    .header {
-      margin-bottom: 2.5rem;
-      border-left: 4px solid var(--accent-light);
-      padding-left: 1rem;
-    }
-
-    .header h1 {
-      font-size: 1.6rem;
+    .top-bar-name {
+      font-family: var(--font-serif);
       font-weight: 700;
-      color: var(--ink);
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      color: #fff;
+    }
+
+    .top-bar-en {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-top: 0.1rem;
+    }
+
+    .btn-back {
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.75);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 0.35rem 0.9rem;
+      border-radius: 4px;
+      text-decoration: none;
+      cursor: pointer;
+      background: none;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .btn-back:hover {
+      color: #fff;
+      border-color: var(--gold);
+    }
+
+    /* ---- コンテンツ ---- */
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .page-header {
+      margin-bottom: 2rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 2px solid var(--green-pale);
+    }
+
+    .eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      color: var(--green);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-header h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 4vw, 1.9rem);
+      font-weight: 700;
+      color: var(--green-deep);
       letter-spacing: 0.04em;
     }
 
-    .header .subtitle {
-      margin-top: 0.4rem;
+    .page-header .subtitle {
+      margin-top: 0.5rem;
       font-size: 0.85rem;
       color: var(--ink-light);
-      letter-spacing: 0.02em;
+      line-height: 1.7;
     }
 
-    .header .date {
+    .page-header .date {
       margin-top: 0.35rem;
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       color: var(--ink-light);
     }
 
+    /* ---- テーブル ---- */
     .table-wrap {
-      border: 1px solid var(--rule);
+      border: 1px solid var(--border);
       border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 2px 16px rgba(45, 106, 79, 0.07);
+      box-shadow: 0 2px 12px rgba(45, 80, 22, 0.06);
     }
 
     table {
@@ -78,12 +136,13 @@
     }
 
     thead tr {
-      background: var(--accent);
+      background: var(--green-deep);
     }
 
     thead th {
-      color: var(--white);
-      font-size: 0.8rem;
+      color: #fff;
+      font-family: var(--font-serif);
+      font-size: 0.78rem;
       font-weight: 700;
       letter-spacing: 0.1em;
       padding: 0.9rem 1.2rem;
@@ -95,9 +154,9 @@
     }
 
     tbody tr {
-      border-bottom: 1px solid var(--rule);
+      border-bottom: 1px solid var(--border);
+      background: #fff;
       transition: background 0.15s;
-      background: var(--white);
     }
 
     tbody tr:last-child {
@@ -105,31 +164,32 @@
     }
 
     tbody tr:nth-child(even) {
-      background: var(--accent-pale);
+      background: var(--green-pale);
     }
 
     tbody tr:hover {
-      background: #c7f0d4;
+      background: #d5e8c4;
     }
 
     td {
       padding: 0.85rem 1.2rem;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       vertical-align: middle;
       color: var(--ink);
     }
 
     .col-region {
       width: 5.5rem;
+      font-family: var(--font-serif);
       font-weight: 700;
-      color: var(--accent);
+      color: var(--green-deep);
       letter-spacing: 0.05em;
       white-space: nowrap;
     }
 
     .col-prefs {
       color: var(--ink-light);
-      font-size: 0.875rem;
+      font-size: 0.85rem;
       line-height: 1.6;
     }
 
@@ -137,35 +197,60 @@
       text-align: right;
       white-space: nowrap;
       font-variant-numeric: tabular-nums;
+      font-family: var(--font-serif);
       font-weight: 700;
-      font-size: 1rem;
-      color: var(--price-col);
+      font-size: 0.98rem;
+      color: var(--green-deep);
     }
 
+    /* ---- 注記 ---- */
     .note {
       margin-top: 1.25rem;
       padding: 0.9rem 1.1rem;
-      background: var(--white);
-      border: 1px solid var(--rule);
+      background: #fff;
+      border: 1px solid var(--border);
       border-radius: 8px;
       font-size: 0.82rem;
       color: var(--ink-light);
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     .note strong {
-      color: var(--ink);
+      color: var(--green-deep);
+      font-weight: 700;
+    }
+
+    /* ---- SP対応 ---- */
+    @media (max-width: 540px) {
+      .col-prefs {
+        font-size: 0.78rem;
+      }
+      td {
+        padding: 0.7rem 0.9rem;
+      }
     }
   </style>
 </head>
 
 <body>
+
+  <div class="top-bar">
+    <div>
+      <div class="top-bar-name">種の杜</div>
+      <div class="top-bar-en">Tane no Mori — Model Workshop</div>
+    </div>
+    <button class="btn-back" onclick="window.close(); history.back();">✕ 閉じる</button>
+  </div>
+
   <div class="container">
-    <div class="header">
-      <h1>配送料金表 <span style="font-size:0.75rem;font-weight:400;color:var(--ink-light);">（税込）</span></h1>
-      <p class="subtitle">配送料一覧となります。</p>
+
+    <div class="page-header">
+      <div class="eyebrow">SHIPPING FEE</div>
+      <h1>配送料金表 <span style="font-size:0.72rem;font-weight:400;color:var(--ink-light);font-family:var(--font-sans);">（税込）</span></h1>
+      <p class="subtitle">配送料一覧です。往復送料はお客様にご負担いただきます。</p>
       <p class="date">2026年5月現在</p>
     </div>
+
     <div class="table-wrap">
       <table>
         <thead>
@@ -249,9 +334,11 @@
         </tbody>
       </table>
     </div>
-    <p class="note">※ この商品は、3辺の大きさ <strong>75cm</strong>（30×30×15cm）以下、重さ <strong>2kg
-        以下</strong>、<strong>千葉県</strong>からの発送となります。</p>
+
+    <p class="note">※ この商品は、3辺の大きさ <strong>75cm</strong>（30×30×15cm）以下、重さ <strong>2kg 以下</strong>、<strong>千葉県</strong>からの発送となります。</p>
+
   </div>
+
 </body>
 
 </html>
