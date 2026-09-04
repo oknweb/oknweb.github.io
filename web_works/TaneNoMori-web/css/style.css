@@ -163,6 +163,8 @@ p.side-nav-text {
     --green-light: #4A7F30;
     --green-pale: #E8F0E1;
     --gold: #C9A882;
+    --gold-deep: #352513;
+    --gold-light: #EDD9BC;
     --red: #f7382a;
     --red-dark: #790d05;
     --cream: #FEFEF8;
@@ -982,7 +984,11 @@ p.side-nav-text {
 
 .course-card.featured {
     border-color: var(--green);
+}
 
+.course-card.premium {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(201, 168, 130, 0.22);
 }
 
 .course-head {
@@ -994,6 +1000,11 @@ p.side-nav-text {
 .course-card.featured .course-head {
     background: var(--green);
     border-bottom-color: var(--green);
+}
+
+.course-card.premium .course-head {
+    background: var(--gold-light);
+    border-bottom-color: rgba(180, 140, 90, 0.3);
 }
 
 .course-badge {
@@ -1021,6 +1032,11 @@ p.side-nav-text {
     color: var(--red);
 }
 
+.course-card.premium .badge-ord {
+    background: var(--gold);
+    color: #fff;
+}
+
 .course-name {
     font-family: var(--font-serif);
     font-weight: 700;
@@ -1033,6 +1049,10 @@ p.side-nav-text {
     color: #fff;
 }
 
+.course-card.premium .course-name {
+    color: var(--green-deep);
+}
+
 .course-tagline {
     font-size: 0.78rem;
     color: var(--ink-light);
@@ -1040,6 +1060,11 @@ p.side-nav-text {
 
 .course-card.featured .course-tagline {
     color: rgba(255, 255, 255, 0.85);
+}
+
+.course-card.premium .course-tagline {
+    color: var(--green-deep);
+    opacity: 0.75;
 }
 
 .course-body {
@@ -1699,7 +1724,7 @@ p.side-nav-text {
 
 .activity-banner {
     padding: 1rem 1.25rem;
-    background: var(--green-deep);
+    background: var(--gold);
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -1714,7 +1739,7 @@ p.side-nav-text {
     letter-spacing: 0.15em;
     text-transform: uppercase;
     font-weight: 700;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 1);
 }
 
 .activity-body {
@@ -1737,7 +1762,7 @@ p.side-nav-text {
     font-family: var(--font-serif);
     font-weight: 700;
     font-size: 1rem;
-    color: var(--green-deep);
+    color: var(--gold-deep);
     margin-bottom: 0.6rem;
 }
 
