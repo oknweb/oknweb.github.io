@@ -19,6 +19,10 @@ strong {
     font-size: 1.05rem;
 }
 
+.p-small {
+    font-size: 0.75em;
+}
+
 ul {
     list-style: none;
     padding: 0;
@@ -28,6 +32,11 @@ ul {
 html {
     scroll-behavior: smooth;
     font-size: 17px;
+}
+
+/* SP専用改行 — PC時は非表示 */
+.sp-only {
+    display: none;
 }
 
 /* wrapper grid */
@@ -476,7 +485,7 @@ p.side-nav-text {
     transform: scale(1.03);
 }
 
-/* .hero-body は削除（hero-copy を hero-top に移動したため） */
+
 
 .hero-copy {
     writing-mode: vertical-rl;
@@ -487,6 +496,7 @@ p.side-nav-text {
     letter-spacing: 0.3em;
     line-height: 1.5;
     text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+    margin: 0;
 }
 
 .hero-bottom {
@@ -972,7 +982,7 @@ p.side-nav-text {
 
 .course-card.featured {
     border-color: var(--green);
-    box-shadow: 0 0 0 3px rgba(81, 156, 35, 0.18);
+
 }
 
 .course-head {
@@ -993,11 +1003,11 @@ p.side-nav-text {
     font-weight: 700;
     padding: 0.2rem 0.6rem;
     border-radius: 3px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.05rem;
 }
 
 .badge-easy {
-    background: #e8f0e1;
+    background: #ffffff;
     color: var(--green-deep);
 }
 
@@ -1385,6 +1395,7 @@ p.side-nav-text {
     font-weight: 700;
     font-size: 1.05rem;
     color: var(--green-deep);
+    margin-top: 0;
     margin-bottom: 0.5rem;
 }
 
@@ -1463,6 +1474,7 @@ p.side-nav-text {
     font-family: var(--font-serif);
     font-weight: 700;
     font-size: 1.05rem;
+    text-align: center;
     color: #fff;
     margin-bottom: 0.75rem;
     padding-bottom: 0.5rem;
@@ -2334,7 +2346,7 @@ footer {
 
     .main-container {
         grid-column: 1;
-        padding-top: 60px;
+        padding-top: 45px;
     }
 
     /* サイドナビ → 横並びヘッダーバー */
@@ -2342,7 +2354,7 @@ footer {
         left: 0;
         right: 0;
         width: 100%;
-        height: 60px;
+        height: 45px;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
@@ -2370,10 +2382,11 @@ footer {
         font-size: 0.95rem;
         font-weight: 700;
         margin: 0;
+
     }
 
     p.side-nav-text {
-        font-size: 0.65rem;
+        font-size: 0.85rem;
         opacity: 0.85;
         margin: 0;
     }
@@ -2401,25 +2414,42 @@ footer {
         transform: translateY(-8px) rotate(-45deg);
     }
 
-    /* ドロワー: ヘッダー(60px)の直下から開始 */
+    /* ドロワー: ヘッダー(45px)の直下から開始 */
     .drawer {
-        top: 60px;
-        height: calc(100vh - 60px);
+        top: 45px;
+        height: calc(100vh - 45px);
         width: 75vw;
         max-width: 280px;
     }
 
-    /* ヒーロー: ヘッダー分の余白 + CTAボタンとコピーの間隔を確保 */
+    /* ヒーロー: ヘッダー(45px)分の余白 + 高さ調整（ヒーローメッセージが少し見える） */
     #s01 {
-        min-height: 100svh;
+        min-height: 65svh;
     }
 
     .hero-inner {
-        min-height: 100svh;
-        padding-top: 2.5rem;
+        min-height: 65svh;
+        padding-top: 1rem;
+        padding-left: 0.5rem;
+        padding-right: 0.75rem;
     }
 
     .hero-top {
         align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    /* SP: CTAボタンを2行対応 */
+    .btn-hero-cta {
+        text-align: center;
+        padding: 0.65rem 1.1rem;
+        font-size: 0.72rem;
+        line-height: 1.6;
+        flex-shrink: 0;
+    }
+
+    /* SP専用 改行（PC では非表示） */
+    .sp-only {
+        display: inline;
     }
 }
