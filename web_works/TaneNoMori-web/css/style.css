@@ -110,6 +110,7 @@ p.side-nav-text {
 .hamburger {
     width: 28px;
     height: 20px;
+    padding-bottom: 2px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -2467,7 +2468,7 @@ footer {
         flex-shrink: 0;
     }
 
-    .nav-mark figcaption {
+    .nav-mark .nav-caption {
         display: none;
     }
 
