@@ -1200,7 +1200,10 @@ p.side-nav-text {
 }
 
 .supplement {
+    display: table;
     margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
     padding: 1rem 1.25rem;
     background: var(--green-pale);
     border-radius: 6px;
@@ -1448,10 +1451,9 @@ p.side-nav-text {
 }
 
 .step-arrow {
-    font-size: 1.1rem;
-    color: var(--gold);
-    padding: 0.1rem 0 0.1rem 58px;
-    line-height: 1;
+    display: flex;
+    justify-content: center;
+    padding: 0.75rem 0 0.75rem calc(56px + 1.5rem);
 }
 
 .flow-closing {
@@ -1946,7 +1948,7 @@ p.side-nav-text {
 .closing-logo img {
     width: 150%;
     height: auto;
-    filter: drop-shadow(0 4px 1px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0 4px 1px rgba(0, 0, 0, 0.02));
 }
 
 /* ============================================================
