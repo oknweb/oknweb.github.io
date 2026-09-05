@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>種の杜 — プラモデル制作代行サービス</title>
+    <meta name="description" content="千葉県の模型工房「種の杜」のプラモデル制作代行サービス。キャンディ・メタリック塗装が得意。かんたん・しっかり・オーダーメイドの3コースで、あなたの「こうしたい」を形にします。見積もり無料。">
+    <meta property="og:title" content="種の杜 — プラモデル制作代行サービス">
+    <meta property="og:description" content="千葉県の模型工房「種の杜」。キャンディ・メタリック塗装が得意な制作代行サービスです。見積もり無料・3コースから選べます。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/site-logo.png">
+    <meta name="twitter:card" content="summary_large_image">
     <link
         href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
         rel="stylesheet">
@@ -25,14 +31,14 @@
                 <h1 class="site-title side-nav-text">種の杜</h1>
                 <p class="side-nav-text">模型工房／製作代行</p>
             </a>
-            <figure class="nav-mark" id="menuBtn">
-                <div class="hamburger">
+            <button class="nav-mark" id="menuBtn" aria-expanded="false" aria-controls="drawer" aria-label="メニューを開閉する">
+                <div class="hamburger" aria-hidden="true">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
-                <figcaption>メニュー</figcaption>
-            </figure>
+                <span class="nav-caption" aria-hidden="true">メニュー</span>
+            </button>
         </nav>
 
         <div class="main-container">
@@ -110,15 +116,16 @@
 
                 <!-- S03 作例ギャラリー ————————————————————— 緑BG -->
                 <section id="s03" class="sec-gallery sec-green">
+                    <h2 class="visually-hidden">作例ギャラリー</h2>
                     <div class="s03-gallery">
                         <div class="s03-slick">
-                            <div><img src="images/SSphoto01.jpg" alt="作例写真 01"></div>
-                            <div><img src="images/SSphoto02.jpg" alt="作例写真 02"></div>
-                            <div><img src="images/SSphoto03.jpg" alt="作例写真 03"></div>
-                            <div><img src="images/SSphoto04.jpg" alt="作例写真 04"></div>
-                            <div><img src="images/SSphoto05.jpg" alt="作例写真 05"></div>
-                            <div><img src="images/SSphoto06.jpg" alt="作例写真 06"></div>
-                            <div><img src="images/SSphoto07.jpg" alt="作例写真 07"></div>
+                            <div><img src="images/SSphoto01.jpg" alt="作例写真 01" loading="lazy"></div>
+                            <div><img src="images/SSphoto02.jpg" alt="作例写真 02" loading="lazy"></div>
+                            <div><img src="images/SSphoto03.jpg" alt="作例写真 03" loading="lazy"></div>
+                            <div><img src="images/SSphoto04.jpg" alt="作例写真 04" loading="lazy"></div>
+                            <div><img src="images/SSphoto05.jpg" alt="作例写真 05" loading="lazy"></div>
+                            <div><img src="images/SSphoto06.jpg" alt="作例写真 06" loading="lazy"></div>
+                            <div><img src="images/SSphoto07.jpg" alt="作例写真 07" loading="lazy"></div>
                         </div>
                     </div>
                 </section>
@@ -164,7 +171,7 @@
 
                 <!-- セクションスペーサー S04(白)→S05(緑) -->
                 <div class="sec-spacer sec-spacer-a" aria-hidden="true">
-                    <img src="images/roundspacerA.svg" alt="" width="1200" height="70">
+                    <img src="images/roundspacerA.svg" alt="" width="1200" height="74">
                 </div>
 
                 <!-- S05 当工房が得意な3種の塗装 ——————————————— 緑BG -->
@@ -419,7 +426,7 @@
 
                 <!-- セクションスペーサー S06(白)→S07(緑) -->
                 <div class="sec-spacer sec-spacer-a" aria-hidden="true">
-                    <img src="images/roundspacerA.svg" alt="" width="1200" height="70">
+                    <img src="images/roundspacerA.svg" alt="" width="1200" height="74">
                 </div>
 
                 <!-- S07 ご依頼から納品までの流れ ——————————— 緑BG（旧S08） -->
@@ -550,7 +557,7 @@
 
                 <!-- セクションスペーサー S07(緑)→S08(白) -->
                 <div class="sec-spacer sec-spacer-b" aria-hidden="true">
-                    <img src="images/roundspacerB.svg" alt="" width="1200" height="70">
+                    <img src="images/roundspacerB.svg" alt="" width="1200" height="74">
                 </div>
 
                 <!-- S08 納期 ————————————————————————————————— 白BG（旧S10） -->
@@ -577,11 +584,11 @@
                     <p class="sec-sub">よくいただくご質問をまとめました。</p>
                     <div class="faq-list">
                         <div class="faq-item">
-                            <div class="faq-q" onclick="toggleFaq(this)">
+                            <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
                                 <div class="q-badge">Q</div>
                                 <div class="q-text">見積もりは無料ですか？</div>
                                 <div class="q-toggle">▾</div>
-                            </div>
+                            </button>
                             <div class="faq-a">
                                 <div class="a-inner">
                                     <div class="a-badge">A</div>
@@ -590,11 +597,11 @@
                             </div>
                         </div>
                         <div class="faq-item">
-                            <div class="faq-q" onclick="toggleFaq(this)">
+                            <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
                                 <div class="q-badge">Q</div>
                                 <div class="q-text">キットは自分で用意する必要がありますか？</div>
                                 <div class="q-toggle">▾</div>
-                            </div>
+                            </button>
                             <div class="faq-a">
                                 <div class="a-inner">
                                     <div class="a-badge">A</div>
@@ -603,11 +610,11 @@
                             </div>
                         </div>
                         <div class="faq-item">
-                            <div class="faq-q" onclick="toggleFaq(this)">
+                            <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
                                 <div class="q-badge">Q</div>
                                 <div class="q-text">製作期間はどのくらいですか？</div>
                                 <div class="q-toggle">▾</div>
-                            </div>
+                            </button>
                             <div class="faq-a">
                                 <div class="a-inner">
                                     <div class="a-badge">A</div>
@@ -618,11 +625,11 @@
                             </div>
                         </div>
                         <div class="faq-item">
-                            <div class="faq-q" onclick="toggleFaq(this)">
+                            <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
                                 <div class="q-badge">Q</div>
                                 <div class="q-text">色の指定はできますか？</div>
                                 <div class="q-toggle">▾</div>
-                            </div>
+                            </button>
                             <div class="faq-a">
                                 <div class="a-inner">
                                     <div class="a-badge">A</div>
@@ -631,11 +638,11 @@
                             </div>
                         </div>
                         <div class="faq-item">
-                            <div class="faq-q" onclick="toggleFaq(this)">
+                            <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
                                 <div class="q-badge">Q</div>
                                 <div class="q-text">製作途中で色味の確認はできますか？</div>
                                 <div class="q-toggle">▾</div>
-                            </div>
+                            </button>
                             <div class="faq-a">
                                 <div class="a-inner">
                                     <div class="a-badge">A</div>
@@ -644,11 +651,11 @@
                             </div>
                         </div>
                         <div class="faq-item">
-                            <div class="faq-q" onclick="toggleFaq(this)">
+                            <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
                                 <div class="q-badge">Q</div>
                                 <div class="q-text">完成後に気に入らなかった場合は？</div>
                                 <div class="q-toggle">▾</div>
-                            </div>
+                            </button>
                             <div class="faq-a">
                                 <div class="a-inner">
                                     <div class="a-badge">A</div>
@@ -659,11 +666,11 @@
                             </div>
                         </div>
                         <div class="faq-item">
-                            <div class="faq-q" onclick="toggleFaq(this)">
+                            <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
                                 <div class="q-badge">Q</div>
                                 <div class="q-text">海外からの依頼は可能ですか？</div>
                                 <div class="q-toggle">▾</div>
-                            </div>
+                            </button>
                             <div class="faq-a">
                                 <div class="a-inner">
                                     <div class="a-badge">A</div>
@@ -672,11 +679,11 @@
                             </div>
                         </div>
                         <div class="faq-item">
-                            <div class="faq-q" onclick="toggleFaq(this)">
+                            <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
                                 <div class="q-badge">Q</div>
                                 <div class="q-text">デカールやリアリスティックデカールは貼ってもらえますか？</div>
                                 <div class="q-toggle">▾</div>
-                            </div>
+                            </button>
                             <div class="faq-a">
                                 <div class="a-inner">
                                     <div class="a-badge">A</div>
@@ -690,7 +697,7 @@
 
                 <!-- セクションスペーサー S10(白)→S11(緑) -->
                 <div class="sec-spacer sec-spacer-a" aria-hidden="true">
-                    <img src="images/roundspacerA.svg" alt="" width="1200" height="70">
+                    <img src="images/roundspacerA.svg" alt="" width="1200" height="74">
                 </div>
 
                 <!-- S11 ご依頼前にご確認ください —————————————— 緑BG（旧S09） -->
@@ -761,13 +768,13 @@
                     <div class="s09-closing">
                         <p>ご不明な点は
                             お気軽にご相談ください！</p>
-                        <sub>どんな小さなことでも事前にお聞きします。<br>お気軽にどうぞ。</sub>
+                        <p class="s09-note">どんな小さなことでも事前にお聞きします。<br>お気軽にどうぞ。</p>
                     </div>
                 </section>
 
                 <!-- S11→S12 緑→白スペーサー -->
-                <div class="sec-spacer sec-spacer-b">
-                    <img src="images/roundspacerB.svg" alt="">
+                <div class="sec-spacer sec-spacer-b" aria-hidden="true">
+                    <img src="images/roundspacerB.svg" alt="" width="1200" height="74">
                 </div>
 
                 <!-- S12 お申込み ————————————————————————————— 白BG -->
@@ -779,7 +786,7 @@
                         <a href="https://forms.gle/f13UbkSdZHfR2aFj8" class="btn-primary" target="_blank"
                             rel="noopener noreferrer">お問い合わせフォーム</a>
                         <a href="#" class="btn-line"><span><img class="sns-icon" src="images/LINE_Brand_icon.png"
-                                    alt="line"></span>LINEで相談する</a>
+                                    alt=""></span>LINEで相談する</a>
                     </div>
                 </section>
 
@@ -815,8 +822,8 @@
                     </div>
                 </section>
                 <!-- S13→S14 緑→白スペーサー -->
-                <div class="sec-spacer sec-spacer-b">
-                    <img src="images/roundspacerB.svg" alt="">
+                <div class="sec-spacer sec-spacer-b" aria-hidden="true">
+                    <img src="images/roundspacerB.svg" alt="" width="1200" height="74">
                 </div>
 
                 <!-- S14 クロージング ————————————————————————— 緑BG（旧S15） -->
@@ -827,9 +834,9 @@
                         お見積もりは無料です。
                     </p>
                     <div class="closing-btns">
-                        <a href="#" class="btn-closing">お申し込みはこちらから</a>
+                        <a href="https://forms.gle/f13UbkSdZHfR2aFj8" class="btn-closing" target="_blank" rel="noopener noreferrer">お申し込みはこちらから</a>
                         <a href="#" class="btn-line"><span><img class="sns-icon" src="images/LINE_Brand_icon.png"
-                                    alt="line"></span>LINEで気軽に相談</a>
+                                    alt=""></span>LINEで気軽に相談</a>
                     </div>
                     <div class="closing-logo">
                         <img src="images/site-logo-green.png" alt="種の杜 模型工房">
@@ -845,7 +852,7 @@
                             <p class="f-desc">プラモデル制作代行サービス<br>あなたの「こうしたい」を形にします</p>
                         </div>
                         <div class="footer-nav">
-                            <h4>Navigation</h4>
+                            <h3>Navigation</h3>
                             <ul>
                                 <li><a href="#s03">種の杜のこと</a></li>
                                 <li><a href="#s04">サービス紹介</a></li>
@@ -855,8 +862,8 @@
                             </ul>
                         </div>
                         <div class="footer-contact">
-                            <h4>Contact</h4>
-                            <div class="f-mail">teaseed1125@gmail.com</div>
+                            <h3>Contact</h3>
+                            <div class="f-mail"><a href="mailto:teaseed1125@gmail.com">teaseed1125@gmail.com</a></div>
                             <div class="f-sns">
                                 <a href="https://x.com/seed_tea" target="_blank">𝕏 Twitter</a>
                                 <a href="https://note.com/teaseed46" target="_blank">note</a>
@@ -864,7 +871,7 @@
                         </div>
                     </div>
                     <div class="footer-bottom">
-                        <span class="footer-copy">© 2025 茶種. All rights reserved.</span>
+                        <span class="footer-copy">© 2026 茶種. All rights reserved.</span>
                         <button class="footer-legal-btn" onclick="openModal()">特定商取引法に基づく表記</button>
                     </div>
                 </footer>

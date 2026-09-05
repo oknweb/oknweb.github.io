@@ -39,6 +39,19 @@ html {
     display: none;
 }
 
+/* スクリーンリーダー専用（視覚的に非表示） */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 /* wrapper grid */
 .wrapper {
     display: grid;
@@ -88,7 +101,10 @@ p.side-nav-text {
     gap: 6px;
     cursor: pointer;
     margin: 0;
-    /* figure要素のブラウザデフォルト margin-inline: 40px をリセット */
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
 }
 
 .hamburger {
@@ -97,6 +113,7 @@ p.side-nav-text {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
 }
 
 .hamburger span {
@@ -104,9 +121,10 @@ p.side-nav-text {
     width: 100%;
     height: 2px;
     background: #fff;
-    border-radius: 2px;
+    border-radius: 1px;
     transition: transform 0.3s ease, opacity 0.3s ease;
     transform-origin: center;
+    will-change: transform, opacity;
 }
 
 .nav-mark.open .hamburger span:nth-child(1) {
@@ -115,13 +133,14 @@ p.side-nav-text {
 
 .nav-mark.open .hamburger span:nth-child(2) {
     opacity: 0;
+    transform: scaleX(0);
 }
 
 .nav-mark.open .hamburger span:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
 }
 
-.nav-mark figcaption {
+.nav-mark .nav-caption {
     font-size: 0.8rem;
     color: #ffffff;
     writing-mode: horizontal-tb;
@@ -1558,7 +1577,7 @@ p.side-nav-text {
     line-height: 2;
 }
 
-.s09-closing sub {
+.s09-note {
     font-size: 0.85rem;
     opacity: 0.75;
     display: block;
@@ -1808,6 +1827,11 @@ p.side-nav-text {
     cursor: pointer;
     user-select: none;
     transition: background 0.15s;
+    width: 100%;
+    background: none;
+    border: none;
+    font: inherit;
+    text-align: left;
 }
 
 .faq-q:hover,
@@ -1942,7 +1966,7 @@ p.side-nav-text {
 .closing-logo {
     width: 140px;
     margin: 0 auto;
-    margin-top: 2rem;
+    margin-top: 5rem;
 }
 
 .closing-logo img {
@@ -1997,8 +2021,8 @@ footer {
     line-height: 1.7;
 }
 
-.footer-nav h4,
-.footer-contact h4 {
+.footer-nav h3,
+.footer-contact h3 {
     font-family: var(--font-serif);
     font-size: 0.7rem;
     letter-spacing: 0.15em;

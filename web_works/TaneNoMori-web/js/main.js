@@ -3,8 +3,23 @@ const menuBtn = document.getElementById('menuBtn');
 const drawer = document.getElementById('drawer');
 const overlay = document.getElementById('overlay');
 
-function openDrawer() { menuBtn.classList.add('open'); drawer.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
-function closeDrawer() { menuBtn.classList.remove('open'); drawer.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow = ''; }
+function openDrawer() {
+    menuBtn.classList.add('open');
+    menuBtn.setAttribute('aria-expanded', 'true');
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    const firstLink = drawer.querySelector('a');
+    if (firstLink) firstLink.focus();
+}
+function closeDrawer() {
+    menuBtn.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    menuBtn.focus();
+}
 
 menuBtn.addEventListener('click', () => drawer.classList.contains('open') ? closeDrawer() : openDrawer());
 overlay.addEventListener('click', closeDrawer);
@@ -14,11 +29,21 @@ drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawe
 function toggleFaq(qEl) {
     const item = qEl.closest('.faq-item');
     const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+        item.classList.add('open');
+        qEl.setAttribute('aria-expanded', 'true');
+    }
 }
 const firstFaq = document.querySelector('.faq-item');
-if (firstFaq) firstFaq.classList.add('open');
+if (firstFaq) {
+    firstFaq.classList.add('open');
+    const firstBtn = firstFaq.querySelector('.faq-q');
+    if (firstBtn) firstBtn.setAttribute('aria-expanded', 'true');
+}
 
 // 特定商取引法 モーダル
 const legalModal = document.getElementById('legalModal');
