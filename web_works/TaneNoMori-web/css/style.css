@@ -511,7 +511,7 @@ p.side-nav-text {
 }
 
 .hero-logo img {
-    width: 100%;
+    width: 150%;
     height: auto;
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
 }
@@ -1176,17 +1176,17 @@ p.side-nav-text {
 
 .price-custom {
     font-size: 0.85rem;
-    color: var(--ink-light);
+    color: var(--cream);
     text-align: center;
     padding: 0.75rem;
-    background: #fafafa;
+    background: var(--red);
     border-radius: 4px;
 }
 
 .price-custom strong {
     display: block;
     font-family: var(--font-serif);
-    color: var(--red);
+    color: var(--cream);
     margin-bottom: 0.2rem;
 }
 
@@ -1901,13 +1901,13 @@ p.side-nav-text {
     font-family: var(--font-serif);
     font-size: clamp(1.6rem, 3.5vw, 2.4rem);
     font-weight: 700;
-    color: #fff;
+    color: var(--ink-light);
     margin-bottom: 0.75rem;
 }
 
 .closing-sub {
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(0, 0, 0, 0.85);
     line-height: 1.8;
     margin-bottom: 3.5rem;
 }
@@ -1935,6 +1935,18 @@ p.side-nav-text {
 .btn-closing:hover {
     background: var(--red-dark);
     transform: scale(1.04);
+}
+
+.closing-logo {
+    width: 140px;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.closing-logo img {
+    width: 150%;
+    height: auto;
+    filter: drop-shadow(0 4px 1px rgba(0, 0, 0, 0.1));
 }
 
 /* ============================================================
