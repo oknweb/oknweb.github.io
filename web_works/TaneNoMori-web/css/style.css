@@ -1579,12 +1579,12 @@ p.side-nav-text {
     text-align: center;
     color: rgba(255, 255, 255, 0.9);
     font-family: var(--font-serif);
-    font-size: 0.95rem;
+    font-size: 1.4rem;
     line-height: 2;
 }
 
 .s09-note {
-    font-size: 0.85rem;
+    font-size: 1rem;
     opacity: 0.75;
     display: block;
     margin-top: 0.25rem;
@@ -1788,7 +1788,7 @@ p.side-nav-text {
 .activity-title {
     font-family: var(--font-serif);
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: var(--gold-deep);
     margin-bottom: 0.6rem;
 }
