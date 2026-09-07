@@ -1,3 +1,14 @@
+// ローディングアニメーション
+(function () {
+    const loader = document.getElementById('loader');
+    const logo = loader && loader.querySelector('.loader-logo');
+    if (!loader || !logo) return;
+
+    setTimeout(() => logo.classList.add('show'), 200);      // ロゴフェードイン
+    setTimeout(() => loader.classList.add('fade-out'), 1600); // ローダーフェードアウト開始
+    setTimeout(() => loader.style.display = 'none', 2600);   // ローダー完全除去
+})();
+
 // ハンバーガーメニュー
 const menuBtn = document.getElementById('menuBtn');
 const drawer = document.getElementById('drawer');
