@@ -27,7 +27,10 @@
 <body>
     <!-- ローディング画面 -->
     <div id="loader" aria-hidden="true">
-        <img src="images/site-logo.png" alt="" class="loader-logo">
+        <div class="loader-inner">
+            <p class="loader-label">模型工房／制作代行</p>
+            <img src="images/site-logo.png" alt="" class="loader-logo">
+        </div>
     </div>
 
     <div class="wrapper">
@@ -82,12 +85,12 @@
                     <div class="hero-overlay"></div>
                     <div class="hero-inner">
                         <div class="hero-top">
-                            <p class="hero-copy">あなたの<br>こうしたいを<br>形にします</p>
-                            <a href="https://forms.gle/f13UbkSdZHfR2aFj8" class="btn-hero-cta" target="_blank"
-                                rel="noopener noreferrer">お申し込みは<br class="sp-only">こちら</a>
+                            <p class="hero-copy hero-anim">あなたの<br>こうしたいを<br>形にします</p>
+                            <a href="https://forms.gle/f13UbkSdZHfR2aFj8" class="btn-hero-cta hero-anim delay-1"
+                                target="_blank" rel="noopener noreferrer">お申し込みは<br class="sp-only">こちら</a>
                         </div>
                         <div class="hero-bottom">
-                            <div class="hero-logo">
+                            <div class="hero-logo hero-anim delay-2">
                                 <img src="images/site-logo.png" alt="種の杜 模型工房">
                             </div>
                         </div>
@@ -255,7 +258,8 @@
                         </div>
                     </div>
                     <div class="s05-footer">
-                        <a href="https://www.foriio.com/teaseed" class="btn-outline" target="_blank" rel="noopener noreferrer">さらに作例を見る </a>
+                        <a href="https://www.foriio.com/teaseed" class="btn-outline" target="_blank"
+                            rel="noopener noreferrer">さらに作例を見る </a>
                     </div>
                     <div class="sec-cta-mid">
                         <a href="https://forms.gle/f13UbkSdZHfR2aFj8" class="btn-primary" target="_blank"
@@ -579,7 +583,9 @@
                 <section id="s08" class="sec sec-white">
                     <div class="eyebrow">【納期】</div>
                     <h2 class="sec-title">現在の混雑状況</h2>
-                    <div id="congestion-status"><div style="color:#999;font-size:0.85rem;">読み込み中...</div></div>
+                    <div id="congestion-status">
+                        <div style="color:#999;font-size:0.85rem;">読み込み中...</div>
+                    </div>
                 </section>
 
                 <!-- S09 送料 ————————————————————————————————— 白BG（旧S11） -->
@@ -588,7 +594,8 @@
                     <h2 class="sec-title">配送料について</h2>
                     <p class="sec-sub">往復送料は別途ご負担いただきます。<br>詳細は送料表をご確認ください。</p>
                     <div style="text-align:center">
-                        <a href="SippingFee.html" class="btn-outline" target="_blank" rel="noopener noreferrer">送料表を見る</a>
+                        <a href="SippingFee.html" class="btn-outline" target="_blank"
+                            rel="noopener noreferrer">送料表を見る</a>
                     </div>
                 </section>
 
@@ -781,15 +788,19 @@
                         </div>
                     </div>
                     <div class="s09-closing">
-                        <p>ご不明な点は
-                            お気軽にご相談ください！</p>
-                        <p class="s09-note">どんな小さなことでも事前にお聞きします。<br>お気軽にどうぞ。</p>
+                        <p>ご不明な点は<br class="sp-only"> お気軽にご相談ください！</p>
+                        <p class="s09-note">どんな小さなことでも<br class="sp-only">事前にお聞きします。<br>お気軽にどうぞ。</p>
                     </div>
                 </section>
 
                 <!-- S11→S12 緑→白スペーサー -->
                 <div class="sec-spacer sec-spacer-b" aria-hidden="true">
                     <img src="images/roundspacerB.svg" alt="" width="1200" height="74">
+                </div>
+
+                <!-- 工房バナー -->
+                <div class="works-banner">
+                    <img src="images/works.jpg" alt="種の杜 工房の作業台">
                 </div>
 
                 <!-- S12 お申込み ————————————————————————————— 白BG -->
@@ -800,7 +811,8 @@
                     <div class="cta-stack">
                         <a href="https://forms.gle/f13UbkSdZHfR2aFj8" class="btn-primary" target="_blank"
                             rel="noopener noreferrer">お問い合わせフォーム</a>
-                        <a href="https://line.me/ti/p/rB3X3cwGp1" class="btn-line" target="_blank" rel="noopener noreferrer"><span><img class="sns-icon" src="images/LINE_Brand_icon.png"
+                        <a href="https://line.me/ti/p/rB3X3cwGp1" class="btn-line" target="_blank"
+                            rel="noopener noreferrer"><span><img class="sns-icon" src="images/LINE_Brand_icon.png"
                                     alt=""></span>LINEで相談する</a>
                     </div>
                 </section>
@@ -831,7 +843,8 @@
                                 <div class="activity-title">展示会参加情報</div>
                                 <p class="activity-desc">展示会、定期的に出品参加しています。わたしの作品を直接ご覧いただく機会です。今後の参加情報や過去の参加レポートはブログにて。
                                 </p>
-                                <a href="https://note.com/teaseed46/n/n6740816f6ad0" class="btn-outline" target="_blank" rel="noopener noreferrer">参加レポートを見る</a>
+                                <a href="https://note.com/teaseed46/n/n6740816f6ad0" class="btn-outline" target="_blank"
+                                    rel="noopener noreferrer">参加レポートを見る</a>
                             </div>
                         </div>
                     </div>
@@ -851,7 +864,8 @@
                     <div class="closing-btns">
                         <a href="https://forms.gle/f13UbkSdZHfR2aFj8" class="btn-closing" target="_blank"
                             rel="noopener noreferrer">お申し込みはこちらから</a>
-                        <a href="https://line.me/ti/p/rB3X3cwGp1" class="btn-line" target="_blank" rel="noopener noreferrer"><span><img class="sns-icon" src="images/LINE_Brand_icon.png"
+                        <a href="https://line.me/ti/p/rB3X3cwGp1" class="btn-line" target="_blank"
+                            rel="noopener noreferrer"><span><img class="sns-icon" src="images/LINE_Brand_icon.png"
                                     alt=""></span>LINEで気軽に相談</a>
                     </div>
                     <div class="closing-logo">
@@ -881,7 +895,8 @@
                             <h3>Contact</h3>
                             <div class="f-mail"><a href="mailto:teaseed1125@gmail.com">teaseed1125@gmail.com</a></div>
                             <div class="f-sns">
-                                <a href="https://x.com/seed_tea" target="_blank" rel="noopener noreferrer">𝕏 Twitter</a>
+                                <a href="https://x.com/seed_tea" target="_blank" rel="noopener noreferrer">𝕏
+                                    Twitter</a>
                                 <a href="https://note.com/teaseed46" target="_blank" rel="noopener noreferrer">note</a>
                             </div>
                         </div>

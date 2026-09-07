@@ -1,12 +1,51 @@
 // ローディングアニメーション
 (function () {
     const loader = document.getElementById('loader');
-    const logo = loader && loader.querySelector('.loader-logo');
-    if (!loader || !logo) return;
+    const inner = loader && loader.querySelector('.loader-inner');
+    if (!loader || !inner) return;
 
-    setTimeout(() => logo.classList.add('show'), 200);      // ロゴフェードイン
-    setTimeout(() => loader.classList.add('fade-out'), 1600); // ローダーフェードアウト開始
-    setTimeout(() => loader.style.display = 'none', 2600);   // ローダー完全除去
+    setTimeout(() => inner.classList.add('show'), 200);
+    setTimeout(() => loader.classList.add('fade-out'), 1600);
+    setTimeout(() => {
+        loader.style.display = 'none';
+        // ヒーロー要素を発火
+        document.querySelectorAll('.hero-anim').forEach(el => el.classList.add('show'));
+    }, 2600);
+})();
+
+// スクロール出現アニメーション
+(function () {
+    const targets = [
+        '.eyebrow', '.sec-title', '.sec-sub',
+        '.worry-card', '.solution-card',
+        '.paint-card', '.course-card', '.step',
+        '.faq-item', '.activity-card',
+        '.s04-catch', '.supplement',
+        '.sec-cta-mid', '.s05-footer', '.s06-cta',
+        '.flow-closing', '.s09-closing', '.cta-stack',
+        '.closing-btns', '.closing-logo', '.finish-details',
+        '.hero-msg-sec', '.blog-list', '.blog-footer',
+        '.restrictions', '.hero-message'
+    ];
+
+    const observer = new IntersectionObserver((entries) => {
+        requestAnimationFrame(() => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+    }, { rootMargin: '-6% 0px', threshold: 0.08 });
+
+    targets.forEach(sel => {
+        document.querySelectorAll(sel).forEach(el => {
+            if (el.closest('#s01')) return; // ヒーローセクションは除外
+            el.classList.add('anim-fade-up');
+            observer.observe(el);
+        });
+    });
 })();
 
 // ハンバーガーメニュー

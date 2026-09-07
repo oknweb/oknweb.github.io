@@ -309,7 +309,9 @@ p.side-nav-text {
 
 /* 緑BG（偶数） */
 .sec-green {
-    background: #519C23;
+    background:
+        linear-gradient(to bottom, transparent calc(100% - 400px), rgba(0, 0, 0, 0.18) 100%),
+        #519C23;
     color: #fff;
 }
 
@@ -527,7 +529,7 @@ p.side-nav-text {
 }
 
 .hero-logo {
-    width: 140px;
+    width: 180px;
 }
 
 .hero-logo img {
@@ -1983,6 +1985,114 @@ p.side-nav-text {
 }
 
 /* ============================================================
+   ANIMATIONS
+============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+
+    /* ヒーロー要素（ローダー後に発火） */
+    .hero-anim {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+
+    .hero-anim.delay-1 {
+        transition-delay: 0.15s;
+    }
+
+    .hero-anim.delay-2 {
+        transition-delay: 0.3s;
+    }
+
+    .hero-anim.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* スクロール出現 */
+    .anim-fade-up {
+        opacity: 0;
+        transform: translateY(22px);
+        transition: opacity 0.65s ease, transform 0.65s ease;
+        will-change: transform, opacity;
+    }
+
+    .anim-fade-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+        will-change: auto;
+    }
+
+    /* カードグループのstagger */
+    .worries .worry-card:nth-child(2),
+    .solutions .solution-card:nth-child(2),
+    .paint-cards .paint-card:nth-child(2),
+    .course-cards .course-card:nth-child(2),
+    .activities .activity-card:nth-child(2) {
+        transition-delay: 0.1s;
+    }
+
+    .worries .worry-card:nth-child(3),
+    .solutions .solution-card:nth-child(3),
+    .paint-cards .paint-card:nth-child(3),
+    .course-cards .course-card:nth-child(3) {
+        transition-delay: 0.2s;
+    }
+
+    /* ステップのstagger（6段） */
+    .flow .step:nth-child(3) {
+        transition-delay: 0.08s;
+    }
+
+    .flow .step:nth-child(5) {
+        transition-delay: 0.16s;
+    }
+
+    .flow .step:nth-child(7) {
+        transition-delay: 0.24s;
+    }
+
+    .flow .step:nth-child(9) {
+        transition-delay: 0.32s;
+    }
+
+    .flow .step:nth-child(11) {
+        transition-delay: 0.40s;
+    }
+}
+
+/* CTA shimmer */
+@keyframes btn-shimmer {
+    0%   { transform: translateX(-120%) skewX(-20deg); }
+    100% { transform: translateX(300%)  skewX(-20deg); }
+}
+
+.btn-hero-cta,
+.btn-primary,
+.btn-closing {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-hero-cta::after,
+.btn-primary::after,
+.btn-closing::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 40%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+    transform: translateX(-120%) skewX(-20deg);
+    animation: btn-shimmer 3.2s ease-in-out infinite;
+    pointer-events: none;
+    will-change: transform;
+}
+
+.btn-hero-cta::after { animation-delay: 0.4s; }
+.btn-primary::after  { animation-delay: 1.0s; }
+.btn-closing::after  { animation-delay: 0.7s; }
+
+/* ============================================================
    LOADER
 ============================================================ */
 #loader {
@@ -2002,14 +2112,31 @@ p.side-nav-text {
     pointer-events: none;
 }
 
-.loader-logo {
-    width: 130px;
+.loader-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
     opacity: 0;
     transition: opacity 0.8s ease;
 }
 
-.loader-logo.show {
+.loader-inner.show {
     opacity: 1;
+}
+
+.loader-label {
+    font-family: var(--font-serif);
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    margin: 0;
+    width: 195px;
+    text-align: center;
+}
+
+.loader-logo {
+    width: 195px;
 }
 
 /* ============================================================
@@ -2294,6 +2421,22 @@ footer {
 }
 
 /* ============================================================
+   WORKS BANNER
+============================================================ */
+.works-banner {
+    line-height: 0;
+    font-size: 0;
+}
+
+.works-banner img {
+    display: block;
+    width: 100%;
+    height: clamp(100px, 17vw, 240px);
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ============================================================
    SECTION SPACERS（SVGアーチ）
 ============================================================ */
 .sec-spacer {
@@ -2316,7 +2459,7 @@ footer {
 
 /* 緑→白：緑セクション末尾に置く、SVGはwhite fill */
 .sec-spacer-b {
-    background: #519C23;
+    background: #42801d;
 }
 
 /* ============================================================
