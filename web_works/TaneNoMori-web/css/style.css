@@ -2661,7 +2661,7 @@ footer {
     /* ドロワー: ヘッダー(45px)の直下から開始 */
     .drawer {
         top: 45px;
-        height: calc(100vh - 45px);
+        height: calc(100dvh - 45px);
         width: 75vw;
         max-width: 280px;
     }
