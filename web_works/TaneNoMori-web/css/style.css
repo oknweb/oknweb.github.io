@@ -2092,6 +2092,10 @@ p.side-nav-text {
 .btn-primary::after  { animation-delay: 1.0s; }
 .btn-closing::after  { animation-delay: 0.7s; }
 
+.btn-hero-cta.shimmer-reset::after,
+.btn-primary.shimmer-reset::after,
+.btn-closing.shimmer-reset::after { animation: none; }
+
 /* ============================================================
    LOADER
 ============================================================ */

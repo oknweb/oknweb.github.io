@@ -1,17 +1,37 @@
-// ローディングアニメーション
+// ローディングアニメーション（同一セッション内のリロードはスキップ）
 (function () {
     const loader = document.getElementById('loader');
     const inner = loader && loader.querySelector('.loader-inner');
     if (!loader || !inner) return;
 
+    const showHero = () => document.querySelectorAll('.hero-anim').forEach(el => el.classList.add('show'));
+
+    if (sessionStorage.getItem('loaderShown')) {
+        loader.style.display = 'none';
+        showHero();
+        return;
+    }
+    sessionStorage.setItem('loaderShown', '1');
+
     setTimeout(() => inner.classList.add('show'), 200);
     setTimeout(() => loader.classList.add('fade-out'), 1600);
     setTimeout(() => {
         loader.style.display = 'none';
-        // ヒーロー要素を発火
-        document.querySelectorAll('.hero-anim').forEach(el => el.classList.add('show'));
+        showHero();
     }, 2600);
 })();
+
+// BFCache復帰時にシマーアニメーションをリセット（iOS Safari 対応）
+window.addEventListener('pageshow', (e) => {
+    if (!e.persisted) return;
+    const btns = document.querySelectorAll('.btn-hero-cta, .btn-primary, .btn-closing');
+    btns.forEach(btn => btn.classList.add('shimmer-reset'));
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            btns.forEach(btn => btn.classList.remove('shimmer-reset'));
+        });
+    });
+});
 
 // スクロール出現アニメーション
 (function () {
