@@ -31,9 +31,6 @@
           <div style="font-size:1rem; font-weight:700; color:${s.color};">
             ${s.emoji} ${s.label}
           </div>
-          <div style="font-size:0.82rem; color:${s.color}; opacity:0.8;">
-            ${s.period}
-          </div>
           <div style="font-size:0.68rem; color:#999; margin-top:0.2rem;">
             最終更新：${data.updated}
           </div>
