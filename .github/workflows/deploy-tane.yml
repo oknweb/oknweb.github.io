@@ -1,0 +1,29 @@
+name: Deploy 種の杜 to ロリポップ
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'web_works/TaneNoMori-web/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.TANE_FTP_SERVER }}
+          username: ${{ secrets.TANE_FTP_USERNAME }}
+          password: ${{ secrets.TANE_FTP_PASSWORD }}
+          local-dir: ./web_works/TaneNoMori-web/
+          server-dir: ./
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/DEV_NOTES.md
+            **/node_modules/**
