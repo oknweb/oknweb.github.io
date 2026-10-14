@@ -1,11 +1,6 @@
 name: Deploy 種の杜 to ロリポップ
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'web_works/TaneNoMori-web/**'
   workflow_dispatch:
 
 jobs:

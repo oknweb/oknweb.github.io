@@ -1,5 +1,6 @@
 # Claude Code local settings
 .claude/
 
-# 開発メモ（ローカル保管）
+# 開発メモ・FTP設定（ローカル保管）
 **/DEV_NOTES.md
+.vscode/sftp.json
