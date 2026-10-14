@@ -131,7 +131,7 @@ greetingModal.addEventListener('click', e => { if (e.target === greetingModal) c
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeGreetingModal(); closeDrawer(); } });
 
 // S02 RSS フィード（note.com）
-const NOTE_API_URL = 'https://api.rss2json.com/v1/api.json?rss_url=https://note.com/teaseed46/rss&count=10';
+const NOTE_API_URL = '/rss-proxy.php?count=10';
 const noteListEl = document.getElementById('note-article-list');
 
 function fetchNoteArticles() {
