@@ -11,12 +11,29 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Install lftp
         run: sudo apt-get install -y lftp
+
+      - name: Test FTP connection
+        env:
+          FTP_SERVER: ${{ secrets.TANE_FTP_SERVER }}
+          FTP_USER: ${{ secrets.TANE_FTP_USERNAME }}
+          FTP_PASS: ${{ secrets.TANE_FTP_PASSWORD }}
+        run: |
+          lftp -e "
+            set ftp:ssl-allow no;
+            set ftp:passive-mode yes;
+            set net:timeout 15;
+            set net:max-retries 2;
+            open -u \"$FTP_USER\",\"$FTP_PASS\" \"$FTP_SERVER\";
+            ls;
+            bye
+          "
 
       - name: Deploy via FTP
         env:
@@ -26,8 +43,9 @@ jobs:
         run: |
           lftp -e "
             set ftp:ssl-allow no;
-            set net:max-retries 3;
-            set net:reconnect-interval-base 5;
+            set ftp:passive-mode yes;
+            set net:timeout 15;
+            set net:max-retries 2;
             open -u \"$FTP_USER\",\"$FTP_PASS\" \"$FTP_SERVER\";
             mirror --reverse --delete --verbose \
               --exclude=DEV_NOTES.md \
