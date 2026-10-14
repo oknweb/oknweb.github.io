@@ -14,18 +14,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install lftp
+        run: sudo apt-get install -y lftp
+
       - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.TANE_FTP_SERVER }}
-          username: ${{ secrets.TANE_FTP_USERNAME }}
-          password: ${{ secrets.TANE_FTP_PASSWORD }}
-          protocol: ftp
-          port: 21
-          local-dir: ./web_works/TaneNoMori-web/
-          server-dir: ./
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/DEV_NOTES.md
-            **/node_modules/**
+        env:
+          FTP_SERVER: ${{ secrets.TANE_FTP_SERVER }}
+          FTP_USER: ${{ secrets.TANE_FTP_USERNAME }}
+          FTP_PASS: ${{ secrets.TANE_FTP_PASSWORD }}
+        run: |
+          lftp -e "
+            set ftp:ssl-allow no;
+            set net:max-retries 3;
+            set net:reconnect-interval-base 5;
+            open -u \"$FTP_USER\",\"$FTP_PASS\" \"$FTP_SERVER\";
+            mirror --reverse --delete --verbose \
+              --exclude=DEV_NOTES.md \
+              --exclude=.git \
+              --exclude=node_modules \
+              ./web_works/TaneNoMori-web/ ./;
+            bye
+          "
