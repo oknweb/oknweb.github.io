@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'web_works/TaneNoMori-web/**'
+  workflow_dispatch:
 
 jobs:
   deploy:
