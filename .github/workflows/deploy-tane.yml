@@ -20,6 +20,8 @@ jobs:
           server: ${{ secrets.TANE_FTP_SERVER }}
           username: ${{ secrets.TANE_FTP_USERNAME }}
           password: ${{ secrets.TANE_FTP_PASSWORD }}
+          protocol: ftp
+          port: 21
           local-dir: ./web_works/TaneNoMori-web/
           server-dir: ./
           exclude: |
