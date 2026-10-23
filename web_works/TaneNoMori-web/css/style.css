@@ -627,66 +627,39 @@ p.side-nav-text {
 }
 
 /* ============================================================
-   S03 GALLERY SLIDESHOW (slick)
+   S03 GALLERY SLIDESHOW (CSS marquee)
 ============================================================ */
 .sec-gallery {
     padding: 0;
+    overflow: hidden;
 }
 
 .s03-gallery {
-    position: relative;
+    overflow: hidden;
 }
 
-.s03-gallery .slick-slider,
-.s03-gallery .slick-dotted.slick-slider {
-    margin-bottom: 0;
+.s03-track {
+    display: flex;
+    width: max-content;
+    animation: s03-marquee 24s linear infinite;
 }
 
-.s03-slick .slick-slide>div {
-    padding: 0;
-}
-
-.s03-slick .slick-slide img {
-    width: 100%;
+.s03-track img {
+    width: 260px;
     aspect-ratio: 3 / 4;
     object-fit: cover;
     object-position: center top;
     display: block;
+    flex-shrink: 0;
 }
 
-.s03-gallery .slick-prev,
-.s03-gallery .slick-next {
-    width: 40px;
-    height: 40px;
-    z-index: 10;
+@keyframes s03-marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
 }
 
-.s03-gallery .slick-prev {
-    left: 12px;
-}
-
-.s03-gallery .slick-next {
-    right: 12px;
-}
-
-.s03-gallery .slick-prev::before,
-.s03-gallery .slick-next::before {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 30px;
-}
-
-.s03-gallery .slick-dots {
-    bottom: 14px;
-}
-
-.s03-gallery .slick-dots li button::before {
-    color: rgba(255, 255, 255, 0.55);
-    font-size: 8px;
-}
-
-.s03-gallery .slick-dots li.slick-active button::before {
-    color: #fff;
-    opacity: 1;
+@media (prefers-reduced-motion: reduce) {
+    .s03-track { animation-play-state: paused; }
 }
 
 /* ============================================================
