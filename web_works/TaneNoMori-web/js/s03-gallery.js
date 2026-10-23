@@ -12,6 +12,9 @@ $('.s03-slick').slick({
     arrows: false,
     pauseOnHover: false,
     pauseOnFocus: false,
+    swipe: false,
+    touchMove: false,
+    draggable: false,
     responsive: [
         { breakpoint: 820, settings: { slidesToShow: 2, centerPadding: '8%' } },
         { breakpoint: 540, settings: { slidesToShow: 1, centerPadding: '10%' } }
